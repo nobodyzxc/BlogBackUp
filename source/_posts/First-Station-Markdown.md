@@ -150,12 +150,12 @@ many lines
 
 ### 用法
 ```
-註解零[^0]
+註解零  [^0]
 [^0] 就是這樣嗎?
 一樣要注意空格啊
 ```
 ### 效果
-註解零[^0]
+註解零  [^0]
 [^0] 就是這樣嗎?
 
 Text prior to footnote reference.[^2]
@@ -169,14 +169,16 @@ WTF?好像弄不太起來...有需要再找吧...
 ### 用法
 ```
 ![my logo](https://avatars0.githubusercontent.com/u/17202064?v=3&s=460)
-![看山醬][ref]
-[ref]: https://pic4.zhimg.com/90286b98c5607fb75f39e165f4bd9e87_b.jpg
+![看山醬萌萌噠][ref]
+[ref]: /images/zhi.jpg "zhi~~"
 ```
 
 ### 效果
 ![my logo](https://avatars0.githubusercontent.com/u/17202064?v=3&s=460)
-![看山醬][ref]
-[ref]: https://pic4.zhimg.com/90286b98c5607fb75f39e165f4bd9e87_b.jpg
+![看山醬萌萌噠][ref]
+[ref]: /images/zhi.jpg "zhi~~"
+
+Image from [zhihu](https://www.zhihu.com/question/35778876/answer/65568580)、[看山微博](http://tw.weibo.com/liukanshan)
 
 ## 8. 程式碼區塊
 如果鑲嵌行間請用`` ` ``前後包裝，一大塊則用<code>\`\`\`</code>包(可以加語言名稱)
@@ -198,7 +200,7 @@ int main(void){//對 我是不換行派的，打我啊
 我絕對不會說<code><code>\`\`\`</code></code>是借助html和反斜線之力完成的。
 
 ## 9.表格
-恩，就是html的`<tb></tb><tr></tr><td></td>`等
+恩，就是html的`<table><tr><td></td></tr></table>`等
 
 ### 用法
 ```
