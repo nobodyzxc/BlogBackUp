@@ -170,13 +170,13 @@ WTF?好像弄不太起來...有需要再找吧...
 ```
 ![my logo](https://avatars0.githubusercontent.com/u/17202064?v=3&s=460)
 ![看山醬萌萌噠][ref]
-[ref]: /images/zhi.jpg "zhi~~"
+[ref]: /images/zhi.jpg "zhi~~侵刪呦"
 ```
 
 ### 效果
 ![my logo](https://avatars0.githubusercontent.com/u/17202064?v=3&s=460)
 ![看山醬萌萌噠][ref]
-[ref]: /images/zhi.jpg "zhi~~"
+[ref]: /images/zhi.jpg "zhi~~侵刪呦"
 
 Image from [zhihu](https://www.zhihu.com/question/35778876/answer/65568580)、[看山微博](http://tw.weibo.com/liukanshan)
 
@@ -184,8 +184,7 @@ Image from [zhihu](https://www.zhihu.com/question/35778876/answer/65568580)、[�
 如果鑲嵌行間請用`` ` ``前後包裝，一大塊則用<code>\`\`\`</code>包(可以加語言名稱)
 
 ### 用法
-<figure class="highlight plain">
-<table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">行間鑲嵌一個\`/\`</div><div class="line"></div><div class="line">\`\`\`C</div><div class="line">#include&lt;stdio.h&gt;</div><div class="line">int main(void){//對 我是不換行派的，打我啊</div><div class="line">    return 0;</div><div class="line">}</div><div class="line">\`\`\`</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">行間鑲嵌一個\`/\`</div><div class="line"></div><div class="line">\`\`\`C</div><div class="line">#include&lt;stdio.h&gt;</div><div class="line">int main(void){//對 我是不換行派的，打我啊</div><div class="line">    return 0;</div><div class="line">}</div><div class="line">\`\`\`</div></pre></td></tr></tbody></table></figure>
 
 ### 效果
 行間鑲嵌一個`/`
