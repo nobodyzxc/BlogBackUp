@@ -1,7 +1,7 @@
 ---
 title: First Station - Markdown
 date: 2016-12-22 00:42:57
-tags:
+categories: Stations
 ---
 <center>
 工欲善其事，必先利其器啊，既然hexo使用了Markdown來渲染文章，那就趕快來學個。
