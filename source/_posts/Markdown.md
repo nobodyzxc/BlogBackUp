@@ -1,7 +1,7 @@
 ---
-title: First Station - Markdown
+title: Trav.0 - Markdown
 date: 2016-12-22 00:42:57
-categories: Stations
+categories: Trav.
 ---
 <center>
 工欲善其事，必先利其器啊，既然hexo使用了Markdown來渲染文章，那就趕快來學個。
@@ -116,6 +116,7 @@ html的超鏈結就是`<a></a>`tag，在Markdown可以用`[]()`及`[][] + []:`�
 ```
 <a href="超鏈結" title="標題(可略)">超鏈結名稱</a>
 [超鏈結名稱](超鏈結 "標題(可略)")
+
 標題就是滑鼠一到鏈結上面會顯示的東東啦
 當然，超鏈結也可以用相對路徑啦，寫過網頁的就知道了
 
@@ -124,6 +125,7 @@ example:
 [nobodyzxc github](http://github.com/nobodyzxc "你瞅啥")
 
 這邊有種特殊用法，就是參考鏈結，有點像註腳，個人覺得像是變數
+
 [超鏈結名稱][參考名稱]
 [參考名稱]: 超鏈結
 

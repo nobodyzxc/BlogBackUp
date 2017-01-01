@@ -3,6 +3,7 @@ title: My new Travel
 date: 2016-12-11 23:52:44
 tags:
 ---
+<center>
 我所追求的簡單，終於在[github](https://github.com)上實現了，莫名感動。
 能用vim寫自己的部落格，感覺更是難以言喻。
 如果當初沒有用cygwin，我大概就不會用git，沒有git就不會頻繁地上github，
@@ -13,3 +14,4 @@ tags:
 自己的空間好像有點...氾濫(笑)，所以打算來個區隔。
 pixnet就放些實作成果，這裡就放些自己學習足跡吧。
 一趟新旅途的展開，加油吧！少年。
+</center>
