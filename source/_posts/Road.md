@@ -85,6 +85,10 @@ categories: Memoir
 現在想起來怪怪的，如果有教 fopen 那當初是用甚麼寫入? `fputs` ? 那怎不教 `cstdio`?
 要再查一下，記憶模糊了。
 </li>
+<li>
+<blockquote>`'\n'` vs `<< endl;`</blockquote>
+換行，好像過了很久才明白 `endl` 是 end line 的意思，相形之下 `\n` new line 似乎比較有 sence。
+</li>
 </ol>
 
 linux 簡單明瞭，深深的吸引了我，因為 VB 的視窗化，讓我覺得一切都太麻煩。
