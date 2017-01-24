@@ -8,6 +8,8 @@ categories: Trav.
 這篇文章會不定期更新，隨著我的 vim skill。
 這段旅途的終點，大概就是我不用 vim 的那天吧！
 (可能是入 emacs 教，或是奔向 IDE 了吧～)
+
+註 : Chrome 有 vimium ， Firefox 有 vimfx 插件可以用，很方便喔。
 </center>
 ## 0. 基本操作
 要編輯一個存在的文檔`tst.txt`時只要在 terminal 下 `vim tst.txt`。
@@ -124,4 +126,4 @@ normal mode 已經說了個大概，更進階的之後會在 vim script section 
   `esc` 跳出。
   在每行插入剛剛打的字母。
 
-參考資料: [refer](https://www.fprintf.net/vimCheatSheet.html)
+參考資料: [vim cheat sheet](https://www.fprintf.net/vimCheatSheet.html)
