@@ -50,11 +50,10 @@ normal 模式主要有兩種功能，快速移動游標、簡易文檔操作和�
     
     * copy   : 整行 copy 按 `yy`，或是按`v`進入 visual mode 選取再按 `y`。
     * paste  : 按`p`。
-    * delete : 用法跟 copy 很像，字母`d`和`x`，try一下吧。
+    * delete : 用法跟 copy 很像，字母`d`和`x`，try一下吧，帶有剪下的功能。
     * search : 按下 `/` ， 鍵入搜尋字串然後`enter`，`n`下一筆，`N`上一筆。
-    * replace: 
+    * replace: `:%s/目標字串/取代成字串/g`，`g`是對每行的目標字串替換，沒加只會取代每行第一個。(亦可進入 visual 進行取代，就不用使用`%`)
     
-   
   3. 指令
   
     進到 vim 之後先講一下離開吧。
@@ -102,12 +101,27 @@ normal 模式主要有兩種功能，快速移動游標、簡易文檔操作和�
     > 計入移動手的成本，其實也沒快到哪裡。
     > 還有個快捷是`ZZ`。
   
-  
-  
-
 normal mode 已經說了個大概，更進階的之後會在 vim script section 中討論。
 
 ### - insert mode
+
+主要就是打字，沒什麼好說的，有幾種指令可以由 normal mode 進入 insert mode。
+
+  * `i` : 由游標位置進入。
+  * `I` : 插入該行第一個字元位置。
+  * `a` : 游標位置往後一位插入。
+  * `A` : 插入行尾。
+  * `o` : 插入下一行。
+  * `O` : 插入上一行。
+  
 ### - visual mode
+ 
+  我覺得最值得一提的就是 column 模式。
+  按`v`進入 visual mode，往下選取需要的行。
+  `ctrl-v`進入 column 模式。
+
+  然後可以做啥咧?按`I`進入 insert mode，鍵入幾個字。
+  `esc` 跳出。
+  在每行插入剛剛打的字母。
 
 (refer)[https://www.fprintf.net/vimCheatSheet.html]
