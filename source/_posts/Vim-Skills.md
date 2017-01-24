@@ -124,4 +124,4 @@ normal mode 已經說了個大概，更進階的之後會在 vim script section 
   `esc` 跳出。
   在每行插入剛剛打的字母。
 
-(refer)[https://www.fprintf.net/vimCheatSheet.html]
+參考資料: [refer](https://www.fprintf.net/vimCheatSheet.html)
