@@ -8,7 +8,6 @@ categories: Trav.
 這篇文章會不定期更新，隨著我的 vim skill。
 這段旅途的終點，大概就是我不用 vim 的那天吧！
 (可能是入 emacs 教，或是奔向 IDE 了吧～)
-
 註 : Chrome 有 vimium ， Firefox 有 vimfx 插件可以用，很方便喔。
 </center>
 ## 0. 基本操作
@@ -54,7 +53,8 @@ normal 模式主要有兩種功能，快速移動游標、簡易文檔操作和�
     * paste  : 按`p`。
     * delete : 用法跟 copy 很像，字母`d`和`x`，try一下吧，帶有剪下的功能。
     * search : 按下 `/` ， 鍵入搜尋字串然後`enter`，`n`下一筆，`N`上一筆。
-    * replace: `:%s/目標字串/取代成字串/g`，`g`是對每行的目標字串替換，沒加只會取代每行第一個。(亦可進入 visual 進行取代，就不用使用`%`)
+    * replace: `:%s/目標字串/取代成字串/g`，`g`是對每行的目標字串替換，沒加只會取代每行第一個。
+        (亦可進入 visual 進行取代，就不用使用`%`)
     
   3. 指令
   
@@ -122,7 +122,7 @@ normal mode 已經說了個大概，更進階的之後會在 vim script section 
   按`v`進入 visual mode，往下選取需要的行。
   `ctrl-v`進入 column 模式。
 
-  然後可以做啥咧?按`I`進入 insert mode，鍵入幾個字。
+  然後可以做啥咧？按`I`進入 insert mode，鍵入幾個字。
   `esc` 跳出。
   在每行插入剛剛打的字母。
 
