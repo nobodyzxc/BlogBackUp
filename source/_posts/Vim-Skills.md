@@ -117,8 +117,10 @@ normal mode 已經說了個大概，更進階的之後會在 vim script section 
   * `O` : 插入上一行。
   
 ### - visual mode
+
+  一鍵縮排很實用，選起來再按 `=` 即可。
  
-  我覺得最值得一提的就是 column 模式。
+  還有值得一提的是 column 模式。
   按`v`進入 visual mode，往下選取需要的行。
   `ctrl-v`進入 column 模式。
 
