@@ -10,6 +10,7 @@ categories: Trav.
 (可能是入 emacs 教，或是奔向 IDE 了吧～)
 註 : Chrome 有 vimium ， Firefox 有 vimfx 插件可以用，很方便喔。
 </center>
+<!-- more -->
 ## 0. 基本操作
 要編輯一個存在的文檔`tst.txt`時只要在 terminal 下 `vim tst.txt`。
 如果要建立一個新檔，叫做`new.txt`，也只要下 `vim new.txt`，只是離開記得存。
