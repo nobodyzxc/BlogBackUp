@@ -4,6 +4,7 @@ date: 2017-01-31 22:44:50
 categories: Trav.
 ---
 <center>
+一個沒有 mutable variables ，只有 recursion 的世界。
 學校 PL 課程，及 [Haskell 趣學指南](https://learnyoua.haskell.sg/content/zh-tw/)的一些心得筆記。
 </center>
 
@@ -84,26 +85,52 @@ categories: Trav.
 |     Eq    | 可判斷相等  | Int ...       |      ==      ||
 |     Ord   |   可排序    | Int ...       | > , < , >= , <= , compare | 有 Eq 特性 |
 |    Show   |  可轉字串   | Int ...       |     show     ||
-|    Read   | 可由字串轉  | Int ...       |     read     |注意稱明，否則型態推導可能沒辦法 work|
+|    Read   | 可由字串轉  | Int ...       |     read     |注意聲明，否則型態推導可能沒辦法 work|
 |    Enum   | 順序可枚舉  | Int ...       | .. , succ , pred ||
 |    Bounded|  有上下界   | Int ...       | minBound , maxBound | 若 Tuple 內皆為 Bounded ， <br>則此 Tuple 亦有 Bounded 特性。|
 |     Num   |  數字類型   | Int ...       | fromIntegral ||
 |  Integral |  整數類型   | Integer       | fromIntegral ||
-|  Floating | 浮點樹類型  | Float         |||
+|  Floating | 浮點數類型  | Float         |||
 |
 
 ## pattern matching
 * 順序很重要
 
-1. 函式內對參數的 pattern matching
+1. 函式定義內對參數的 pattern matching
    一開始提到的是可以在 .hs 中像 select case 全部啪出來，不用 if else，在 ghci [需要用 guard](http://stackoverflow.com/questions/15733266/pattern-matching-in-ghci)。
+   其實是 case of 的語法糖。
 2. 函式引數和參數的 pattern matching
    其實就是參數可以將引數拆開(我用詞好[精準](http://no8dyzxc.pixnet.net/blog/post/290731567) \>///<)，好用。
 3. List Comprehension 的 pattern matching
    指南的例子 : `[a + b | (a , b) <- xs]`
 
-* 以上前兩點是我亂叫的(奪門而出
+* 以上前兩點是我亂叫的，意思知道就好。(奪門而出
 
+  還有一種 at pattern , xs@(a:as)，表示把xs拆成(a:as)。
+
+## Guard & Key words
+
+```haskell
+func param
+    | [bool exp] = val
+    | [bool exp] = val
+    --let keyword(can be anywhere)
+    | [bool exp] = let [name binding;...;...] in [exp]
+    ...
+    | otherwise = val
+    --where keyword(must be the structure end)
+    where [name binding]
+          [function def balala]
+
+--let keyword in list comprehension
+[nameCanSee | nameCannotSee , let [name binding]]
+[nameCannotSee | nameCannotSee , let [name binding] in [bool exp]]
+
+func param = case [exp] of [pattern] -> val
+                          [pattern] -> val
+                          [pattern] -> val
+
+```
 ## self suspicion
 
 * tuple likes struct , while list likes array ?
