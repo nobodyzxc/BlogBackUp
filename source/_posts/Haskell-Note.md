@@ -4,7 +4,7 @@ date: 2017-01-31 22:44:50
 categories: Trav.
 ---
 <center>
-A world loop , but recursion。
+A world without loop , but recursion。
 學校 PL 課程，及 [Haskell 趣學指南](https://learnyoua.haskell.sg/content/zh-tw/)的一些心得筆記。
 </center>
 
@@ -12,7 +12,7 @@ A world loop , but recursion。
 
 ## Some hints
 
-* 不像 imperative languages 告訴電腦要做什麼，FP 的思考方式是描述問題。
+* 不像 OP 告訴電腦要做什麼，FP 的思考方式是描述問題。
 * function call 有最高優先順序。
 * if 在 haskell 裡是 exp 不是 statment
 * function name 字首必須小寫 (Type 為大寫)。
@@ -106,7 +106,7 @@ A world loop , but recursion。
 |    Bounded|  有上下界   | Int ...       | minBound , maxBound | 若 Tuple 內皆為 Bounded ， <br>則此 Tuple 亦有 Bounded 特性。|
 |     Num   |  數字類型   | Int ...       | fromIntegral ||
 |  Integral |  整數類型   | Integer       | fromIntegral ||
-|  Floating | 浮點數類型  | Float         |              ||
+|  Floating | 浮點數類型  | Float         |              |||
 
 ## Pattern matching
 * 順序很重要
