@@ -4,13 +4,13 @@ date: 2017-01-31 22:44:50
 categories: Trav.
 ---
 <center>
-一個沒有 mutable variables ，只有 recursion 的世界。
+A world loop , but recursion。
 學校 PL 課程，及 [Haskell 趣學指南](https://learnyoua.haskell.sg/content/zh-tw/)的一些心得筆記。
 </center>
 
 <!-- more -->
 
-## some hint
+## Some hints
 
 * 不像 imperative languages 告訴電腦要做什麼，FP 的思考方式是描述問題。
 * function call 有最高優先順序。
@@ -19,7 +19,7 @@ categories: Trav.
 * 認清 `++` 和 `:` ，適時使用`:`，在**前端**插入元素。
 * List 的比較依照字典序。
 
-## function list
+## Function list
 |  function   |       Note      |
 |:-----------:|:---------------:|
 |`+` , `-` , `*` , `/`||
@@ -58,8 +58,23 @@ categories: Trav.
 |   `fst` (t , t)    | the first elm in tuple(pair) |
 |   `snd` (t , t)    | the second elm in tuple(pair) |
 | `zip` [t] [t]   | make a list of tuple(pair) |
+| `zipWith` (t-\>t'-\>t'') [t] [t'] | zip two list by a func |
+| `flip` (t-\>t''-\>t''') | flip the param order of a func call |
+| `map` (t-\>t') [t] | like for\_each , list comprehension |
+| `filter` (t-\>Bool) [t] | like Guard in list comprehension |
+| `takeWhile` t-\>Bool [t] | take elm to return a new list while ... |
+| `foldl` (t-\>t'-\>t) t [t'] | do ... to acc while elm \= [] |
+| `foldr` (t-\>t'-\>t) t' [t] | almost simialr to foldl |
+| `foldl1` (t-\>t-\>t) [t']  | take head of list as init |
+| `foldr1` (t-\>t-\>t) [t']  | almost simialr to foldl1 |
+| `scanl` (t-\>t'-\>t) t [t'] | acc operated val to list from left |
+| `scanr` (t-\>t'-\>t) t' [t] | acc operated val to list from right |
+| `scanl1` (t-\>t-\>t) [t] | omit |
+| `scanr1` (t-\>t-\>t) [t] | omit |
 
-## data Type
+
+
+## Data type
 |     Type    |     Note     |
 |:-----------:|:------------:|
 |     Bool    ||
@@ -68,8 +83,9 @@ categories: Trav.
 |    Float    ||
 |    Double   ||
 |     Char    ||
-|      []     | List |
-|      ()     | Tuple |
+|     List    | [] |
+|     Tuple   | () |
+|     Maybe   | Nothing or single elm |
 ## Typeclass
 
 不禁讓我想到統計的三個 data Type , interval , odinal , categorical。
@@ -90,10 +106,9 @@ categories: Trav.
 |    Bounded|  有上下界   | Int ...       | minBound , maxBound | 若 Tuple 內皆為 Bounded ， <br>則此 Tuple 亦有 Bounded 特性。|
 |     Num   |  數字類型   | Int ...       | fromIntegral ||
 |  Integral |  整數類型   | Integer       | fromIntegral ||
-|  Floating | 浮點數類型  | Float         |||
-|
+|  Floating | 浮點數類型  | Float         |              ||
 
-## pattern matching
+## Pattern matching
 * 順序很重要
 
 1. 函式定義內對參數的 pattern matching
@@ -131,7 +146,53 @@ func param = case [exp] of [pattern] -> val
                           [pattern] -> val
 
 ```
-## self suspicion
+
+## High Order function
+
+* Curried functions = 不完全的 function
+  ex:
+```haskell
+ghci > tkMaxCmpWithTen = max 10
+ghci > tkMaxCmpWithTen 9
+10
+ghci > addThree = (+3)
+ghci > addThree 10
+13
+```
+* High Order function = take function as parameter
+```haskell
+ghci >  applyTwice func x = func (func x)
+ghci > applyTwice addThree 10
+16
+ghci > applyTwice (+3) 10
+16
+
+```
+* `$` and `.`
+```haskell
+$ comb to right
+
+f(g(x)) = f . g $ x
+
+sum . map (*3) $ [1..9]
+(int)sum(list) . (list)map (*3)(list) $ (list)[1..9]
+```
+
+## Module
+引入函式庫。
+```haskell
+--in .hs
+import Data.List
+import Data.List hiding (nub)  --ignore nub in module
+import Data.List (nub，sort)   --only import num 'n sort
+import qualified Data.Map      --need use 'Data.Map.func' to call func
+import qualified Data.Map as M --can alias 'Data.Map' to 'M'
+--in ghci can also use
+:m Data.List
+```
+
+
+## Self suspicion
 
 * tuple likes struct , while list likes array ?
 * 試想 zip implement , 是 zip (x:xs) (y:ys) = (x , y) : zip xs ys
@@ -139,3 +200,13 @@ func param = case [exp] of [pattern] -> val
   這兩種使用 list element 的方式差別是什麼 ,
   後者如何以 recursion 實現。
   並考慮一下迴圈是否有類似的狀況。
+* 那就是右摺疊可以處理無限長度的資料結構，而左摺疊不可以。將無限 List 從中斷開執行左摺疊是可以的，不過若是向右，就永遠到不了頭了。
+  (覺得怪怪的，這敘述，搭配一下實例思考一下)
+```haskell
+head' :: [a] -> a  
+head' = foldr1 (\x _ -> x)  
+last' :: [a] -> a  
+last' = foldl1 (\_ x -> x)
+```
+  -> 好像是惰性求值的關係，可以從無限開始跑可是變數要用 anonymous 表示無限那端。
+
