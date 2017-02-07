@@ -5,7 +5,7 @@ categories: Trav.
 ---
 <center>
 A world without loop , but recursion。
-學校 PL 課程，及 [Haskell 趣學指南](https://learnyoua.haskell.sg/content/zh-tw/)的一些心得筆記。
+學校 PL 課程，及 [Haskell 趣學指南](https://learnyoua.haskell.sg/content/zh-tw/) 的一些心得筆記。
 </center>
 
 <!-- more -->
@@ -15,7 +15,7 @@ A world without loop , but recursion。
 * 不像 OP 告訴電腦要做什麼，FP 的思考方式是描述問題。
 * function call 有最高優先順序。
 * if 在 haskell 裡是 exp 不是 statment
-* function name 字首必須小寫 (Type 為大寫)。
+* function name 字首必須小寫 (Type 為大寫）。
 * 認清 `++` 和 `:` ，適時使用`:`，在**前端**插入元素。
 * List 的比較依照字典序。
 
@@ -90,8 +90,8 @@ A world without loop , but recursion。
 
 不禁讓我想到統計的三個 data Type , interval , odinal , categorical。
 
-`=>`符號左邊是型態約束(表示此 Type Var 屬於哪個 Typeclass)，
-右邊是引數和回傳值。用於描述函式原型(?)。
+`=>`符號左邊是型態約束（表示此 Type Var 屬於哪個 Typeclass)，
+右邊是引數和回傳值。用於描述函式原型 (?)。
 
 例如將一般數字型態轉為更通用的 Integral 的函式 `fromIntegral`
 其定義為 `fromIntegral :: (Num b, Integral a) => a -> b`
@@ -115,13 +115,13 @@ A world without loop , but recursion。
    一開始提到的是可以在 .hs 中像 select case 全部啪出來，不用 if else，在 ghci [需要用 guard](http://stackoverflow.com/questions/15733266/pattern-matching-in-ghci)。
    其實是 case of 的語法糖。
 2. 函式引數和參數的 pattern matching
-   其實就是參數可以將引數拆開(我用詞好[精準](http://no8dyzxc.pixnet.net/blog/post/290731567) \>///<)，好用。
+   其實就是參數可以將引數拆開（我用詞好[精準](http://no8dyzxc.pixnet.net/blog/post/290731567) \>///<)，好用。
 3. List Comprehension 的 pattern matching
    指南的例子 : `[a + b | (a , b) <- xs]`
 
-* 以上前兩點是我亂叫的，意思知道就好。(奪門而出
+* 以上前兩點是我亂叫的，意思知道就好。（奪門而出
 
-  還有一種 at pattern , xs@(a:as)，表示把xs拆成(a:as)。
+  還有一種 at pattern , xs@(a:as)，表示把 xs 拆成 (a:as)。
 
 ## Guard & Key words
 
@@ -201,11 +201,11 @@ import qualified Data.Map as M --can alias 'Data.Map' to 'M'
   後者如何以 recursion 實現。
   並考慮一下迴圈是否有類似的狀況。
 * 那就是右摺疊可以處理無限長度的資料結構，而左摺疊不可以。將無限 List 從中斷開執行左摺疊是可以的，不過若是向右，就永遠到不了頭了。
-  (覺得怪怪的，這敘述，搭配一下實例思考一下)
+  （覺得怪怪的，這敘述，搭配一下實例思考一下）
 ```haskell
-head' :: [a] -> a  
-head' = foldr1 (\x _ -> x)  
-last' :: [a] -> a  
+head' :: [a] -> a
+head' = foldr1 (\x _ -> x)
+last' :: [a] -> a
 last' = foldl1 (\_ x -> x)
 ```
   -> 好像是惰性求值的關係，可以從無限開始跑可是變數要用 anonymous 表示無限那端。

@@ -8,7 +8,7 @@ categories: Trav.
 想來不禁百感交集，意味悠遠。
 這篇文章會不定期更新，隨著我的 vim skill。
 這段旅途的終點，大概就是我不用 vim 的那天吧！
-(可能是入 emacs 教，或是奔向 IDE 了吧～)
+（可能是入 emacs 教，或是奔向 IDE 了吧～)
 註 : Chrome 有 vimium ， Firefox 有 vimfx 插件可以用，很方便喔。
 </center>
 <!-- more -->
@@ -20,7 +20,7 @@ categories: Trav.
 vim 有三種模式 normal , insert , visual。一開始進到 vim 時即是 normal 模式。
 
 `<ESC>`進 normal mode ，
-normal mode 下，`i`(注意是小寫)，可以讓游標在**原位**進入 insert mode，
+normal mode 下，`i`（注意是小寫），可以讓游標在**原位**進入 insert mode，
 normal mode 下，`v`，可以進入 visual mode。
 
 看起來，normal mode 是一切 mode 的橋樑。
@@ -31,13 +31,13 @@ insert mode 會出現 `-- INSERT --`， visual mode 則是 `-- VISUAL --`。
 ### - normal mode
 normal 模式主要有兩種功能，快速移動游標、簡易文檔操作和下指令。
 其中離開指令就是在 normal mode 下的。
-要切換 normal mode 只要按`esc`鍵就好了，vim script會表示成`<ESC>`。
+要切換 normal mode 只要按`esc`鍵就好了，vim script 會表示成`<ESC>`。
 要下指令，只要在 normal mode 按`:`，再下指令。
 
   1. 移動
 
     要移動最簡單的就是按方向鍵，但是 vim 習慣上會使用 `jkhl` ， 分別對應上下左右。
-    (方向鍵在所有模式是通用的)
+    （方向鍵在所有模式是通用的）
 
     不想一格格移動的話可以先鍵入一個數字再移動，比如 `15j` 是向下移動十五行。
     在很多操作下都有搭配數字的用法，有興趣不妨試一下。
@@ -53,10 +53,10 @@ normal 模式主要有兩種功能，快速移動游標、簡易文檔操作和�
 
     * copy   : 整行 copy 按 `yy`，或是按`v`進入 visual mode 選取再按 `y`。
     * paste  : 按`p`。
-    * delete : 用法跟 copy 很像，字母`d`和`x`，try一下吧，帶有剪下的功能。
+    * delete : 用法跟 copy 很像，字母`d`和`x`，try 一下吧，帶有剪下的功能。
     * search : 按下 `/` ， 鍵入搜尋字串然後`enter`，`n`下一筆，`N`上一筆。
-    * replace: `:%s/目標字串/取代成字串/g`，`g`是對每行的目標字串替換，沒加只會取代每行第一個。
-        (亦可進入 visual 進行取代，就不用使用`%`)
+    * replace: `:%s/ 目標字串 / 取代成字串 /g`，`g`是對每行的目標字串替換，沒加只會取代每行第一個。
+        （亦可進入 visual 進行取代，就不用使用`%`)
 
   3. 指令
 
@@ -134,4 +134,4 @@ normal mode 已經說了個大概，更進階的之後會在 vim script section 
   `esc` 跳出。
   在每行插入剛剛打的字母。
 
-參考資料: [vim cheat sheet](https://www.fprintf.net/vimCheatSheet.html)
+參考資料：[vim cheat sheet](https://www.fprintf.net/vimCheatSheet.html)
