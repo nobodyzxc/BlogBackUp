@@ -74,7 +74,8 @@ A world without loop , but recursion。
 
 
 
-## Data type
+## Data
+#### type
 |     Type    |     Note     |
 |:-----------:|:------------:|
 |     Bool    ||
@@ -83,9 +84,13 @@ A world without loop , but recursion。
 |    Float    ||
 |    Double   ||
 |     Char    ||
+|     Maybe   | Nothing or single elm |
+#### structure
+|     Structure    |     Note     |
+|:-----------:|:------------:|
 |     List    | [] |
 |     Tuple   | () |
-|     Maybe   | Nothing or single elm |
+
 ## Typeclass
 
 不禁讓我想到統計的三個 data Type , interval , odinal , categorical。
