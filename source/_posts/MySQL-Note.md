@@ -70,7 +70,7 @@ drop [index constraint_var_name | index col_x | primary_key |
 alter table tb_name
 alter col_x drop default
 ```
-constraint list
+* constraint list
   * **not null**      - col can't be null
   * **unique**        - row for col must be unique
   * **primary key**   - not null union unique
