@@ -20,9 +20,9 @@ categories: Trav.
 練習的 database 就用 [w3school](http://www.w3schools.com/sql/default.asp) 教的 [northwind](https://github.com/dalers/mywind) 吧。
 ```bash
 git clone https://github.com/dalers/mywind.git
-cat northwind.sql | mysql -u root -p
-cat northwind-default-current-timestamp.sql | mysql -u root -p
-cat northwind-data.sql | mysql -u root -p
+cat northwind.sql | MySQL -u root -p
+cat northwind-default-current-timestamp.sql | MySQL -u root -p
+cat northwind-data.sql | MySQL -u root -p
 # -u 引數看你的配置
 ```
 
@@ -184,7 +184,7 @@ select c.id from customers as c;
   * inner join -- 要有關聯才 show
   * left join  -- 左邊全都 show ， 右邊看關聯
   * right join -- 右邊全都 show ， 左邊看關聯
-  * full join  -- 都 show , [mysql gg](http://stackoverflow.com/questions/4796872/full-outer-join-in-mysql)
+  * full join  -- 都 show , [MySQL gg](http://stackoverflow.com/questions/4796872/full-outer-join-in-MySQL)
   * join       -- same as join
 ```sql
 select o.id as order_id , c.first_name as customer
@@ -330,7 +330,7 @@ select coalesce(address , "NULL ADDRESS") from tb_name;
 
 * functions
   * group by before order by
-  * mysql don't support first() , last() , alternatively , you should use order by and limit
+  * MySQL don't support first() , last() , alternatively , you should use order by and limit
 ```sql
 select ship_city from orders
 group by ship_city order by id desc limit 1;
@@ -341,5 +341,5 @@ select ship_city  from orders
 group by ship_city having count(ship_city) = 4;
 ```
   * mid(string , start from 1 , length)
-  * mysql don't support len() , you should use length()
+  * MySQL don't support len() , you should use length()
 
