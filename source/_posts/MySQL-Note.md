@@ -331,12 +331,12 @@ select coalesce(address , "NULL ADDRESS") from tb_name;
 * functions
   * group by before order by
   * mysql don't support first() , last() , alternatively , you should use order by and limit
-```
+```sql
 select ship_city from orders
 group by ship_city order by id desc limit 1;
 ```
   * having example:
-```
+```sql
 select ship_city  from orders
 group by ship_city having count(ship_city) = 4;
 ```
