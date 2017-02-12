@@ -1,7 +1,7 @@
 ---
-title: Trav.3 - MySQL Note
+title: MySQL Note
 date: 2017-02-10 18:46:49
-categories: Trav.
+categories: Note
 ---
 
 <center>

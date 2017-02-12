@@ -1,7 +1,7 @@
 ---
-title: Trav.1 - Vim Balabala(0)
+title: Trav.1 - Vim Note (0)
 date: 2017-01-22 23:32:56
-categories: Trav.
+categories: Note
 ---
 <center>
 結識 vim 一年多了，一切的一切算得上機緣巧遇。

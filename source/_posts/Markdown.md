@@ -1,7 +1,7 @@
 ---
-title: Trav.0 - Markdown
+title: Markdown Note
 date: 2016-12-22 00:42:57
-categories: Trav.
+categories: Note
 ---
 <center>
 工欲善其事，必先利其器啊，既然 hexo 使用了 Markdown 來渲染文章，那就趕快來學個。

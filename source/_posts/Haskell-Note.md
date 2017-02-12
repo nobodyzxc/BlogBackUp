@@ -1,7 +1,7 @@
 ---
-title: Trav.2 - Haskell Note
+title: Haskell Note
 date: 2017-01-31 22:44:50
-categories: Trav.
+categories: Note
 ---
 <center>
 A world without loop , but recursion。
