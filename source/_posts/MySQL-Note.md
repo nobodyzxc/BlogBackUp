@@ -55,7 +55,7 @@ add constraint constraint_var_name constraint_type (cond | col_x)
 [references table_name(col_name)] -- foreign key
 alter table tb_name
 // 2.
-add constraint_type (col_x)
+add constraint_type (col_x) -- () is important
 
 -- add default
 alter table tb_name
