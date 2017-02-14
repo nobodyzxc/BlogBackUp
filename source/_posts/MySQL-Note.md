@@ -20,9 +20,9 @@ categories: Note
 練習的 database 就用 [w3school](http://www.w3schools.com/sql/default.asp) 教的 [northwind](https://github.com/dalers/mywind) 吧。
 ```bash
 git clone https://github.com/dalers/mywind.git
-cat northwind.sql | MySQL -u root -p
-cat northwind-default-current-timestamp.sql | MySQL -u root -p
-cat northwind-data.sql | MySQL -u root -p
+cat northwind.sql | mysql -u root -p
+cat northwind-default-current-timestamp.sql | mysql -u root -p
+cat northwind-data.sql | mysql -u root -p
 # -u 引數看你的配置
 ```
 
@@ -78,6 +78,7 @@ alter col_x drop default
   (ex: In order table have a foreign key customer , refers to customers table)
   * **check** (cond)  - check the condtition
   * **default** (val) - assign the default val to col
+
 
 * comment
 ```sql
@@ -301,7 +302,7 @@ select coalesce(address , "NULL ADDRESS") from tb_name;
 ```
 
 * type
-  1. text
+  * text
     * char(size < 255) - const length
     * varchar(size < 256) - var length , when over 255 -> text
     * tinytext - a string whose length < 256
@@ -312,7 +313,7 @@ select coalesce(address , "NULL ADDRESS") from tb_name;
     * longbolb  - a binobj whose max  size  = 4,294,967,295
     * enum(elm , ...) - a list with max length = 65535
     * set - like enum. wait me to find out.
-  2. number(can add unsigned prefix)
+  * number (can add `unsigned` prefix)
     * tinyint(size)   - 1 byte
     * smallint(size)  - 2 bytes
     * mediumint(size) - 3 bytes
@@ -321,12 +322,13 @@ select coalesce(address , "NULL ADDRESS") from tb_name;
     * float           - omit
     * double          - omit
     * decimal         - float represented by string
-  3. date
+  * date
     * date      - YYYY-MM-DD
     * datetime  - YYYY-MM-DD HH:MM:SS
     * time      - HH:MM:SS
     * year      - YYYY
     * timestamp - YYYY-MM-DD HH:MM:SS (UTC)
+
 
 * functions
   * group by before order by
