@@ -265,7 +265,7 @@ alert table test.custs auto_increment = 100;
 ```
 * view
 ```sql
--- view is a virtual table , well , like call by references
+-- view is a virtual table , well , likes call by references
 create view v_name as
 [ select statement ];
 
@@ -312,7 +312,7 @@ select coalesce(address , "NULL ADDRESS") from tb_name;
     * longtext  - a string whose max length = 4,294,967,295
     * longbolb  - a binobj whose max  size  = 4,294,967,295
     * enum(elm , ...) - a list with max length = 65535
-    * set - like enum. wait me to find out.
+    * set - likes enum. wait me to find out.
   * number (can add `unsigned` prefix)
     * tinyint(size)   - 1 byte
     * smallint(size)  - 2 bytes
@@ -332,7 +332,7 @@ select coalesce(address , "NULL ADDRESS") from tb_name;
 
 * functions
   * group by before order by
-  * MySQL don't support first() , last() , alternatively , you should use order by and limit
+  * MySQL doesn't support first() , last() , alternatively , you should use order by and limit
 ```sql
 select ship_city from orders
 group by ship_city order by id desc limit 1;
@@ -343,5 +343,5 @@ select ship_city  from orders
 group by ship_city having count(ship_city) = 4;
 ```
   * mid(string , start from 1 , length)
-  * MySQL don't support len() , you should use length()
+  * MySQL doesn't support len() , you should use length()
 

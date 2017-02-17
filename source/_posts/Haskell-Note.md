@@ -195,6 +195,66 @@ import qualified Data.Map as M --can alias 'Data.Map' to 'M'
 --in ghci can also use
 :m Data.List
 ```
+## Our own data type
+永遠不要在 data 聲明中加型別約束
+```
+-- data Typename = valueConstructor param ...
+data Point = Point Float Float
+data Shape = Circle Point Float | Rectangle Point Point
+
+modlue Shape
+( Point (..) -- export all value constructor
+, Shape (Circle , Rectangle) -- export Circle and Rectangle
+, surface -- function name
+, baseCircle -- auxilliary function , baseCircle :: Float -> Float -> Shape
+) where
+
+-- record syntax
+data Person = Person { firstName :: String
+                     , lastName :: String
+                     , age :: Int
+                     , height :: Float
+                     , phoneNumber :: String
+                     , lover :: String
+                     } deriving (Show)
+
+ghci > lover I
+"\x4a\x79\x75\x6e\x2d\x59\x69\x20\x4a\x68\x61\x6e\x67"
+
+-- deriving
+data Day = Mon | Tues | Wed | Thur | Fri deriving (Eq , Ord , Bounded)
+
+-- type key word to alias type
+type String = [char]
+
+type IntMap v = Map Int v
+-- same as
+type IntMap = Map Int
+
+-- operator
+-- infix[lr] seq symbol
+infixr 5 ++
+
+-- an example of binary search tree
+data Tree a = EmptyTree | Node a (Tree a) (Tree a) deriving (Show, Read, Eq)
+
+singleton x = Node x EmptyTree EmptyTree
+
+treeInsert x EmptyTree = singleton x
+treeInsert x (Node a left right)
+      | x == a = Node x left right
+      | x < a  = Node a (treeInsert x left) right
+      | x > a  = Node a left (treeInsert x right)
+
+treeElem x EmptyTree = False
+treeElem x (Node a left right)
+    | x == a = True
+    | x < a  = treeElem x left
+    | x > a  = treeElem x right
+
+mkTree ls = foldr treeInsert EmptyTree ls
+```
+
 
 
 ## Self suspicion
@@ -214,4 +274,4 @@ last' :: [a] -> a
 last' = foldl1 (\_ x -> x)
 ```
   -> 好像是惰性求值的關係，可以從無限開始跑可是變數要用 anonymous 表示無限那端。
-
+* 自定義的 `:-:` 沒有定義，用起來直接是串起來的效果？!

@@ -9,10 +9,10 @@ categories: Note
 這篇文章會不定期更新，隨著我的 vim skill。
 這段旅途的終點，大概就是我不用 vim 的那天吧！
 （可能是入 emacs 教，或是奔向 IDE 了吧～)
-註 : Chrome 有 vimium ， Firefox 有 vimfx 插件可以用，很方便喔。
+註 : Chrome 有 Vimium ， Firefox 有 VimFx 插件可以用，很方便喔。
 </center>
 <!-- more -->
-## 0. 基本操作
+## 基本操作篇
 要編輯一個存在的文檔`tst.txt`時只要在 terminal 下 `vim tst.txt`。
 如果要建立一個新檔，叫做`new.txt`，也只要下 `vim new.txt`，只是離開記得存。
 如果還沒想到要存什麼名字，只要下`vim`就好了，離開再命名就好了。
@@ -107,7 +107,7 @@ normal 模式主要有兩種功能，快速移動游標、簡易文檔操作和�
     > 計入移動手的成本，其實也沒快到哪裡。
     > 還有個快捷是`ZZ`。
 
-normal mode 已經說了個大概，更進階的之後會在 vim script section 中討論。
+normal mode 已經說了個大概，更進階的之後會在 vimrc section 中討論。
 
 ### - insert mode
 
@@ -119,6 +119,7 @@ normal mode 已經說了個大概，更進階的之後會在 vim script section 
   * `A` : 插入行尾。
   * `o` : 插入下一行。
   * `O` : 插入上一行。
+  * `s` : 消除一字元並進入。
   * `S` : 清除該行。
 
 ### - visual mode
