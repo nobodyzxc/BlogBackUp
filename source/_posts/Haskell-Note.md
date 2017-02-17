@@ -197,7 +197,7 @@ import qualified Data.Map as M --can alias 'Data.Map' to 'M'
 ```
 ## Our own data type
 永遠不要在 data 聲明中加型別約束
-```
+```haskell
 -- data Typename = valueConstructor param ...
 data Point = Point Float Float
 data Shape = Circle Point Float | Rectangle Point Point
