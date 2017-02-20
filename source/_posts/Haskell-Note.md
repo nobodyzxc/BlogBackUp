@@ -54,11 +54,11 @@ A world without loop , but recursion。
 | (`cycle` [t])  | a list of cycling orign list |
 |(`repeat`  elm)| a inf list made by a elm |
 |`replicate` num elm| same as `take num (repeat elm)` |
-|[ func </code>&#124;</code> var\* <- [t] `, boolean(Guard)*` ]<br> `_` = anonymous var| list comprehension  |
+|[ valOfFunc </code>&#124;</code> var\* <- [t] `, boolean(Guard)*` ]<br> `_` = anonymous var| list comprehension  |
 |   `fst` (t , t)    | the first elm in tuple(pair) |
 |   `snd` (t , t)    | the second elm in tuple(pair) |
 | `zip` [t] [t]   | make a list of tuple(pair) |
-|  (\var var -> val) | lambda exp |
+|  (\var -> valOfFunc) | lambda exp |
 | `zipWith` (t-\>t'-\>t'') [t] [t'] | zip two list by a func |
 | `flip` (t-\>t''-\>t''') | flip the param order of a func call |
 | `map` (t-\>t') [t] | like for\_each , list comprehension |
@@ -216,10 +216,10 @@ data Person = Person { firstName :: String
                      , age :: Int
                      , height :: Float
                      , phoneNumber :: String
-                     , lover :: String
+                     , secCrush :: String
                      } deriving (Show)
 
-ghci > lover I
+ghci > secCrush I
 "\x4a\x79\x75\x6e\x2d\x59\x69\x20\x4a\x68\x61\x6e\x67"
 
 -- deriving
@@ -255,8 +255,10 @@ treeElem x (Node a left right)
 
 mkTree ls = foldr treeInsert EmptyTree ls
 ```
-
-
+typeclass
+```haskell
+-- wait to stuff
+```
 
 ## Self suspicion
 
