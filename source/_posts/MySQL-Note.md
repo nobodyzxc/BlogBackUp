@@ -16,7 +16,7 @@ categories: Note
 
 ## 環境配置
 
-還是在 cygwin 上，相關辦法可以參考不才的[這篇](http://no8dyzxc.pixnet.net/blog/post/103827086)。
+還是在 Cygwin 上，相關辦法可以參考不才的[這篇](http://no8dyzxc.pixnet.net/blog/post/103827086)。
 練習的 database 就用 [w3school](http://www.w3schools.com/sql/default.asp) 教的 [northwind](https://github.com/dalers/mywind) 吧。
 ```bash
 git clone https://github.com/dalers/mywind.git
