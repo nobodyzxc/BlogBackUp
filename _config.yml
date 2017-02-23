@@ -83,4 +83,4 @@ deploy:
   branch: master
 
 # message board by Disqus
-disqus_shortname: nobodyzxc
+duoshuo_shortname: nobodyzxc
