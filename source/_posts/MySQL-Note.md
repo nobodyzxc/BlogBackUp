@@ -5,7 +5,7 @@ categories: Note
 ---
 
 <center>
-開篇謎之音：MD 寒假一直開坑，卻一直沒好好填。
+開篇謎之音：...... 寒假一直開坑，卻一直沒好好填。
 之前想寫個 OJ 所以才接觸 MySQL，但一碰 MySQL 後 OJ 卻沒甚麼動力去玩了。
 一切都靜止下來了。
 一年後，突然想起，才在這裡慢慢填，主要是 [w3school](http://www.w3schools.com/sql/default.asp) 的筆記。
