@@ -1,5 +1,5 @@
 ---
-title: Haskell Note
+title: Haskell Note （富堅中）
 date: 2017-01-31 22:44:50
 categories: Note
 ---
