@@ -9,7 +9,7 @@ categories: Note
 之前想寫個 OJ 所以才接觸 MySQL，但一碰 MySQL 後 OJ 卻沒甚麼動力去玩了。
 一切都靜止下來了。
 一年後，突然想起，才在這裡慢慢填，主要是 [w3school](http://www.w3schools.com/sql/default.asp) 的筆記。
-利益相關：老爸是寫 ERP 管理資料庫的，然後他老人家表示現在都用 stored procedure 了。
+利益相關：老爸是寫 ERP 管理資料庫的，然後他表示現在都用 stored procedure 了。
 </center>
 
 <!-- more -->
