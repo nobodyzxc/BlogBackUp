@@ -154,7 +154,7 @@ func param = case [exp] of [pattern] -> val
 
 ```
 
-## High Order function
+## High Order Function
 
 * Curried functions = 不完全的 function
   ex:

@@ -166,3 +166,5 @@ $(document).ready(function(){
 |hover           | (function , function)             | (hoverIn , hoverOut) <br>滑鼠經過該物件之事件|
 |focus           | (function)                        | 物件取得焦點 |
 |keydown         | (function)                        | 鍵盤被敲擊之事件|
+
+### 即將入 ReactJS 的坑
