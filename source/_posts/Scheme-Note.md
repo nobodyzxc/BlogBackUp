@@ -6,18 +6,18 @@ tags:
 
 <center>
 SICP 魔法之啟程。中間會加入上課內容。
-syntax highlight 還要折騰...
+稍稍動了一下 syntax hightlight 的 css。
 </center>
-
+<link href="/mycss/scheme.css" rel="stylesheet" type="text/css">
 <!-- more -->
 
 ## Let's lambda
-```lisp
+```scheme
 ; easy lambda exp
 (lambda (x y) (* x y))
 ```
 ## Curry and Compose
-```lisp
+```scheme
 ; lambda
 (define (curry f) (lambda (x) (lambda (y) (f x y))))
 ; compose
@@ -33,27 +33,27 @@ not ready yet
 用 filter 簡簡單單就可以解決的東西啊...
 我是喜歡 FP 的啊！
 
-{% codeblock lang:lisp %}
+```scheme
 ; BST tree
 (define (curry f) (lambda (x) (lambda (y) (f x y))))
 (define (bstTree xs)
   (if (null? xs) '()
     (let ((node (car xs))
-          (left (cdr xs)))
+          (branch (cdr xs)))
       (cons node (list
-                   (bstTree (filter ((curry >) node) left))
-                   (bstTree (filter ((curry <=) node) left))
+                   (bstTree (filter ((curry > ) node) branch))
+                   (bstTree (filter ((curry <=) node) branch))
                    ))
       )))
 
 ; search BST tree
-(define (exist? n bt)
-  (cond [(null? bt) #f]
-        [(= n (car bt)) #t]
-        [(< (car bt) n) (exist? n (caddr bt))]
-        [else (exist? n (cadr bt))]
+(define (exist? n tree)
+  (cond [(null? tree) #f]
+        [(= n (car tree)) #t]
+        [(< (car tree) n) (exist? n (caddr tree))]
+        [else (exist? n (cadr tree))]
         )
   )
 
 (exist? 7 (bstTree '(1 4 2 7 3 7 3 8 46)))
-{% endcodeblock %}
+```
