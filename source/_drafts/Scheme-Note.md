@@ -1,7 +1,7 @@
 ---
 title: Scheme Note
 date: 2017-03-29 00:12:04
-tags:
+categories: Note
 ---
 
 <center>
@@ -26,7 +26,9 @@ SICP 魔法之啟程。中間會加入上課內容。
 ## and of if define ... Key word !
 not ready yet
 ## my miniScheme
-not ready yet
+{% codeblock mini-scheme lang:scheme /mycode/mini-scheme.ss %}
+code snippet
+{% endcodeblock %}
 
 ## midterm
 前面簡答題廢話寫太多，導致兩題沒寫完 QQ。
