@@ -97,7 +97,7 @@ function initMap(){
     map = [] , bckNum = 0 , score = 0 , moved = false , pass = false , stopGame = true;
 
     forMap(0 , 1 , 0 , 1 , function(y , x){ if(x === 0){ map[y] = []; } map[y].push(0); });
-    addBck(0) , addBck(rand(0 , 1));
+    addBck(0) , addBck(rand(0 , 2));
 }
 
 function checkGameOver(){
