@@ -74,7 +74,7 @@ Array 和 Python 一樣，是用 `[]` ， 不用 push，直接取用 index。
 可以用 `.` 來取用 Object member，也可以用 `[name]`，
 混淆了 Python Map 和 Object 的界線。
 
-```
+```JavaScript
 var myObj = {};
 
 // var myObj = new Object(); // not preferrable

@@ -8,7 +8,7 @@ categories: Note
 SICP 魔法之啟程。中間會加入上課內容。
 稍稍動了一下 syntax hightlight 的 css。
 </center>
-<link href="/mycss/scheme.css" rel="stylesheet" type="text/css">
+<link href="/mycss/scheme-syntax-patch.css" rel="stylesheet" type="text/css">
 <!-- more -->
 
 ## Let's lambda
@@ -33,7 +33,6 @@ code snippet
 ## midterm
 前面簡答題廢話寫太多，導致兩題沒寫完 QQ。
 用 filter 簡簡單單就可以解決的東西啊...
-我是喜歡 FP 的啊！
 
 ```scheme
 ; BST tree
