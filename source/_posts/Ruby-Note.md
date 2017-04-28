@@ -5,16 +5,17 @@ categories: Note
 ---
 
 <center>
-Codecademy 之 Ruby 速記。
+[Codecademy](https://www.codecademy.com) 之 Ruby 速記。
 原來 Ruby 和 DSL 很有淵源啊（喃喃）。
 剛學沒多久教授就提到了，Ruby 主要是 SmallTalk + Lisp 佐一點 C。
 
 wait to refer:
-  [Ruby Guides](http://guides.ruby.tw/ruby/globalvars.html)
+  [Ruby Guides](http://guides.ruby.tw/ruby/index.html)
 </center>
 
 <!-- more -->
-<script src="/myjs/ruby-syntax-patch.js"></script>
+<script src="/mycode/ruby-syntax-patch.js"></script>
+<link href="/mycode/scheme-syntax-patch.css" rel="stylesheet" type="text/css">
 ## Basic
 跟 Python 一樣是動態、腳本語言，所謂變數只是 name binding，
 (Philosophy 可是很不同呢～)
@@ -83,7 +84,7 @@ def functionName(argA , argB)
     # do something
 end
 
-# 由於強大的 DSL 能力，可以 omit ()
+# 由於靈活的語法，可以 omit ()
 def add x , y
     x + y      # omit return will take last exp as return value
 end
@@ -153,8 +154,29 @@ end
 loop { # do something } # inf loop
 
 number = 10
-number.times{ print "Do you need some Wow?" }
-# so Wow (doge
+number.times{ print "Do you need some Wow?" } # wow...(doge
+
+# Array 會提及物間迭代器用法 - each
+```
+
+關於 loop 的流程控制
+
+```ruby
+{         # block of loop
+
+# redo jump here to restart it , so amazing...
+
+
+redo if doRedo
+break if doBreak
+next if doNext
+
+return if doReturn # return func (not loop)
+
+# next jump here wait to start a new iteration
+
+}
+# break jump to here
 ```
 
 ## Array
@@ -256,16 +278,34 @@ puts "She will reject me" unless she_love_me
 ```
 
 swich case in c , select case in vb , case when in ruby!
-注意， vb 的 select case 是取 exp，他其實比較像 swich case in c。
+非常之靈活。
 注意 then and else(without then)。
 ```ruby
+# 基本用法，像 C
 case lang
-    when "java" then puts "so long..."       # add then if whole command in one line
+    when "java" then puts "so long..."  # add then if whole command in one line
     when "cpp"
-        puts "so powerful..."                # or omit then with a new line
+        puts "so powerful..."           # or omit then with a new line
     when "ruby"
         puts "so fun!"
-    else "puts "I like the else!"
+    else puts "I like the else!"
+end
+
+case lang
+    when "chinese" , "english"          # 逗號
+        puts "I can"
+    else
+        puts "I can't"
+end
+
+case num
+    when 1..10 then puts "1 to 10"      # GNU extension 也有
+    when 11..20 then puts "2 to 20"
+end
+
+case                                    # 如果 case 沒給，甚至可以像 VB 用 expr
+    when false then puts "false"
+    when 1 + 1 == 2 then puts "true"
 end
 ```
 
@@ -372,7 +412,8 @@ puts mul.call 1 , 2
 # 因為是物件導向 Proc 物件要當 Function 用要用 call
 ```
 ```JavaScript
-mul = function(x , y){ return x * y } # create lambda and bind it to a new name
+mul = function(x , y){ return x * y }
+// create lambda and bind it to a new name
 console.log(mul(1 , 2));
 // 剛好相反，因為物件都是 Function 模擬的 w
 ```
@@ -434,9 +475,12 @@ lambda_double = lambda { |x| x * 2 }
 ```
 
 difference between lambda and Proc
+
 1. lambda 會檢查 param 數量，Proc 若沒吃夠直接當 nil
 2. lambda 會返回控制權， Proc 回直接執行
 （對 2. 我有一套自己的解釋法但不知對不對，詳見例）
+
+
 ```ruby
 def ProcTst
     proc_s = Proc.new{ return "inner Proc" }
@@ -457,6 +501,22 @@ end
 
 puts LbdaTst # ==> "LbdaTst"
 ```
+
+應該只有我會這麼亂想吧...
+```ruby
+def ReturnTst
+    yield                           # 所以該行回傳結果是 "inner Lbda"
+    return "ReturnTst"                # 然後 return "LbdaTst"
+end
+
+puts ReturnTst{ return "rtn of block" }
+puts ReturnTst &Proc.new{ return "rtn of Proc" }
+puts ReturnTst &lambda{ return "rtn of lambda" }
+
+# => 結果都是 unexpect return
+```
+
+
 -----
 結語，要用一次性且只有一個的 function 用 block + yield 就好
 然後一次性多個 就傳 lambda or Proc object 加上 & 吧。
@@ -734,3 +794,112 @@ puts Square.area 5 , 5 # 就是這樣
 ```
 -----
 結語，其實我覺得還是有許多問題的，不過這真的是 OOP 面的問題。
+
+## 寫在後面
+
+Ruby 還有一些比較特別的東西，記在最後面。
+
+-----
+
+單件方法 (singleton method)
+
+就是 instance create 後，可以直接重新 def instName.func。
+據說是從 prototype-based 來的。(JavaScript 就是 prototype-based)
+
+-----
+
+恩，有點 WTF 的東西...
+感覺整個 obj\_new 是個 lambda...
+v 是 obj\_new closure 裡的 name binding。
+
+```ruby
+def obj_new
+    v = 0
+    get = lambda{ v }
+    set = lambda{ |x| v = x }
+    return get , set
+end
+
+obj_r , obj_w = obj_new
+
+puts obj_r.call
+obj_w.call 5
+puts obj_r.call
+```
+恕我用癟腳的 Scheme 模擬一下。
+最近剛好在教 FP 模擬 OOP :)
+```scheme
+(define obj-new
+  (lambda (v)
+    (list
+      (lambda () v)
+      (lambda (x) (set! v x))
+      )
+    )
+  )
+
+(define obj (obj-new 0))
+(define obj-r (car obj))
+(define obj-w (cadr obj)) ; 沒有 pattern matching 真麻煩
+
+(display (obj-r)) (newline)
+(obj-w 5)
+(display (obj-r)) (newline)
+```
+
+其實如果不要照 Ruby 的範例，我 scheme 是比較想寫成
+
+```scheme
+(define obj-new
+  (lambda (v)
+    (lambda (sym . param)
+      (cond
+        ((equal? sym 'get) v)
+        ((equal? sym 'set) (set! v (car param)))
+        (else 'func-not-def)
+        )
+      )
+    )
+  )
+(define obj (obj-new 0))
+(display (obj 'get)) (newline)
+(obj 'set 5)
+(display (obj 'get)) (newline)
+```
+
+-----
+
+例外處理
+
+像 C++ ， Java 都在那邊 throw , catch 時，Ruby 已用 begin , rescue 優美的解決。
+
+```ruby
+def get_file_first_line
+    fname = gets.chomp
+    begin
+        file = open(fname)
+        context = file.gets
+        context
+    rescue
+        nil
+    ensure
+        file.close          # do ensure block no matter what
+    end
+end
+```
+
+-----
+
+inspect func -- 自定義直接呼叫物件的回傳值。
+
+```ruby
+class Org
+    def inspect
+        "It's a Object"
+    end
+end
+
+obj = Org.new
+print obj
+```
+-----

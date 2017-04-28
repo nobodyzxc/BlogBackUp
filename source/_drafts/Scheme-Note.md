@@ -8,7 +8,7 @@ categories: Note
 SICP 魔法之啟程。中間會加入上課內容。
 稍稍動了一下 syntax hightlight 的 css。
 </center>
-<link href="/mycss/scheme-syntax-patch.css" rel="stylesheet" type="text/css">
+<link href="/mycode/scheme-syntax-patch.css" rel="stylesheet" type="text/css">
 <!-- more -->
 
 ## Let's lambda
