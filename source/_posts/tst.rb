@@ -1,7 +1,22 @@
-def LbdaTst
-                                    # lambda 直接再進一個 stack
-    yield                     # 所以該行回傳結果是 "inner Lbda"
-    return "LbdaTst"                # 然後 return "LbdaTst"
+def get_file_first_line
+    err_try = 0
+    print "> "
+    fname = gets.chomp
+    begin
+        file = open(fname)
+        rtn = file.gets
+    rescue
+        if err_try < 3
+            print "> "
+            fname = gets.chomp
+            err_try += 1
+            retry               # jump to begin
+        end
+    ensure                      # do ensure block no matter what
+        puts "Ensure close file"
+        file&.close             # &. -> safer func call
+    end
+    rtn
 end
 
-puts LbdaTst &Proc.new{ return "inner Lbda" }
+puts ">> #{get_file_first_line}"
