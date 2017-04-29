@@ -13,7 +13,7 @@ A world without loop , but recursion。
 
 ## Some hints
 
-* 不像 OP 告訴電腦要做什麼，FP 的思考方式是描述問題。
+* 不像 PP , OOP 告訴電腦要做什麼，FP 的思考方式是描述問題。
 * function call 有最高優先順序。
 * if 在 haskell 裡是 exp 不是 statment
 * function name 字首必須小寫 (Type 為大寫）。

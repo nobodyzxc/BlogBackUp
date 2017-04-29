@@ -910,6 +910,6 @@ class Org
 end
 
 obj = Org.new
-print obj
+obj           # return "It's a Org" in irb
 ```
 -----
