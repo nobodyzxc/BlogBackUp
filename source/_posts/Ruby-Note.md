@@ -183,12 +183,17 @@ return if doReturn # return func (not loop)
 
 ```ruby
 array = [1 , 2 , 3 , 4]
-array = [1..4] # the same
+array = [1..4] # not the same !!
+array = (1..4).to_a # this !
+# 這是 array 塞一個 range 物件，做迭代會迭出一個物件
 
 array.each do |var|
     print "#{var}"
 end
 
+(1..4).each do |var| # 直接用 range 物件迭代就一樣了
+    print "#{var}"   # 體會一下
+end
 # iteration
 array.each { |var| print "#{var}" } # lambda in haskell ?
 ```
