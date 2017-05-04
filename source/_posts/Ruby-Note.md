@@ -184,8 +184,8 @@ return if doReturn # return func (not loop)
 ```ruby
 array = [1 , 2 , 3 , 4]
 array = [1..4] # not the same !!
-array = (1..4).to_a # this !
 # 這是 array 塞一個 range 物件，做迭代會迭出一個物件
+array = (1..4).to_a # this !
 
 array.each do |var|
     print "#{var}"
