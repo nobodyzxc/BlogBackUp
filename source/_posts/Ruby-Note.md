@@ -10,7 +10,8 @@ categories: Note
 剛學沒多久教授就提到了，Ruby 主要是 SmallTalk + Lisp 佐一點 C。
 
 wait to refer:
-  [Ruby Guides](http://guides.ruby.tw/ruby/index.html)
+  [Ruby Guides](http://guides.ruby.tw/ruby/index.html) done!
+  [Lots of docs](https://www.ruby-lang.org/zh_tw/documentation/)
 </center>
 
 <!-- more -->
