@@ -25,13 +25,13 @@ wait to refer:
 every thing is object。
 
 basic special operator
-```ruby
+``` ruby
 2 ** 4 # 16
 [1 , 2 , 3] <=> [3 , 1] # cmp recursively
 ```
 
 ## Comment
-```ruby
+``` ruby
 # single line comment
 
 =begin
@@ -46,7 +46,7 @@ multiple line comment
 `.`，function chainning 在 OO 可以玩得很溜。
 
 IO
-```ruby
+``` ruby
 gets.chomp
 # chomp 去除前後空白字元，包括 \n \t 一類
 
@@ -56,7 +56,7 @@ print "#{var} without new line"
 ```
 
 array object's methods
-```ruby
+``` ruby
 arr = [1 , 4 , 2 , 5 , 3]
 arr.sort!
 arr.sort! { |a , b| -(a <=> b) } # lambda is great!
@@ -64,7 +64,7 @@ arr.sort! { |a , b| -(a <=> b) } # lambda is great!
 
 
 string object's methods
-```ruby
+``` ruby
 # 不用加括弧啊
 "string".to_sym # symbol will explain later
 "string".intern # "string" => :symbol
@@ -80,7 +80,7 @@ string object's methods
 ```
 
 define a function
-```ruby
+``` ruby
 def functionName(argA , argB)
     # do something
 end
@@ -94,7 +94,7 @@ end
 ## Control Flow
 基本的東西，稍微記一下。
 
-```ruby
+``` ruby
 if 1 == 1
     # do something
 elsif 'a' == 'b' # 注意 keyword
@@ -126,7 +126,7 @@ statement if exp
 
 ## Loop
 
-```ruby
+``` ruby
 while exp
     # do something
 end
@@ -162,7 +162,7 @@ number.times{ print "Do you need some Wow?" } # wow...(doge
 
 關於 loop 的流程控制
 
-```ruby
+``` ruby
 {         # block of loop
 
 # redo jump here to restart it , so amazing...
@@ -182,7 +182,7 @@ return if doReturn # return func (not loop)
 
 ## Array
 
-```ruby
+``` ruby
 array = [1 , 2 , 3 , 4]
 array = [1..4] # not the same !!
 # 這是 array 塞一個 range 物件，做迭代會迭出一個物件
@@ -201,7 +201,7 @@ array.each { |var| print "#{var}" } # lambda in haskell ?
 
 ## Hash
 
-```ruby
+``` ruby
 hashTb = { "one" => 1 , "two" => 2 , "three" => 3 }
 
 # we can take symbol as key , too!
@@ -240,7 +240,7 @@ puts symTb.select{ |k , v| v % 2 == 1 }
 這個資料型態也很潮，
 跟字串不一樣，相同的字面值只佔一個空間。
 （因為這個特性，所以做 hash 比較優秀嗎？)
-```ruby
+``` ruby
 puts "string".object_id
 # 12886316620
 puts "string".object_id
@@ -257,7 +257,7 @@ s_sym = sym.to_s # 轉成 string
 ```
 
 ## Symbol vs String in Hash from [Codecademy](https://www.codecademy.com)
-```ruby
+``` ruby
 require 'benchmark'
 
 string_AZ = Hash[("a".."z").to_a.zip((1..26).to_a)]
@@ -277,7 +277,7 @@ puts "Symbol time: #{symbol_time} seconds."
 
 ## Zen of Ruby (Improvement of Syntax)
 one line 系列，不用 end。
-```ruby
+``` ruby
 puts "She will accept me" if she_love_me
 
 puts "She will reject me" unless she_love_me
@@ -286,7 +286,7 @@ puts "She will reject me" unless she_love_me
 swich case in c , select case in vb , case when in ruby!
 非常之靈活。
 注意 then and else(without then)。
-```ruby
+``` ruby
 # 基本用法，像 C
 case lang
     when "java" then puts "so long..."  # add then if whole command in one line
@@ -316,7 +316,7 @@ end
 ```
 
 magic operator! (for me)
-```ruby
+``` ruby
 contain = nil
 puts contain
 contain ||= "not nil"  # re assignment if nil
@@ -326,7 +326,7 @@ puts contain
 ```
 
 zen of iterations
-```ruby
+``` ruby
 object of num
 5.times{ |n| somthing.. }
 
@@ -339,12 +339,12 @@ object which can enum (num , char ...)
 ```
 
 check if obj will response the method or not
-```ruby
+``` ruby
 obj.respond_to?(:func) # take care , it take a functino name(symbol) as param
 ```
 
 pushy ( `<<` operator )
-```ruby
+``` ruby
 [1 , 2 , 3 , 4].push(5)
 # equal to
 [1 , 2 , 3 , 4] << 5
@@ -355,12 +355,12 @@ pushy ( `<<` operator )
 ```
 
 string interpolation
-```ruby
+``` ruby
 puts "list to string #{[1 , 2 , 3 , 4, 5]}" # eq to to_s function
 ```
 
 ternary operator
-```ruby
+``` ruby
 true ? 1 : 2 # like c
 ```
 
@@ -381,7 +381,7 @@ Haskell 和 Scheme 不用說，Python 可，JavaScript 和 Ruby 目前不會用�
 **（最後我發現 Ruby 一定要再呼叫 call 這個 method。)**
 
 High Order Function
-```ruby
+``` ruby
 # collect 就是 FP 中常用的 map
 [1 , 2 , 3].collect { |n| n % 2 == 0 }
 [1 , 2 , 3].map { |n| n % 2 == 0 } # 也有 map 這個 function
@@ -392,7 +392,7 @@ High Order Function
 yield => 傳入的 lambda function 代名詞（變數名）。
 一般我們 FP 在定義 High Order Function 時都要為 take 的 function 取變數名。
 但 Ruby 在只有傳入一個 function 時，可以直接拿 yield 做關鍵字 take function。
-```ruby
+``` ruby
 # 我做一個簡單的 map
 def myMap li
     rtn = []
@@ -408,7 +408,7 @@ puts "#{myMap [1 , 2 , 3 , 4] { |x| x ** 2 }}"
 
 Proc To DRY
 感覺可以用 JavaScript 的 lambda fn 和其 name binding 體會一下差異
-```ruby
+``` ruby
 # ruby 要將 lambda(Proc) 綁到變數上，注意 P 大寫
 mul = Proc.new { |a , b| a * b } # create a block and => new proc object
                                  # proc obj 比 block obj 成熟
@@ -430,7 +430,7 @@ Proc to Block
 可以體會到，把 Block 綁到 Proc 是常用的手段，
 但要 Proc 如何用在 High Order Function 呢？
 前面我們學到 Block 使用是在 function 後加 Block 然後使用 yield 關鍵字。
-```ruby
+``` ruby
 用前面的 myMap 再加一個 double 為例子。
 double = Proc.new { |x| x * 2 }
 puts myMap([1 , 2 , 3] , &double) # & 號 做的就是把 Proc => Block
@@ -444,7 +444,7 @@ puts myMap([1 , 2 , 3]) &double         # error
 -----
 
 Proc 應用在 map 上。
-```ruby
+``` ruby
 num_s = [1 , 2 , 3].map(&:to_s)
 # 注意冒號，要用 symbol 轉 proc 來 call
 # （其實我在想是不是 obj method 的關係）
@@ -454,7 +454,7 @@ num_s = [1 , 2 , 3].map(&:to_s)
 
 補：Codecademy 上沒有講，但我覺得很奇怪的一點－難道我只能用 yield 嗎？
 FP 上都可以把 function 傳進來用變數表示，Ruby 要怎麼做？
-```ruby
+``` ruby
 # 這樣做（重寫 myMap)
 def myMap li , &fn # 記得傳進來要當 proc or lambda 物件來看了
     rtn = []
@@ -475,7 +475,7 @@ puts "#{myMap([1 , 2 , 3 , 4]){ |e| e * 2 }}"
 
 真正要介紹 Ruby 的 lambda 了，由於是 OO 語言，所以 lambda 是 obj。
 用法基本和 proc 相似。
-```ruby
+``` ruby
 proc_double = Proc.new { |x| x * 2 }
 lambda_double = lambda { |x| x * 2 }
 ```
@@ -487,7 +487,7 @@ difference between lambda and Proc
 （對 2. 我有一套自己的解釋法但不知對不對，詳見例）
 
 
-```ruby
+``` ruby
 def ProcTst
     proc_s = Proc.new{ return "inner Proc" }
                                     # 我視 proc.call 為直接像 macro 炸開
@@ -509,7 +509,7 @@ puts LbdaTst # ==> "LbdaTst"
 ```
 
 應該只有我會這麼亂想吧...
-```ruby
+``` ruby
 def ReturnTst
     yield                           # 所以該行回傳結果是 "inner Lbda"
     return "ReturnTst"                # 然後 return "LbdaTst"
@@ -530,7 +530,7 @@ puts ReturnTst &lambda{ return "rtn of lambda" }
 ## OOP
 
 Capitalize your class name
-```ruby
+``` ruby
 class Dog                # => 強制大寫，不然不給過，立意良善
 end
 
@@ -541,7 +541,7 @@ doge = Dog.new "lion"    # create a instance
 constructor - initialize
 他的建構子不是拿 class 的名字
 不過說實在的，我覺得 initialize 有點冗長...
-```ruby
+``` ruby
 class Dog
     def initialize name
         @name = name     # 詳見下例
@@ -551,7 +551,7 @@ end
 -----
 
 variable type - global , class , instance
-```ruby
+``` ruby
 $animal_num = 0          # 全域變數，帶 $ 字頭
 class Dog
     @@dog_count = 0      # 屬於 class 的 var，就是 static 啦，帶 @@ 字頭
@@ -564,7 +564,7 @@ end
 -----
 
 function belongs class -> self.fn or ClassName.fn
-```ruby
+``` ruby
 class Dog
     @@dog_count = 0      # 屬於 class 的 var，就是 static 啦，帶 @@ 字頭
     def initialize name
@@ -591,7 +591,7 @@ end
 
 inheritance with `<`
 
-```ruby
+``` ruby
 class Animal
     def initialize sound
         @sound = sound
@@ -619,7 +619,7 @@ doge.howling             # 糟糕，doge 叫不出來，怎麼辦
 -----
 
 需要 overriide ，因為 doge 叫不出來。
-```ruby
+``` ruby
 class Dog < Animal
     @@dog_count = 0      # 屬於 class 的 var，就是 static 啦，帶 @@ 字頭
     def initialize name
@@ -643,7 +643,7 @@ doge.howling             # doge 叫出來了
 
 -----
 super => 調用 parent 的 **同名 function**（不只是 initialize 喔）
-```ruby
+``` ruby
 class Dog < Animal
     @@dog_count = 0      # 屬於 class 的 var，就是 static 啦，帶 @@ 字頭
     def initialize name
@@ -670,7 +670,7 @@ public , private , protect
 class var , instance var 預設都是 private
 class function , instance function 預設都是 public
 protect 就是繼承者可用嘛，不多說。
-```ruby
+``` ruby
 class Dog < Animal
     @@dog_count = 0      # 屬於 class 的 var，就是 static 啦，帶 @@ 字頭
 
@@ -708,7 +708,7 @@ attr\_reader , attr\_writer , attr\_accessor
 我們常常在 OOP 使用 get 和 set ，但實在太冗了，
 Ruby 給我們自動製造 function 的方法。用起來和 public 變數一樣。
 
-```ruby
+``` ruby
 class Dog
     attr_reader :age              # 為 age 做 get 的 function
     attr_writer :food_in_stomach  # 抱歉，江郎才盡了
@@ -734,7 +734,7 @@ module Name => 一樣 Capitalized
 module 只能有 Const（大寫的 name)
 namespace 呼叫 （和 C++ 一樣可以用 `::`)
 require ModuleName （就是 import in python 啦）
-```ruby
+``` ruby
 
 require "date" # 可以使用 Date module 的東西，注意小寫及 string
 
@@ -761,7 +761,7 @@ puts Rectangle.area 5 , 10
 
 include module in class
 mixin -> imitating multiple inheritance
-```ruby
+``` ruby
 class Paper # Ummm...
     include Rectangle
     def initialize len , wid
@@ -780,7 +780,7 @@ puts m.shape   # Rectangle
 
 extend -> as class fn
 拿 parent 的 **instance fn** 當自己的 **class fn**
-```ruby
+``` ruby
 module Rectangle
     Edge = 4   # 廢話
     def area wid , len      # 注意 area , class fn => instance fn
@@ -818,7 +818,7 @@ Ruby 還有一些比較特別的東西，記在最後面。
 感覺整個 obj\_new 是個 lambda...
 v 是 obj\_new closure 裡的 name binding。
 
-```ruby
+``` ruby
 def obj_new
     v = 0
     get = lambda{ v }
@@ -879,7 +879,7 @@ puts obj_r.call
 
 像 C++ ， Java 都在那邊 throw , catch 時，Ruby 已用 begin , rescue 優美的解決。
 
-```ruby
+``` ruby
 def get_file_first_line
     err_try = 0
     print "> "
@@ -908,7 +908,7 @@ puts ">> #{get_file_first_line}"
 
 inspect func -- 自定義直接呼叫物件的回傳值。
 
-```ruby
+``` ruby
 class Org
     def inspect
         "It's a Object"
