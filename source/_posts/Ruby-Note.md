@@ -377,8 +377,13 @@ Ruby 是將 function 看成 let 回傳最後一個 statement。
 `(lambda (x) (* x 2))` in Scheme 和
 `function(x) { return x * 2 }` in JavaScript 都是 lambda。
 不知不覺也學了好多 lambda 呢，不過我在思考可不可以直接拿來 apply 這件事。
-Haskell 和 Scheme 不用說，Python 可，JavaScript 和 Ruby 目前不會用。
-**（最後我發現 Ruby 一定要再呼叫 call 這個 method。)**
+Haskell 和 Scheme 不用說，Python 可，<s>JavaScript 和 Ruby 目前不會用。</s>
+``` Ruby
+lambda{ |x| puts x }.call(8)         # Ruby
+```
+``` JavaScript
+(function(x){ console.log(x); })(8) // JavaScript
+```
 
 High Order Function
 ``` ruby
@@ -391,7 +396,7 @@ High Order Function
 
 yield => 傳入的 lambda function 代名詞（變數名）。
 一般我們 FP 在定義 High Order Function 時都要為 take 的 function 取變數名。
-但 Ruby 在只有傳入一個 function 時，可以直接拿 yield 做關鍵字 take function。
+但 Ruby 在只有傳入一個 function 時，可以直接拿 yield 做關鍵字來 take function。
 ``` ruby
 # 我做一個簡單的 map
 def myMap li
