@@ -8,6 +8,7 @@ categories: Note
 [Codecademy](https://www.codecademy.com) 之 Ruby 速記。
 原來 Ruby 和 DSL 很有淵源啊（喃喃）。
 剛學沒多久教授就提到了，Ruby 主要是 SmallTalk + Lisp 佐一點 C。
+> On the path to enlightenment.
 
 wait to refer:
   [Ruby Guides](http://guides.ruby.tw/ruby/index.html) done!
