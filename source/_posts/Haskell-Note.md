@@ -198,9 +198,16 @@ import qualified Data.Map as M --can alias 'Data.Map' to 'M'
 :m Data.List
 ```
 ## Our own data type
-永遠不要在 data 聲明中加型別約束
+> 永遠不要在 data 聲明中加型別約束
 ```haskell
+-- Object method
 -- data Typename = valueConstructor param ...
+data Circle = Circle Float Float Float
+
+-- Enum method
+-- data Typename = v0 | v1 | v2 ...
+data Day = Mon | Tue | Wed | Thu | Fri | Sat | Sun
+
 data Point = Point Float Float
 data Shape = Circle Point Float | Rectangle Point Point
 
@@ -210,8 +217,11 @@ modlue Shape
 , surface -- function name
 , baseCircle -- auxilliary function , baseCircle :: Float -> Float -> Shape
 ) where
+-- 可以選擇不導出 value constructor，這樣強迫使用者使用 auxilliary function，
+-- 避免使用者直接對 value constructor 做 pattern matching，一個封裝的概念。
 
--- record syntax
+
+-- record syntax avoid writting boring "get functions"
 data Person = Person { firstName :: String
                      , lastName :: String
                      , age :: Int
@@ -220,7 +230,7 @@ data Person = Person { firstName :: String
                      , secCrush :: String
                      } deriving (Show)
 
-ghci > secCrush I
+ghci > secCrush me
 "\x4a\x79\x75\x6e\x2d\x59\x69\x20\x4a\x68\x61\x6e\x67"
 
 -- deriving
@@ -258,8 +268,26 @@ mkTree ls = foldr treeInsert EmptyTree ls
 ```
 typeclass
 ```haskell
--- wait to stuff
+-- 先前有介紹過 TypeClass，在這裡我們為自己的資料型態加上 TypeClass
+data Day = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday
+           deriving (Eq, Ord, Show, Read, Bounded, Enum)
+-- Eq 可比 , Ord 排序由左至右分別是小到大 , Show & Read 提供 IO , Bounded 提供上下界 , Enum 順序枚舉
+-- 因為 Enum 的特性，可以使用
+[minBound .. maxBound] :: [Day]
 ```
+
+type key word and the type constructor
+```haskell
+-- type 提供了一個對類別不錯的 alias 方法
+type String = [Char] -- 最常見的
+-- 我們寫 Function 在宣告可能會用到
+
+-- type constructor
+type AssocList k v = [(k,v)]
+-- 用法嘛，宣告用（應該不只這樣，再想想）
+[(1,2),(4,5),(7,9)] :: AssocList Int Int
+```
+
 
 ## Self suspicion
 

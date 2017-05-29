@@ -9,7 +9,7 @@ categories: Note
 這篇文章會不定期更新，隨著我的 vim skill。
 這段旅途的終點，大概就是我不用 vim 的那天吧！
 （可能是入 emacs 教，或是奔向 IDE 了吧～)
-註 : Chrome 有 Vimium ， Firefox 有 VimFx 插件可以用，很方便喔。
+Chrome 有 Vimium ， Firefox 有 VimFx 加入我大 Vim 教吧。
 </center>
 <!-- more -->
 ## 基本操作篇
