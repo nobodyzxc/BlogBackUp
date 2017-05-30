@@ -5,9 +5,8 @@ categories:
 ---
 
 <center>
+
 本篇主要內容為在 Cygwin 下一些簡單的 BASH 用法。
-
-
 
 </center>
 
@@ -73,6 +72,7 @@ categories:
 沒意外的話是空空如也啊。
 
 可以再下個`ls -a`，(a 是 all 的意思），把所有隱藏的房間（和物品 ->文件） show 出來。
+(`ls -la` 可以詳列更多訊息，l 是 long list format 的意思）
 
 你可以發現多了 `./` 和 `../` 這兩個房間。
 
@@ -94,6 +94,14 @@ categories:
 關於回到家目錄，你可以用`cd ~` 或 `cd`。
 
 > 對於路徑，[這裡](http://linux.vbird.org/linux_basic/0220filemanager.php#dir_pathway) 有更詳細的說明。
+
+## 建立捷徑
+
+linux 和 windows 的捷徑其實是不太一樣的，在 cygwin 中不可用 .lnk 的捷徑。
+
+在家目錄如果想要建一個到桌面的捷徑，你可以下 `ln -s /cygdrive/c/Users/$USER/Desktop/ ~/desktop`。
+
+然後你在家目錄可以使用 `cd desktop` 移動到桌面了。
 
 ## 創建、刪除與移動
 
