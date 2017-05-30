@@ -12,7 +12,7 @@ categories:
 
 <!-- more -->
 
-事先聲明 Cygwin != Linux，它是 Windows 下一個模仿 Linux terminal 的介面。
+事先聲明 Cygwin != Linux，它是 Windows 下一個模擬 Linux terminal 的介面。
 
 關於 Cygwin 的[安裝](https://www.ubuntu-tw.org/modules/newbb/viewtopic.php?topic_id=47282)。
 
@@ -35,24 +35,24 @@ categories:
 ```
 /                <- 根目錄 (root)，為 windows 下的某個資料夾
 |
-├── bin
+├── bin          <- 很多指令（程式）存放的位置
 ├── cygdrive
-│   ├── c
-│   └── d
-├── dev
-├── etc
+│   ├── c        <- 注意！這裡可以切到 C 槽
+│   └── d        <- 注意！這裡可以切到 D 槽
+├── dev          <- 對 linux 來說，這裡有很多硬體裝置有關的檔案
+├── etc          <- Linux 開機（這裡就是開 Cygwin) 的一些設定檔
 ├── home
 │   └── ~        <- 家目錄，你現在的位置
-├── lib
-├── sbin
-├── tmp
-├── usr
+├── lib          <- 程式語言的一堆 library
+├── sbin         <- 放著系統管理者常用的指令
+├── tmp          <- 一般使用者暫存檔案的地方，重要的東西不要放這
+├── usr          <- 跟系統息息相關的目錄
 │   ├── bin
 │   ├── etc
 │   ├── include
 │   ├── lib
 │   └── tmp
-└── var
+└── var          <- 系統工作預設的工作目錄。
 ```
 
 你現在的位置其實和 windows 還是有應對關係的，
@@ -74,10 +74,10 @@ categories:
 可以再下個`ls -a`，(a 是 all 的意思），把所有隱藏的房間（和物品 ->文件） show 出來。
 (`ls -la` 可以詳列更多訊息，l 是 long list format 的意思）
 
-你可以發現多了 `./` 和 `../` 這兩個房間。
+你可以發現多了 `.` 和 `..` 這兩個房間。
 
-`./`表示當前這間房間。至於為啥要有這種設計，你之後就會知道了。
-`../`則是上一層房間。方才我們說過，linux 的檔案系統是以樹狀的結構存在。
+`.`表示當前這間房間。至於為啥要有這種設計，你之後就會知道了。
+`..`則是上一層房間。方才我們說過，linux 的檔案系統是以樹狀的結構存在。
 
 接下了可以開始切換了，可以使用`cd dirname`切換路徑。
 使用`cd ..`切到上一層。(cd 是 change directory 的縮寫）
@@ -99,7 +99,8 @@ categories:
 
 linux 和 windows 的捷徑其實是不太一樣的，在 cygwin 中不可用 .lnk 的捷徑。
 
-在家目錄如果想要建一個到桌面的捷徑，你可以下 `ln -s /cygdrive/c/Users/$USER/Desktop/ ~/desktop`。
+在家目錄如果想要建一個到桌面的捷徑，
+你可以下 `ln -s /cygdrive/c/Users/$USER/Desktop/ ~/desktop`。
 
 然後你在家目錄可以使用 `cd desktop` 移動到桌面了。
 
@@ -168,7 +169,18 @@ apt-cyg 如何使用呢？首先先把 [apt-cyg 的 script](https://github.com/t
 接著 `./apt-cyg install vim`。你就有 vim 可以用了。
 （和 Windows 不一樣的是，當前目錄可執行的檔案要執行一定要加 `./`)
 
-你可以將 `apt-cyg` 移到 `/bin` （根目錄底下的 bin 目錄），這樣就能在任何地方呼叫它而不用使用`./`了。
+你可以將 `apt-cyg` 移到 `/bin` （根目錄底下的 bin 目錄），
+這樣就能在任何地方呼叫它而不用使用`./`了。
+
 `mv apt-cyg /bin`。（對這方面有興趣可以看看`$PATH`的[介紹](https://www.phpini.com/linux/set-path-var)）
 
-> 其實如果檔案沒有執行權限，可以使用`bash file.sh` 來執行一個 shell 腳本。道理和 python 一樣。
+然後如果對有帶`$`號的變數有興趣的話，可以看看[環境變數](http://linux.vbird.org/linux_basic/0320bash.php#variable_environ)。
+
+> 其實如果檔案沒有執行權限，可以使用`bash file.sh` 來執行一個 shell 腳本。
+> 道理和 python 一樣。
+
+## 其他有用套件
+
+`tmux` -- 一項強大的終端切割螢幕工具。使用 `apt-cyg install tmux` 取得。
+在沒有設定檔的情形下`ctrl-b`是 prefix 鍵。 使用`ctrl-b ?`開始玩玩看吧。
+也可以使用我調教過的[設定檔](https://github.com/nobodyzxc/MyConfFiles/blob/master/tmux.conf) (prefix 是 `ctrl-a`)，將設定檔存為 ~/.tmux.conf。
