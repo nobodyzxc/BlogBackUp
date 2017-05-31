@@ -166,7 +166,7 @@ ghci > addThree = (+3)
 ghci > addThree 10
 13
 ```
-* High Order function = take function as parameter
+* High Order function = take function as parameter (**Or return a function**)
 ```haskell
 ghci >  applyTwice func x = func (func x)
 ghci > applyTwice addThree 10
@@ -199,6 +199,7 @@ import qualified Data.Map as M --can alias 'Data.Map' to 'M'
 ```
 ## Our own data type
 > 永遠不要在 data 聲明中加型別約束
+
 ```haskell
 -- Object method
 -- data Typename = valueConstructor param ...

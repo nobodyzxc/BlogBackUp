@@ -155,6 +155,47 @@ linux 和 windows 的捷徑其實是不太一樣的，在 cygwin 中不可用 .l
 * `指令名稱 --help`
 一般來說程式會內建一些使用說明，加個 flag 試試看吧。
 
+## 資料流重導向
+
+使用資料流也是一項很重要的技能。
+簡單來說資料流可以分做 stdin , stdout , stderr。
+
+* stdin 是檔案內容輸入至程式（指令）的一條流向。
+（鍵盤輸入 -- linux 下裝置也有檔案，在 /dev 中，也是 stdin）
+
+  當你寫好一支簡單的程式 (output.py)，他會要求輸入，然後輸出至螢幕。
+  ```python
+print(input())
+  ```
+
+  但你每次要輸一長串相同的東西很麻煩，
+  這時候你可以寫在檔案 (input.txt) 裡面。
+  ```
+hello world! It's my first python script ......
+  ```
+
+  每次就不用執行`python output.py`再從鍵盤輸入同樣的東西了。
+  寫好 input.txt 後只要下`python output.py < input.txt`，
+  它就會幫你把 output.txt 的內容輸進 output.py。
+
+* stdout 程式輸出至檔案的那條流向（螢幕在 linux 下也是檔案喔）。
+
+  你現在下個 `ls` 的指令，它會輸出至螢幕，如果你要將它重導至檔案 (justLsOut.txt)，
+  可以下個`ls > justLsOut.txt`。
+  如果本來沒有 justLsOut.txt 檔案，它會創一個 justLsOut.txt，然後把內容塞進去。
+  如果一經有 justLsOut.txt 的話，它會覆蓋掉 justLsOut.txt 的內容，然後塞 ls 的結果進去。
+
+  但如果你不想要覆蓋掉原本內容呢？你也可以將 ls 的結果加在 justLsOut.txt 後面。
+  使用 `ls >> justLsOut.txt` 就好了。`>>`是 append 的用法。
+
+* stderr 當有錯誤發生時，程式輸出至檔案的那條流向。
+  不過一般是跟 stdout 一起輸到螢幕。
+  如果你將 stdout 導到其他地方，螢幕剩下的就是 stderr 了。
+
+> 更多如 `cat > file.txt << end` , `ls nonexsitfile.txt > out.txt 2&>1` 用法請走[這](https://www.csie.cyut.edu.tw/moodle23/dywang/linuxProgram/node14.html)
+> 除此之外，你還可以學學 [pipe](https://www.csie.cyut.edu.tw/moodle23/dywang/linuxProgram/node15.html)
+
+
 ## 使用 apt-cyg 管理套件
 
 apt-cyg 如何使用呢？首先先把 [apt-cyg 的 script](https://github.com/transcode-open/apt-cyg/blob/master/apt-cyg) 複製下來，
@@ -164,7 +205,7 @@ apt-cyg 如何使用呢？首先先把 [apt-cyg 的 script](https://github.com/t
 接著可以用 `mv script.txt apt-cyg`。
 
 再來 `chmod a+x apt-cyg`。
-（讓這個腳本擁有執行權限，有興趣的話可以有 chmod 去找關於 linux 檔案權限的內容）
+（讓這個腳本擁有執行權限，有興趣的話可以用 chmod 去找關於 linux 檔案權限的內容）
 
 接著 `./apt-cyg install vim`。你就有 vim 可以用了。
 （和 Windows 不一樣的是，當前目錄可執行的檔案要執行一定要加 `./`)
