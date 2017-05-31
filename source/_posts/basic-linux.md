@@ -5,7 +5,6 @@ categories:
 ---
 
 <center>
-
 本篇主要內容為在 Cygwin 下一些簡單的 BASH 用法。
 
 </center>
@@ -20,8 +19,16 @@ categories:
 (apt-cyg 的使用置於文末）
 
 當你開啟 Cygwin 時，先不要嫌它醜，這之後可以慢慢調。
+（或是直接抓現成的[設定檔](https://github.com/nobodyzxc/MyConfFiles/blob/master/cygwin.bashrc.sh) 存到`~/.bashrc`）
 
 ## WHERE AM I ?
+
+首先，你可以看到有個命令列。
+
+```
+userName@computerName ~
+$
+```
 
 記住，你現在位置為家目錄，如果沒有特別改命令列的話，你可以發現命令列是以`~`表示家目錄。
 
@@ -120,6 +127,7 @@ linux 和 windows 的捷徑其實是不太一樣的，在 cygwin 中不可用 .l
 當你要移除一個*空*資料夾的時候 `rmdir dirname`。
 當你要移除一個資料夾（空或非空都適用）和裡面的東西 `rm -r dirname`。
 (-r flag 是 recursively 的意思）
+> 注意！使用 rm 刪除資料就真的回不來了，它沒有資源回收垃圾桶。
 
 * 移動（或更名）
 當你要移動檔案（或資料夾）A 到資料夾 B 時 `mv a b`。
@@ -129,7 +137,7 @@ linux 和 windows 的捷徑其實是不太一樣的，在 cygwin 中不可用 .l
 > 還有一點要注意的是，Windows 下大小寫其實是不分的。
 > （但你在 Cygwin 中打字還是要分大小寫）。
 
-## 關於強大的 TAB 和 Arrow Keys , 快捷鍵等。
+## 關於強大的 TAB 和 Arrow Keys , 快捷鍵等
 
 * tab
 假設你要切換到一個名字很長的資料夾時，
@@ -176,19 +184,19 @@ hello world! It's my first python script ......
 
   每次就不用執行`python output.py`再從鍵盤輸入同樣的東西了。
   寫好 input.txt 後只要下`python output.py < input.txt`，
-  它就會幫你把 output.txt 的內容輸進 output.py。
+  它就會幫你把 input.txt 的內容輸進 output.py。
 
 * stdout 程式輸出至檔案的那條流向（螢幕在 linux 下也是檔案喔）。
 
   你現在下個 `ls` 的指令，它會輸出至螢幕，如果你要將它重導至檔案 (justLsOut.txt)，
   可以下個`ls > justLsOut.txt`。
   如果本來沒有 justLsOut.txt 檔案，它會創一個 justLsOut.txt，然後把內容塞進去。
-  如果一經有 justLsOut.txt 的話，它會覆蓋掉 justLsOut.txt 的內容，然後塞 ls 的結果進去。
+  如果已經有 justLsOut.txt 的話，它會覆蓋掉 justLsOut.txt 的內容，然後塞 ls 的結果進去。
 
   但如果你不想要覆蓋掉原本內容呢？你也可以將 ls 的結果加在 justLsOut.txt 後面。
   使用 `ls >> justLsOut.txt` 就好了。`>>`是 append 的用法。
 
-* stderr 當有錯誤發生時，程式輸出至檔案的那條流向。
+* stderr 是當有錯誤發生時，程式輸出至檔案的那條流向。
   不過一般是跟 stdout 一起輸到螢幕。
   如果你將 stdout 導到其他地方，螢幕剩下的就是 stderr 了。
 
@@ -204,7 +212,7 @@ apt-cyg 如何使用呢？首先先把 [apt-cyg 的 script](https://github.com/t
 
 
 1. 貼在記事本裡面，**不要用 word**，然後存到家目錄 (`cpath -w $HOME`) 中，假設存為 `script.txt`。
-2. 下指令`cat > script.txt` 然後滑鼠右鍵貼上，接著`ctrl-d`跳出。
+2. 下指令`cat > script.txt` 然後滑鼠右鍵貼上，按 enter，接著`ctrl-d`跳出。
 
 
 你可以下`cat script.txt`看貼上有沒有成功，
@@ -213,9 +221,9 @@ apt-cyg 如何使用呢？首先先把 [apt-cyg 的 script](https://github.com/t
 接著可以用 `mv script.txt apt-cyg`。（別懷疑，我會將檔案叫做 script.txt 只是要你練習 mv）
 
 再來 `chmod a+x apt-cyg`。
-（讓這個腳本擁有執行權限，有興趣的話可以用 chmod 去找關於 linux 檔案權限的內容）
+（讓這個腳本擁有執行權限，有興趣看看關於 linux [檔案權限](http://linux.vbird.org/linux_basic/0210filepermission.php) 的內容）
 
-接著 `./apt-cyg install vim`。你就有 vim 可以用了。
+接著 `./apt-cyg install vim`。你就有 vim 可以用了。（我的 vim 入門可以走[這](/2017/01/22/vim-0/#more))
 （和 Windows 不一樣的是，當前目錄可執行的檔案要執行一定要加 `./`)
 
 你可以將 `apt-cyg` 移到 `/bin` （根目錄底下的 bin 目錄），
@@ -232,4 +240,8 @@ apt-cyg 如何使用呢？首先先把 [apt-cyg 的 script](https://github.com/t
 
 `tmux` -- 一項強大的終端切割螢幕工具。使用 `apt-cyg install tmux` 取得。
 在沒有設定檔的情形下`ctrl-b`是 prefix 鍵。 使用`ctrl-b ?`開始玩玩看吧。
-也可以使用我調教過的[設定檔](https://github.com/nobodyzxc/MyConfFiles/blob/master/tmux.conf) (prefix 是 `ctrl-a`)，將設定檔存為 ~/.tmux.conf。
+也可以使用我調教過的[設定檔](https://github.com/nobodyzxc/MyConfFiles/blob/master/tmux.conf) (prefix 是 `ctrl-a`)，將設定檔存為 `~/.tmux.conf`。
+
+## 結束
+
+你玩完 Cygwin 後，可以不用按右上角的`X`，你可以打個 `exit` 或按`ctrl-d`來結束它。
