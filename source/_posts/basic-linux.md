@@ -200,9 +200,17 @@ hello world! It's my first python script ......
 
 apt-cyg 如何使用呢？首先先把 [apt-cyg 的 script](https://github.com/transcode-open/apt-cyg/blob/master/apt-cyg) 複製下來，
 
-貼在記事本裡面，**不要用 word**，然後存到家目錄 (`cpath -w $HOME`) 中，假設存為 `script.txt`。
+接著你有兩種方式（任選其一即可）把內容貼到檔案，放到家目錄。
 
-接著可以用 `mv script.txt apt-cyg`。
+
+1. 貼在記事本裡面，**不要用 word**，然後存到家目錄 (`cpath -w $HOME`) 中，假設存為 `script.txt`。
+2. 下指令`cat > script.txt` 然後滑鼠右鍵貼上，接著`ctrl-d`跳出。
+
+
+你可以下`cat script.txt`看貼上有沒有成功，
+`cat`指令是將檔案內容輸出至螢幕（沒有參數時是將鍵盤輸入輸出）。
+
+接著可以用 `mv script.txt apt-cyg`。（別懷疑，我會將檔案叫做 script.txt 只是要你練習 mv）
 
 再來 `chmod a+x apt-cyg`。
 （讓這個腳本擁有執行權限，有興趣的話可以用 chmod 去找關於 linux 檔案權限的內容）
