@@ -8,8 +8,7 @@ categories: Note
 [Codecademy](https://www.codecademy.com) 之 Ruby 速記。
 原來 Ruby 和 DSL 很有淵源啊（喃喃）。
 剛學沒多久教授就提到了，Ruby 主要是 SmallTalk + Lisp 佐一點 C。
-> On the path to enlightenment.
-
+>> On the path to enlightenment.
 wait to refer:
   [Ruby Guides](http://guides.ruby.tw/ruby/index.html) done!
   [Lots of docs](https://www.ruby-lang.org/zh_tw/documentation/)
@@ -717,14 +716,14 @@ Ruby 給我們自動製造 function 的方法。用起來和 public 變數一樣
 ``` ruby
 class Dog
     attr_reader :age              # 為 age 做 get 的 function
-    attr_writer :food_in_stomach  # 抱歉，江郎才盡了
+    attr_writer :food             # 抱歉，江郎才盡了
     attr_accessor :name           # get and set both
     # 注意後面是加 symbol
 
-    def initialize name , age , food_in_stomach
+    def initialize name , age , food
         @name = name
         @age = age
-        @food_in_stomach = food_in_stomach
+        @food = food
     end
 end
 
@@ -732,7 +731,7 @@ doge = Dog.new "lion" , 3 , "null"
 puts doge.name
 doge.name = "frog"
 puts "#{doge.name} : #{doge.age}"
-doge.food_in_stomach = "meat"
+doge.food = "meat"
 ```
 
 ## Module

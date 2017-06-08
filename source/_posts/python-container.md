@@ -77,7 +77,11 @@ list(iterable) 建構子可以輕易的將其他容器 (iterable) 轉為 list �
 > 在 index 之*前*插入元素。
 8. `L.pop([idx])`
 > 移除 idx 位置的元素，並回傳該元素。（沒有參數等同對最後一個元素進行操作）
-9. `L.sort([key = None , reverse=False])`
+9. `L.remove(elm)`
+> 移除第一個出現的元素。
+10. `L.reverse()`
+> 對 list 進行倒轉（不回傳值）。
+11. `L.sort([key = None , reverse=False])`
 > 排序。
 
 ### help(set)
@@ -94,27 +98,29 @@ set(iterable) 建構子可以輕易的將其他容器 (iterable) 轉為 set 容�
 > 回傳差集。
 5. `S.difference_update(set ...)`
 > S = S.difference(Set ...)。應該可以算是語法糖的東西。
-6. `S.intersection(set ...)`
+6. `S.discard(elm)`
+> 移除一個元素，如果它存在於 set 中，不存在也不會噴錯。
+7. `S.intersection(set ...)`
 > 回傳交集。
-7. `S.intersection_update(set ...)`
+8. `S.intersection_update(set ...)`
 > S = S.intersection()。
-8. `S.isdijoint(set)`
+9. `S.isdijoint(set)`
 > 不相交回傳 True。
-9. `S.issubset(set)`
+10. `S.issubset(set)`
 > 如果 S 是參數的子集回傳 True。
-10. `S.issuperset(set)`
+11. `S.issuperset(set)`
 > 如果 S 是參數的超集回傳 True。
-11. `S.pop()`
-> 移除任一元素並回傳（我試過了，好像也不是那麼隨意）（如果 empty 發生 KeyError)
-12. `S.remove(elm)`
+12. `S.pop()`
+> 移除任一元素並回傳（我試過了，好像也不是那麼隨意）（如果 empty 發生 KeyError）
+13. `S.remove(elm)`
 > 移除一元素（必須存在於 set 否則發生 KeyError)
-13. `S.symmetric_difference(set)`
+14. `S.symmetric_difference(set)`
 > 回傳集合為刪除交集的聯集部分。
-14. `S.symmetric_difference_update(set)`
+15. `S.symmetric_difference_update(set)`
 > S.symmetric_difference 的語法糖。
-15. `S.union(set ...)`
+16. `S.union(set ...)`
 > 交集。
-16. `S.update(set ...)`
+17. `S.update(set ...)`
 > 感覺就是 S.union_update()，不過這裡直接叫 update 了。
 
 ### help(dict)

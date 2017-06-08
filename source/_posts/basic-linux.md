@@ -150,7 +150,7 @@ linux 和 windows 的捷徑其實是不太一樣的，在 cygwin 中不可用 .l
 你方才輸過的指令可以用方向鍵上下來叫出來。
 
 * 快捷鍵（有興趣請走[這](https://wiki.archlinux.org/index.php/Keyboard_shortcuts))
-輸過的指令也可以敲幾個字然後按`ctrl-r`來叫出，
+輸過的指令也可以按`ctrl-r`然後敲幾個字來叫出，
 如果不是想要的那個，繼續按`ctrl-r`，選到後按`enter`。
 
 ## 指令幫助
@@ -241,7 +241,7 @@ apt-cyg 如何使用呢？首先先把 [apt-cyg 的 script](https://github.com/t
 
 `tmux` -- 一項強大的終端切割螢幕工具。使用 `apt-cyg install tmux` 取得。
 在沒有設定檔的情形下`ctrl-b`是 prefix 鍵。 使用`ctrl-b ?`開始玩玩看吧。
-也可以使用我調教過的[設定檔](https://github.com/nobodyzxc/MyConfFiles/blob/master/tmux.conf) (prefix 是 `ctrl-a`)，將設定檔存為 `~/.tmux.conf`。
+也可以使用我調校過的[設定檔](https://github.com/nobodyzxc/MyConfFiles/blob/master/tmux.conf) (prefix 是 `ctrl-a`)，將設定檔存為 `~/.tmux.conf`。
 
 ## 結束
 
