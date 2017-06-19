@@ -22,10 +22,12 @@ permalink: :year/:month/:day/:title/
 permalink_defaults:
 
 social:
-    pixnet: http://no8dyzxc.pixnet.net/blog
-    youtube: https://www.youtube.com/channel/UCPgvp2rLwglsLVCrqVlQXuA
-    zhihu: https://www.zhihu.com/people/nobodyzxc/activities
-    instagram: https://www.instagram.com/nobodyzxc/
+    Pixnet: http://no8dyzxc.pixnet.net/blog
+    YouTube: https://www.youtube.com/channel/UCPgvp2rLwglsLVCrqVlQXuA
+    知乎: https://www.zhihu.com/people/nobodyzxc/activities
+    Instagram: https://www.instagram.com/nobodyzxc/
+    GitHub: https://github.com/nobodyzxc
+    Google+: https://plus.google.com/114949079453512284672
 
 # Directory
 source_dir: source
