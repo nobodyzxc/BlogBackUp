@@ -1,3 +1,5 @@
+// <code> tag is too close to <p> tag
+// use`!`syntax sugar -> use `!` syntax sugar
 document.addEventListener("DOMContentLoaded", function(event) {
     var codetags = document.getElementsByTagName("code");
     for(var i = 0 ; i < codetags.length ; i++){

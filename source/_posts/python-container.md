@@ -119,7 +119,7 @@ set(iterable) 建構子可以輕易的將其他容器 (iterable) 轉為 set 容�
 15. `S.symmetric_difference_update(set)`
 > S.symmetric_difference 的語法糖。
 16. `S.union(set ...)`
-> 交集。
+> 聯集。
 17. `S.update(set ...)`
 > 感覺就是 S.union_update()，不過這裡直接叫 update 了。
 
