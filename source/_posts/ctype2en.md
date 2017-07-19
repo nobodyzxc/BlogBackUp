@@ -14,7 +14,7 @@ PL 教授給的 [8 頁 Func Ptr 閱讀材料](https://www.google.com.tw/url?sa=t
 <p></p>
 <p></p>
 > 我嘗試寫成 Haskell 的定義型態。
-> 當然， Haskell 並沒有 Pointer，我把它當作一種自定義的資料型態。
+> 那個 Type\* 能理解就好了 （逃
 
 [https://cdecl.org/](https://cdecl.org/)
 
