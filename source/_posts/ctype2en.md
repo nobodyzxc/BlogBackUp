@@ -7,6 +7,7 @@ categories:
 <center>
 PL 教授給的 [8 頁 Func Ptr 閱讀材料](https://www.google.com.tw/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiYrNTC6orVAhXEebwKHVxyDXIQFgglMAA&url=http%3A%2F%2Fwww2.mta.ac.il%2F~hbinsky%2Fc%2520content%2FFunction%2520Pointer.pdf&usg=AFQjCNEzZ-0v-7fvdH5Z8sEVHbebcpV4mg)。
 那就來玩一下吧。
+wait to refer:[rule](http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html)
 </center>
 <!-- more -->
 <script src="/mycode/c-syntax-path.js"></script>

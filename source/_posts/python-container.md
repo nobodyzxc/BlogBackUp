@@ -18,15 +18,15 @@ Python 感覺入門很久了，但對於容器的使用一直感到很生疏，�
 > (a) For some operations, prefix notation just reads better than postfix — prefix (and infix!) operations have a long tradition in mathematics which likes notations where the visuals help the mathematician thinking about a problem. Compare the easy with which we rewrite a formula like x\*(a+b) into x\*a + x\*b to the clumsiness of doing the same thing using a raw OO notation.
 
 ```
-嗯？len("asd" + "efg") 和 "asd".length() + "efg".length() 嗎？
-但我會寫成 ("asd" + "efg").length() 啊？
-不過我覺得我理解有錯，他的意思是用 OO 的方式展開 x*(a+b) 比較麻煩嗎？
+恩... 習慣問題嗎？
+嗯？len("asd" + "efg") 和 ("asd" + "efg").length() 嗎？
+確實，前面的比較好看些。
 ```
 > (b) When I read code that says len(x) I know that it is asking for the length of something. This tells me two things: the result is an integer, and the argument is some kind of container. To the contrary, when I read x.len(), I have to already know that x is some kind of container implementing an interface or inheriting from a class that has a standard len(). Witness the confusion we occasionally have when a class that is not implementing a mapping has a get() or keys() method, or something that isn’t a file has a write() method.
 
 ```
-好像是在說，用 len(container) 就比較不用去思考 container 底下有沒有 len() 這個 member。
-比較不易混亂嗎。
+好像是在說，用 len(container) 就比較不用去思考 container 底下有沒有 len() 這個實作。
+確實，我常常被 javascript 的 string.length 和 C++ 的 string.length() 混淆。
 ```
 
 ## Functionality functions for containers
