@@ -29,7 +29,7 @@ Python 感覺入門很久了，但對於容器的使用一直感到很生疏，�
 確實，我常常被 javascript 的 string.length 和 C++ 的 string.length() 混淆。
 ```
 
-## Functionality functions for containers
+## Non-member functions
 
 1. repr(container) -> 轉成可以讓被 eval 的字串符（哼哼，人家 Scheme 才沒這麼複雜呢）。
 2. len(container) -> 取得容器長度
