@@ -213,7 +213,7 @@ cout << endl;
       `sa.swap(sb)`
     - `.clear`
   - Observers
-    read it by yourself
+    read it yourself
   - Operations
     - `.find`
     - `.count`
@@ -281,7 +281,7 @@ for(map<string , int>::iterator
     - `.swap`
     - `.clear`
   - Observers
-    read it by yourself
+    read it yourself
   - Operations
     - `.find`
       get the iterator
@@ -335,7 +335,10 @@ for(map<string , int>::iterator
   - `min_element`
   - `max_element`
 - Binery\_search
-  - do it by yourself maybe
+  - do it yourself maybe
+- Other
+  - next\_permutation(first , end);
+  - prev\_permutation(first , end);
 
 # overload operator
 ```cpp
