@@ -1,23 +1,24 @@
 ---
-title: Cpp STL Hack
-date: 2017-10-05 12:30:53
+title: competition
+date: 2017-10-13 16:08:32
 categories:
 ---
-
-<center>
-為了應付比賽，又很久沒有使用 STL，所以做個總攻略。
-</center>
-
 <!-- more -->
 # How to start
+
 ```cpp
+#include <bits/stdc++.h>
+#define _ ios_base::sync_with_stdio(0);cin.tie(0);
+/* sync_with_stdio will disable printf scanf */
+#define endl '\n'
+
 using namespace std;
+int main() { _
+	return 0;
+}
 ```
 # pair
-- Header
-```cpp
-#include<utility>
-```
+- Header `<utility>`
 - Non-member funcs
 ```cpp
             /* make a pair without assign types */
@@ -25,8 +26,7 @@ pair<int , string> pr = make_pair(1 , "str");
             /* assignment opertor overloading */
 
 /* comparaision between pairs */
- cout << (make_pair(1 , 2) < make_pair(1 , 3)) << endl;
-/* 1 */
+ cout << (make_pair(1 , 2) < make_pair(1 , 3)) << endl; /* 1 */
 
 /* C++ 11 */
 swap(pr0 , pr1);
@@ -34,35 +34,25 @@ swap(pr0 , pr1);
 
 - Member vars
 ```cpp
-cout << pr.first << endl;
-/* 1 */
-cout << pr.second << endl;
-/* 2 */
+cout << pr.first << endl; /* 1 */
+cout << pr.second << endl; /* 2 */
 ```
 
 # tuple (*C++11*)
-- Header
-```cpp
-#include<tuple>
-```
+- Header `<tuple>`
 - Non-member funcs
 ```cpp
 /* make a tuple */
 tuple<int , char , string> t(10 , 'c' , "string");
-
 /* make tuple quickly */
 auto tp = make_tuple(1 , 1);
-
 /* get element */
 cout << get<2>(t) << endl;
 /* string */
 ```
 
 # vector
-- Header
-```cpp
-#include<vector>
-```
+- Header `<vector>`
 - How to construct
 ```cpp
 const int size = 5;
@@ -81,7 +71,6 @@ for(int i = 0 ; i < size ; i++)
 ```
 - How to iterate
 ```cpp
-/* 珍惜生命，多用 auto */
 /* iterator 為 .begin() .end() .rbegin() 及 .rend() */
 for(vector<vector<int> >::iterator vit = vvi.begin() ;
       vit != vvi.end() ; vit++ , cout << endl)
@@ -94,10 +83,7 @@ for(int i = 0 ; i < vvi.size() ; i++ , cout << endl)
 ```
 - Member funcs
   - Capacity and Accessor
-    - `.size`
-    - `.empty`
-    - `.front`
-    - `.back`
+    - `.size` , `.empty` , `.front` , `.back`
     - `.resize`
 ```cpp
 vi.resize(3)
@@ -108,8 +94,7 @@ vi.resize(10)
 /* expand to 10 elms and stuff new with default val (0) */
 ```
   - Modifiers
-    - `.push_back`
-    - `.pop_back`
+    - `.push_back` , `.pop_back` , `.clear`
     - `.insert`
       `.insert(iter , val)`
       `.insert(iter , size_t , val)`
@@ -117,66 +102,38 @@ vi.resize(10)
     - `.erase`
       `.earse(iter)`
       `.earse(iter_beg , iter_end)`
-    - `.swap`
-      `va.swap(vb)`
-    - `.clear`
+    - `.swap` - `va.swap(vb)`
 
 - function overlads
-  - relational
-  - `swap`
-    `swap(va , vb)`
+  - relational , `swap`
 
 ref: ***[std vector C++ — deep or shallow copy](https://stackoverflow.com/a/11348411)***
 
+
+
 # stack
-- Header
-```cpp
-#include<stack>
-```
+- Header `<stack>`
 - Member functions
-  - `.empty`
-  - `.size`
-  - `.top`
-  - `.push`
-  - `.pop`
+  - `.empty` , `.size` , `.top` , `.push` , `.pop`
 - Non-member func
   - relational operator
 
 # queue
-- Header
-```cpp
-#include<queue>
-```
+- Header `<queue>`
 - Member functions
-  - `.empty`
-  - `.size`
-  - `.front`
-  - `.back`
-  - `.push`
-  - `.pop`
+  - `.empty` , `.size` , `.front` , `.back` , `.push` , `.pop`
 - Non-member func
   - relational operator
 
 # priority\_queue
-- Header
-```cpp
-#include<queue>
-```
+- Header `<queue>`
 - Member functions
-  - `.empty`
-  - `.size`
-  - `.front`
-  - `.back`
-  - `.push`
-  - `.pop`
+  - `.empty` , `.size` , `.front` , `.back` , `.push` , `.pop`
 - Non-member func
   - relational operator
 
 # set
-- Header
-```cpp
-#include<set>
-```
+- Header `<set>`
 - How to construct
 ```cpp
 int data[] = {1 , 2 , 3 , 4};
@@ -190,15 +147,19 @@ set<float , bool(*fp)(float)) fset;
 - How to iterate
 ```cpp
 /* iterator 為 .begin() .end() .rbegin() 及 .rend() */
+
+
+
+
 for(set<int>::iterator it
    = iset.begin() ; it != iset.end() ; it++)
    cout << *it << ' ';
+
 cout << endl;
 ```
 - Member functions
   - Capacity
-    - `.empty`
-    - `.size`
+    - `.empty` , `.size`
     - `.max_size`
       check if the set has enough size to store elements
   - Modifiers
@@ -245,10 +206,7 @@ cout << endl;
       ```
 
 # map
-- Header
-```cpp
-#include<map>
-```
+- Header `<map>`
 - How to construct
 ```cpp
 map<string , int> dict;
@@ -260,14 +218,16 @@ map<string , int> zdict(dict); /* copy constructor */
 - How to iterate
 ```cpp
 /* iterator is a pointer to pair */
+
+
+
 for(map<string , int>::iterator
    it = dict.begin() ; it != dict.end() ; it++)
    cout << it->first << ' ' << it->second << endl;
 ```
 - Member functions
   - Capacity & Element access
-    - `.empty`
-    - `.size`
+    - `.empty` , `.size`
     - `.max_size`
       check if the map has enough size to store kpr
     - `[]`
@@ -296,10 +256,7 @@ for(map<string , int>::iterator
       Return pair of iters
 
 # algorithm
-- Header
-```cpp
-#include<algorithm>
-```
+- Header `<algorithm>`
 - Non-modifying
   - `iter find(iter_beg , iter_end , val)`
   - `iter find_if(iter_beg , iter_end , pred_fp)`
@@ -324,11 +281,8 @@ for(map<string , int>::iterator
     `sort(first , last)`
     `sort(first , last , comp_fp)`
 - Heap
-  - `push_heap`
-  - `pop_heap`
-  - `make_heap`
-  - `sort_heap`
-  - `is_heap` (***c++11***)
+  - `push_heap` , `pop_heap` ,`make_heap` , `sort_heap`
+ `is_heap` (***c++11***)
 - Min/Max
   - `min`
   - `max`
@@ -343,13 +297,16 @@ for(map<string , int>::iterator
 # overload operator
 ```cpp
 inline bool operator==(const X& lhs, const X& rhs){ /* DIY */ }
+
 inline bool operator!=(const X& lhs, const X& rhs){ return !(lhs == rhs); }
+
+
 inline bool operator< (const X& lhs, const X& rhs){ /* DIY */ }
+
 inline bool operator> (const X& lhs, const X& rhs){ return rhs < lhs; }
 inline bool operator<=(const X& lhs, const X& rhs){ return !(lhs > rhs); }
 inline bool operator>=(const X& lhs, const X& rhs){ return !(lhs < rhs); }
 ```
-paste from:[operator overloading](http://en.cppreference.com/w/cpp/language/operators)
-
 # vim script
 <script src="https://gist.github.com/nobodyzxc/4c74d648f244ab072f345aa8a49d36f3.js"></script>
+
