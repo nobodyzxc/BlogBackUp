@@ -209,7 +209,7 @@ hello world! It's my first python script ......
 
 cygwin 安裝的 setup.exe 基本上就是一個套件管理器，但是它是 GUI 的，而且還要點一堆選項，感覺很慢。
 
-如果你追求速度又 prefer Text Mode 的話，你可以試試別人寫的 shell script - apt-cyg。
+如果你追求速度又 prefer Text Mode 的話，你可以試試別人寫的 shell script － apt-cyg。
 
 用起來感覺就像 apt-get 一樣。
 
@@ -219,16 +219,12 @@ apt-cyg 如何使用呢？首先先把 [apt-cyg 的 script](https://github.com/t
 
 1. 貼在記事本裡面，**不要用 word**，然後存到家目錄 (`cpath -w $HOME`) 中，假設存為 `script.txt`。
 2. 下指令`cat > script.txt` 然後滑鼠右鍵貼上，按 enter，接著`ctrl-d`跳出。
-3. 有裝 wget 的話，在家目錄使用 `wget https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg`
-
-> for 1. and 2.
-
-你可以下`cat script.txt`看貼上有沒有成功，
-`cat`指令是將檔案內容輸出至螢幕（沒有參數時是將鍵盤輸入輸出）。
-
-接著可以用 `mv script.txt apt-cyg`。（別懷疑，我會將檔案叫做 script.txt 只是要你練習 mv）
-
-> 選 3. 直接跳這裡 （你可以 cat 一下 apt-cyg 看看有沒有下載成功）
+> 你可以下`cat script.txt`看貼上有沒有成功，
+  `cat`指令是將檔案內容輸出至螢幕（沒有參數時是將鍵盤輸入輸出）。
+  接著可以用 `mv script.txt apt-cyg`。（別懷疑，我會將檔案叫做 script.txt 只是要你練習 mv）<br>
+3. 有裝 wget 的話，在家目錄使用
+   > `wget https://raw.githubusercontent.com/transcode-open/apt-cyg/master/apt-cyg`
+     （你可以 cat 一下 apt-cyg 看看有沒有下載成功）
 
 再來 `chmod a+x apt-cyg`。
 （讓這個腳本擁有執行權限，有興趣看看關於 linux [檔案權限](http://linux.vbird.org/linux_basic/0210filepermission.php) 的內容）
