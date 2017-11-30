@@ -211,7 +211,7 @@ cygwin 安裝的 setup.exe 基本上就是一個套件管理器，但是它是 G
 
 如果你追求速度又 prefer Text Mode 的話，你可以試試別人寫的 shell script - apt-cyg。
 
-用起來感覺就像 apt-cyg 一樣。
+用起來感覺就像 apt-get 一樣。
 
 apt-cyg 如何使用呢？首先先把 [apt-cyg 的 script](https://github.com/transcode-open/apt-cyg/blob/master/apt-cyg) 複製下來，
 
