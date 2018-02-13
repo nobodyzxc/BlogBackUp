@@ -23,11 +23,11 @@ permalink_defaults:
 
 social:
     Pixnet: http://no8dyzxc.pixnet.net/blog
-    YouTube: https://www.youtube.com/channel/UCPgvp2rLwglsLVCrqVlQXuA
+    YouTube: https://www.youtube.com/channel/UCPgvp2rLwglsLVCrqVlQXuA || youtube
     知乎: https://www.zhihu.com/people/nobodyzxc/activities
-    Instagram: https://www.instagram.com/nobodyzxc/
-    GitHub: https://github.com/nobodyzxc
-    Google+: https://plus.google.com/114949079453512284672
+    Instagram: https://www.instagram.com/nobodyzxc/ || instagram
+    GitHub: https://github.com/nobodyzxc || github
+    Google+: https://plus.google.com/114949079453512284672 || google
 
 # Directory
 source_dir: source
