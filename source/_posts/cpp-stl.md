@@ -1,7 +1,7 @@
 ---
 title: Cpp STL Hack
 date: 2017-10-05 12:30:53
-categories:
+categories: Note
 ---
 
 <center>

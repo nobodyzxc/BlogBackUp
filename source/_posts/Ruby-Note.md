@@ -882,7 +882,7 @@ puts obj_r.call
 
 例外處理
 
-像 C++ ， Java 都在那邊 throw , catch 時，Ruby 已用 begin , rescue 優美的解決。
+對應 C++ ， Java 的 throw , catch ，Ruby 有著 begin , rescue 。
 
 ``` ruby
 def get_file_first_line

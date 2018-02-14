@@ -4,6 +4,8 @@ date: 2018-02-14 22:44:50
 categories: Note
 ---
 <center>
+
+嘛，情人節，和 Haskell 約個會吧！
 原篇 Haskell Note 已移至草稿區，
 因為學完 Scheme 後回來看 Haskell，
 發現有不少地方是已經會的。
@@ -156,6 +158,11 @@ categories: Note
    scahnl, scanr, scanl1, scanr1
 ```
 
+> 注意 foldl 系列的第一個參數的型態是 (b -> a -> b)
+> 所以在寫 lambda 的時候是 (\ e acc -> expr)
+> 而 foldr 系列則是 (a -> b -> b)
+> 寫 lambda 的時候則是 (\ acc e -> expr)
+
 ### Lambda
 
    lambda 寫法 `\ bindings -> exprs`
@@ -172,6 +179,16 @@ categories: Note
 ### Function composition
 
    嘛，就是 f(g(x)) 可以用 haskell 寫成 f . g。就是這樣而已！
+   注意的是 apply to arguments 的部份搭配個 $ , 也就是 f . g $ arg
+
+## Module
+
+> transpose 函數可以反轉一組 List 的 List。
+
+光看中文還蠻容易誤解的，但看了他的例子及看了英文後，這不就轉置嗎？
+
+馬上想到 python 是用 scheme, python 是用 zip (map) 達成，
+但考慮到 haskell 的靜態特性，所以把 var arg 裝到一個 list 成為一個新函數。
 
 ## Self suspicion
 
