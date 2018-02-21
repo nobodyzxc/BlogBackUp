@@ -1,5 +1,5 @@
 ---
-title: Scheme 初學者眼中的 Haskell
+title: Scheme 初學者眼中的 Haskell [ Writing ]
 date: 2018-02-14 22:44:50
 categories: Note
 ---
@@ -21,18 +21,18 @@ categories: Note
 ### Pattern matching
 
 我記得王垠的 40 行代碼好像有 require pmatch,
-所以 scheme 應該是有以 library 實現 pattern matching 的。
+所以 Scheme 應該是有以 library 實現 pattern matching 的。
 
 而 Haskell 則是內建此種語言特性，大概可以有三種地方可以用到。
 
 1. 函數定義，可以少去一些 if else
-   ```haskell
+   ```Haskell
    -- 注意 match 的順序性
    fib 0 = 0
    fib 1 = 1
    fib x = fib (x - 1) + fib (x - 2)
    ```
-   ```scheme
+   ```Scheme
       (define (fib x) ; 懶得寫 = 所以用 case
          (case x      ; 不過 racket 其實是用 equal?
             [(0) 0]   ; R6RS, R5RS 是用 eqv?
@@ -42,7 +42,7 @@ categories: Note
    ```
 
 2. 拆 tuple, list
-```haskell
+```Haskell
    -- as pattern
    all@a:b = [1, 2, 3]
    -- all == [1, 2, 3]
@@ -58,7 +58,7 @@ categories: Note
 ```
 
 3. List comprehension 中
-```haskell
+```Haskell
    [x + y | (x, y) <-zip [1, 2, 3] [4, 5, 6]]
    --       ^ match
 ```
@@ -66,7 +66,7 @@ categories: Note
 ### Guard
    感覺之前一直不能接受這個 syntax, 現在看作 cond 就好了。
    書中的例子藉由 Guard 定義一個函數。
-```haskell
+```Haskell
    bmiTell bmi -- *attension! no = here
        | bmi <= 18.5 = "You're underweight, you emo, you!"
        | bmi <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"
@@ -76,7 +76,7 @@ categories: Note
 
    其實就是
 
-```scheme
+```Scheme
    (define (bmiTell bmi)
       (cond
          ((<= bmi 18.5) "You're underweight, you emo, you!")
@@ -89,7 +89,7 @@ categories: Note
 
    用於函數定義中，於定義下方加入 where syntax 做簡易的 binding。
 
-```haskell
+```Haskell
  bmiTell weight height -- *attension! no = here
        | bmi <= 18.5 = "You're underweight, you emo, you!"
        | bmi <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"
@@ -99,9 +99,9 @@ categories: Note
          -- where 裡面可作 pattern matching 亦可定義函數
 ```
 
-   嘛，就是 scheme 裡的 nested define 嘛。
+   嘛，就是 Scheme 裡的 nested define 嘛。
 
-```scheme
+```Scheme
    (define (bmiTell weight height)
       (define bim (/ weight (* height height)))
       (cond
@@ -118,7 +118,7 @@ categories: Note
 
    list comprehension 中也可以用 let bind 一些值，注意有效範圍。
 
-```haskell
+```Haskell
    [nv | (x, y) <- lst, let nv = x + y, nv > 10]
 --  ^^   x-----------x  ^^^^^^^^^^^^^^  ^^^^^^^
 ```
@@ -126,12 +126,12 @@ categories: Note
 ### Case
 
    pattern matching 本質上是 case exprs 的語法糖。
-   而在我看來 pattern matching 在 scheme 中也就是 cond 的語法糖 (null? 等函數去判斷）
+   而在我看來 pattern matching 在 Scheme 中也就是 cond 的語法糖 (null? 等函數去判斷）
    所以在 case exprs 可以解決的基本上 Guard 也可以解決，而回歸原始，用 if else 解決。
    重點是記得適用場景，Guard 用在 Bool，case 用在 pattern matching。
    之前這邊一直沒有摸清楚。
 
-```haskell
+```Haskell
    case expression of pattern -> result
                       pattern -> result
                       pattern -> result
@@ -139,18 +139,18 @@ categories: Note
 
 ### HOF
 
-   與 scheme 最大的不同就是 Haskell 會自己做 currying。
+   與 Scheme 最大的不同就是 Haskell 會自己做 currying。
    善用 currying 特性就可以很自然的做出 partially applied function。
    如此就不用再寫 lambda 去餵 HOF 啦～
 
    還有就是 map 的力量，Haskell 的 map 是 map :: (a -> b) -> [a] -> [b]，
-   和 scheme 的 map 不太一樣，scheme 因為是動態語言所以 map 吃的 function 彈性比較大。
+   和 Scheme 的 map 不太一樣，Scheme 因為是動態語言所以 map 吃的 function 彈性比較大。
    如 `(map + '(1 2 3) '(1 2 3))` 後面可以接幾個 list 端看前面 function （加號的話可以無限啦～）。
    而 Haskell 要用 + 號則是用 zipWith，`zipWith (+) [1, 2, 3] [1, 2, 3]`。
-   Haskell map 和 zipWith 也就只是差在 unary 和 binary，依舊不能和 scheme map 比。
+   Haskell map 和 zipWith 也就只是差在 unary 和 binary，依舊不能和 Scheme map 比。
    或許有其他方法吧，這就要研究一下 Haskell 的 var args 用法了。
 
-   一些 haskell hof 可以玩玩
+   一些 Haskell hof 可以玩玩
 
 ```
    map, filter,
@@ -178,7 +178,7 @@ categories: Note
 
 ### Function composition
 
-   嘛，就是 f(g(x)) 可以用 haskell 寫成 f . g。就是這樣而已！
+   嘛，就是 f(g(x)) 可以用 Haskell 寫成 f . g。就是這樣而已！
    注意的是 apply to arguments 的部份搭配個 $ , 也就是 f . g $ arg
 
 ## Module
@@ -187,25 +187,23 @@ categories: Note
 
 光看中文還蠻容易誤解的，但看了他的例子及看了英文後，這不就轉置嗎？
 
-馬上想到 python 是用 scheme, python 是用 zip (map) 達成，
-但考慮到 haskell 的靜態特性，所以把 var arg 裝到一個 list 成為一個新函數。
+馬上想到 Python 是用 Scheme, Python 是用 zip (map) 達成，
+但考慮到 Haskell 的靜態特性，所以把 var arg 裝到一個 list 成為一個新函數。
 
 ## Self suspicion
+> 以下是一年前做 Note 提出的疑問。
 
-* tuple likes struct, while list likes array ?
-* 試想 zip implement, 是 zip (x:xs) (y:ys) = (x, y) : zip xs ys
-  而不是 list comprehension [... |  x<-xs, y<-ys, ...],
-  這兩種使用 list element 的方式差別是什麼，
-  後者如何以 recursion 實現。
-  並考慮一下迴圈是否有類似的狀況。
+* Q: tuple likes struct, while list likes array ?
+  A: 在念計概的時候有提到 record 這個概念，就是不同型態的資料的集合，所以 tuple 和 struct 都可以算是 record 的一種實作吧。不過 Haskell 也有 Record Syntax。而 list 不是 array，就是 linked list，要 array 的話 Scheme 有 vector，Haskell 裡應該也有類似的東西。
+* Q: 試想 zip implement, 是 `zip (x:xs) (y:ys) = (x, y) : zip xs ys` 而不是 list comprehension [... |  x<-xs, y<-ys, ...]，這兩種使用 list element 的方式差別是什麼，後者如何以 recursion 實現。並考慮一下迴圈是否有類似的狀況。
+  A: 上述的 List Comprehension 會是兩層迴圈的情形（窮舉），所以沒辦法使用。之後看到唐鳳介紹 FP 時用 Haskell List Comprehension 做的[例子](https://stackoverflow.com/questions/27333923/haskell-write-zip-function-using-list-comprehension)，估計這 List Comprehension 的內部也有個 zip 的實現在用 pattern matching 去為參數配對吧。
 * 那就是右摺疊可以處理無限長度的資料結構，而左摺疊不可以。將無限 List 從中斷開執行左摺疊是可以的，不過若是向右，就永遠到不了頭了。
   （覺得怪怪的，這敘述，搭配一下實例思考一下）
 
-```haskell
+```Haskell
 head' :: [a] -> a
 head' = foldr1 (\x _ -> x)
 last' :: [a] -> a
 last' = foldl1 (\_ x -> x)
 ```
   -> 好像是惰性求值的關係，可以從無限開始跑可是變數要用 anonymous 表示無限那端。
-* 自定義的 `:-:` 沒有定義，用起來直接是串起來的效果？!
