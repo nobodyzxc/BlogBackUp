@@ -50,7 +50,7 @@ categories:
 之前旁聽 Haskell 的時候，還對他不熟悉，
 到現在看過了一點 Lambda Calculus 相關的定義後，
 這次驚奇的發現在抽象的過程中，竟然跑出了 Lambda Expression，
-然後最後變成 JS 的 Short Form。
+然後最後變成 JS 的 Arrow Function。
 
 拿給家人玩時，發現普遍會發生一個問題，
 那就是大家會觀察不到工具的功能。
