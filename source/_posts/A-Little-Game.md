@@ -75,24 +75,24 @@ categories:
 點出比較重要的幾關吧。
 - Lv1
    提了 atom，如星星，一個基本的資料型態，應該可算 Symbol。
-   還有就是 function，可以 input 然後 return 的。
+   還有就是 tool(function)，可以 input 然後 return 的。
    （建議動畫可以做好點，不然普通人會把 input x return x 當成沒有事情發生）
 
 - Lv2
-   function can take function as input.
+   tool can take tool as input.
 
 - Lv3
-   function can return const , not always variable.
-   and they are all functions.
+   tool can return const , not always variable.
+   and they are all tools.
 
 - Lv4
-   figure out the black region.
+   figure out the tool of black region.
 
 - Lv5
-   function can return more.
+   tool can return more atoms.
 
 - Lv6
-   function can split the expressoin part.
+   tool can split the expressoin part.
 
 - Lv7, 8
    HOF
