@@ -96,8 +96,7 @@ categories: Note
        | bmi <= 30.0 = "You're fat! Lose some weight, fatty!"
        | otherwise   = "You're a whale, congratulations!"
          where
-            bim = weight
-            height = weight / height ^ 2
+            bim = weight / height ^ 2
          -- where 裡面可作 pattern matching 亦可定義函數
 ```
 
