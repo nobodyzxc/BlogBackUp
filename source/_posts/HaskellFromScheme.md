@@ -6,7 +6,6 @@ categories: Note
 <center>
 
 嘛，情人節，和 Haskell 約個會吧！
-原篇 Haskell Note 已移至草稿區，
 因為學完 Scheme 後回來看 Haskell，
 發現有不少地方是已經會的。
 而我覺得記些基本的東西意義不大，
