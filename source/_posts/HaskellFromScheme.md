@@ -13,7 +13,8 @@ categories: Note
 重新來看待 Haskell 這個語言。
 </center>
 
-<!-- more --><br><br><br>
+<!-- more -->
+<br><br>
 
 ## Syntax
 

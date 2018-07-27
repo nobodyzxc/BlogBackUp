@@ -12,7 +12,8 @@ categories: Note
 利益相關：老爸是寫 ERP 管理資料庫的，然後他表示現在都用 stored procedure 了。
 </center>
 
-<!-- more --><br><br><br>
+<!-- more -->
+<br><br>
 
 ## 環境配置
 

@@ -9,7 +9,9 @@ categories: Note
 </center>
 
 
-<!-- more --><br><br><br>
+<!-- more -->
+<br><br>
+
 
 # How to start
 ```cpp

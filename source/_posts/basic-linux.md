@@ -9,7 +9,8 @@ categories:
 
 </center>
 
-<!-- more --><br><br><br>
+<!-- more -->
+<br><br>
 
 事先聲明 Cygwin != Linux，它是 Windows 下一個模擬 Linux terminal 的介面。
 

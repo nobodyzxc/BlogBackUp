@@ -10,7 +10,8 @@ categories: Note
 許多東西好像就合理了起來，但這次也只是複習基本語法罷了，期許能記得更牢。
 </center>
 
-<!-- more --><br><br><br>
+<!-- more -->
+<br><br>
 ## Basic
 跟 Python 一樣是動態語言，所謂變數只是 name binding，
 用法跟 Python 也一樣，要用之前先 assign 一個值。

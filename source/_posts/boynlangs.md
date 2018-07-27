@@ -8,7 +8,8 @@ categories: Memoir
 我與他們的緣份。
 </center>
 
-<!-- more --><br><br><br>
+<!-- more -->
+<br><br>
 
 ## 嚮往
 

@@ -7,7 +7,8 @@ categories: Memoir
 <center>
 ***謹記我跌跌撞撞，那不成熟的過去。***
 </center>
-<!-- more --><br><br><br>
+<!-- more -->
+<br><br>
 ### 路？
 
 元旦連假回家，老爸載著我，吃晚餐的路上。

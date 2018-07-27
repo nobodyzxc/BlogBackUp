@@ -12,7 +12,8 @@ categories:
 感覺從中得到了些東西，所以想探討一下。
 </center>
 
-<!-- more --><br><br><br>
+<!-- more -->
+<br><br>
 
 ## [傳送門](http://www.therottingcartridge.com/games/programming/)
    ^ 戳他
