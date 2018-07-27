@@ -8,7 +8,9 @@ categories: Note
 為了應付比賽，又很久沒有使用 STL，所以做個總攻略。
 </center>
 
-<!-- more -->
+
+<!-- more --><br><br><br>
+
 # How to start
 ```cpp
 using namespace std;

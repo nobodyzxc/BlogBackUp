@@ -14,7 +14,7 @@ wait to refer:
   [Lots of docs](https://www.ruby-lang.org/zh_tw/documentation/)
 </center>
 
-<!-- more -->
+<!-- more --><br><br><br>
 <script src="/mycode/ruby-syntax-patch.js"></script>
 <link href="/mycode/scheme-syntax-patch.css" rel="stylesheet" type="text/css">
 ## Basic

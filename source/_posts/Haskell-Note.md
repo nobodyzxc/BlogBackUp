@@ -10,7 +10,7 @@ A world without loop , but recursion。
 更更新：我回乃了。
 </center>
 
-<!-- more -->
+<!-- more --><br><br><br>
 
 ## Some hints
 

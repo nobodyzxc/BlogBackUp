@@ -11,7 +11,7 @@ categories: Note
 （可能是入 emacs 教，或是奔向 IDE 了吧～)
 Chrome 有 Vimium ， Firefox 有 VimFx 加入我大 Vim 教吧。
 </center>
-<!-- more -->
+<!-- more --><br><br><br>
 ## 基本操作篇
 要編輯一個存在的文檔`tst.txt`時只要在 terminal 下 `vim tst.txt`。
 如果要建立一個新檔，叫做`new.txt`，也只要下 `vim new.txt`，只是離開記得存。

@@ -8,7 +8,7 @@ categories: Memoir
 為期兩個禮拜的課程結束，我收穫到了什麼呢？
 </center>
 
-<!-- more -->
+<!-- more --><br><br><br>
 對 Functional 的追求，
 我隻身一人到了台大上課，
 然而心中的那份悸動，

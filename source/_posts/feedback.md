@@ -8,7 +8,7 @@ categories:
 上程式語言課，給老師的回饋。
 </center>
 
-<!-- more -->
+<!-- more --><br><br><br>
 
 > 葉丙成老師兩篇關於主修 CS 的文章
 >

@@ -9,7 +9,7 @@ PL 教授給的 [8 頁 Func Ptr 閱讀材料](https://www.google.com.tw/url?sa=t
 那就來玩一下吧。
 wait to refer:[rule](http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html)
 </center>
-<!-- more -->
+<!-- more --><br><br><br>
 <script src="/mycode/c-syntax-path.js"></script>
 <link href="/mycode/c-syntax-path.css" rel="stylesheet" type="text/css">
 <p></p>
