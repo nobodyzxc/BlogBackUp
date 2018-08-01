@@ -184,7 +184,7 @@ steep 用來判斷一 List 之元素差是否保持陡峭。
 steepsum xs = (steep xs, sum xs)
 ```
 
-如此，`steep xs = fst $ steep xs`
+如此，`steep xs = fst $ steepsum xs`
 
 現在，我們 steepsum 變成 recursive function，
 實現一邊算 steep 一邊算 sum。
