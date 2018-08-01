@@ -170,7 +170,7 @@ steep (x:xs) = steep xs && x > sum xs
 ```
 
 steep 用來判斷一 List 之元素差是否保持陡峭。
-如果該元素大於其後所有元素回傳 True 反之 False。
+如果該元素大於其後所有元素之和回傳 True 反之 False。
 
 考慮其複雜度，
 呼叫 steep 有 n 次，每次 steep 中的 sum 又需要 n 的複雜度，
