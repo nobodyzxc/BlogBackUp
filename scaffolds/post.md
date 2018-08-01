@@ -9,4 +9,4 @@ categories:
 
 <!-- more -->
 
-<br><br><br>
+<br><br>
