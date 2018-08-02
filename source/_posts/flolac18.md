@@ -190,7 +190,7 @@ steepsum xs = (steep xs, sum xs)
 
 如此，`steep xs = fst $ steepsum xs`
 
-現在，我們 steepsum 變成 recursive function，
+現在，我們將 steepsum 變成 recursive function，
 實現一邊算 steep 一邊算 sum。
 
 ```haskell
@@ -312,8 +312,8 @@ foldl f e xs = foldr (\e acc -> (\b -> acc $ f b e)) id xs $ e
 
 ### Syntax of Lambda Calculas
 
-第二節課才進到 Lambda Calculas，
-Lambda 很簡單，只有 variable, application, abstraction 三條規則。
+第二節課才進到 lambda calculas，
+lambda form 很簡單，只有 variable, application, abstraction 三條規則。
 
 然後就用 lambda 定義了 tuple, fst, snd, nature numbers, boolean...
 
@@ -349,7 +349,7 @@ Lambda 很簡單，只有 variable, application, abstraction 三條規則。
 
 ### Simple typed Lambda Calculas and System F
 
-算是會做 Lambda Calculas 的 type derivation...
+算是會做 lambda calculas 的 type derivation...
 
 但是老實說，並沒有把 System F 搞得很清楚 ><
 
@@ -378,13 +378,15 @@ dual types 確保了通訊雙方 type 相對一致，確立了安全性。
 
 Talk 介紹了 Racket，才知道他的強大。
 
-之前看知乎上，談論到 Racket 的 Macro 很強大，
-但我都之其然，而不知其所以然。
+之前看知乎上，談論到 Racket 的 Macro 很棒，
+但我都知其然，而不知其所以然。
 
 今天總算是見識到啦><
 
+> #lang power
+
 以後 slide 也靠 Slideshow 轉 Markdown 啦～
-~~之前還不知道 Racket 有 Slideshow，還用 Python 工具 landslide~~
+~~之前還不知道 Racket 有 Slideshow，還用 landslide 轉 Markdown (一個 Python 寫的工具) ~~
 
 <object width="100%" height="400" data="/mycode/flolac-2018-racket-sharing.pdf"></object>
 
