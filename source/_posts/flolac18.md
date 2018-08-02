@@ -2,6 +2,7 @@
 title: FLOLAC'18
 date: 2018-07-27 23:38:45
 categories: Memoir
+mathjax: true
 ---
 
 <center>
@@ -42,9 +43,12 @@ categories: Memoir
 > 結果去那還是沒認識半個人 XD
 
 接下來會記一下學到的東西吧。
-以下部份摘自教材，為我最有印象的幾個部份。
+課程有四部份，以下摘自教材，
+為我最有印象的幾個部份。
 
-## Functional Programming
+## 函數式編程
+
+> Functional Programming
 
 
 ### Induction
@@ -95,7 +99,7 @@ sumsq xs = sum (map square xs)
 
 例如改寫成
 ```
-sumsq = foldr (\e acc -> e * e + acc) 0
+sumsq = foldr (\e acc -> square e + acc) 0
 ```
 
 如此的轉換稱作 fold fusion。
@@ -224,8 +228,11 @@ steepsum xs = (sp && x > sm, x + sm)
 ### Monad
 
 這又是另一段故事了，有時間再說 XD
+~~或者就跳過了，反正對於 Monad，我有預感我會自開一篇~~
 
-## Logic
+## 邏輯
+
+> Logic
 
 ### Instuitionistic Logic and Nature Induction
 
@@ -271,14 +278,18 @@ steepsum xs = (sp && x > sm, x + sm)
 2   (A ∧ B) ∧ C → A ∧ (B ∧ C) // →I by 1.1 and 1.7
 ```
 
-之後還有提到 semantic of propositional logic 及 first order logic，
+### Others
+
+之後還有提到 semantic of propositional logic 及 first-order logic，
 一樣有些 introducing 和 elimination 的 rules...
 就不細講了，可以透過這些 rule 可以做 structural proof 和 nature induction 的 proof。
 
 最後就是提到 Curry-Howard correspondence，
-將 first order logic 和 typed lambda calculas 結合起來。
+將 first-order logic 和 typed lambda calculas 對應起來。
 
-這門課還有演示了 agda ，感覺很好玩，
+這門課還有演示了 Agda ，感覺很好玩，
+用了 [aquamacs](http://aquamacs.org/) 搭配 $\LaTeX$ 的語法，打出了 [FLOLAC18.agda](https://gist.github.com/josh-hs-ko/3a0ea16a225ca4efbd01428c06b8fdba) 啊～
+
 原來這就是利用程式輔助證明啊。~~有時間再入坑~~
 
 然後講師還出了一題用 foldr 定義 foldl，
@@ -291,18 +302,91 @@ steepsum xs = (sp && x > sm, x + sm)
 foldl f e xs = foldr (\e acc -> (\b -> acc $ f b e)) id xs $ e
 ```
 
-## λ Calculas
+## Lambda 演算與型別
 
-> 待更
+> λ Calculas and Types
 
 
-## π Calculas
+先是用 Formal Language 定義了由 0 | succ | add 組成的數。
+然後介紹了 SI。
 
-> 待更
+### Syntax of Lambda Calculas
 
-## Talk(Racket)
+第二節課才進到 Lambda Calculas，
+Lambda 很簡單，只有 variable, application, abstraction 三條規則。
 
-> 待更
+然後就用 lambda 定義了 tuple, fst, snd, nature numbers, boolean...
+
+α conversion, β conversion 啦，
+大概就是我之前在網路上看過的那些了。
+
+然後提到的 Free and Bound Variables，
+之前在學校 LICS 課討論的 first-order logic 蠻像的。
+(那時候 LICS 討論 admissiable 討論蠻久的...)
+
+### Properties of Lambda Calculas
+
+這邊提到的 Evaluation Strategies，
+剛好之前也有看過，但沒有和 Haskell 產生連結，
+
+- Call-by-value strategie
+   rightmost-outermost but not inside any λ-abstraction
+   > ex: Scheme
+
+- Call-by-name strategie
+   leftmost-outermost but not inside any λ-abstraction
+   > ex: Haskell
+
+之前寫過 mini Scheme 的 eval/apply 終於知道和 Haskell 差在哪裡了。
+這也是讓 Haskell Lazy 的原因啊。(Lazy Evaluation 為**一種** call-by-name 的方法)
+
+之前看 call-by-name 只是覺得會有用這麼麻煩的方法求值的實現嗎？
+用 Call-by-value 不是很好嗎... 原來 Haskell 就是。
+
+算是把以前的惑又解更開了。
+
+有時間把 [Wiki](https://en.wikipedia.org/wiki/Evaluation_strategy) 看看吧。
+
+### Simple typed Lambda Calculas and System F
+
+算是會做 Lambda Calculas 的 type derivation...
+
+但是老實說，並沒有把 System F 搞得很清楚 ><
+
+
+## 並行計算模型與訊程型別
+
+> Models of concurrent computation and session types
+
+重點就在 π Calculas，一堆 dual types 的 derivation...
+
+dual types 確保了通訊雙方 type 相對一致，確立了安全性。
+
+π Calculas 有蠻多版本的，然後由簡單到複雜...
+
+感覺比 λ Calculas 複雜啊～～看得眼睛花，
+不過這門相較於其他，算是比較簡單的了。
+
+講師使用 [Scribble](http://www.scribble.org/) 寫了簡單的 protocal 作為示範。
+其中 IDE 的 type checking 讓你在寫的時候就知道自己傳收兩邊的 type 有沒有寫錯。
+
+## Talk (Racket)
+
+以前學 Scheme 用的就是 Racket，
+沒有寫很多程式，但知道這語言潛力很大，
+但就是沒有一個好好的介紹，讓我入門。
+
+Talk 介紹了 Racket，才知道他的強大。
+
+之前看知乎上，談論到 Racket 的 Macro 很強大，
+但我都之其然，而不知其所以然。
+
+今天總算是見識到啦><
+
+以後 slide 也靠 Slideshow 轉 Markdown 啦～
+~~之前還不知道 Racket 有 Slideshow，還用 Python 工具 landslide~~
+
+<object width="100%" height="400" data="http://flolac.iis.sinica.edu.tw/flolac18/files/flolac-2018-racket-sharing.pdf"></object>
 
 ## 後記
 
