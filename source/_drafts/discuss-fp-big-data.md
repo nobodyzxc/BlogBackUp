@@ -13,7 +13,6 @@ PL 課程上的一句話，
 <!-- more -->
 
 ### FP 與 Big Data?
-
 如同前言般，只聞教授談到，傳統 PL 是將 data 傳入 function，
 而 FP 是將 function 帶到 data 中，由於此種特性，才有辦法處理 Big data 那種等級的 data。
 

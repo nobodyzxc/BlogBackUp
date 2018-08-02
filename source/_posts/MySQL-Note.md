@@ -2,6 +2,8 @@
 title: MySQL Note
 date: 2017-02-10 18:46:49
 categories: Note
+tags:
+- sql
 ---
 
 <center>

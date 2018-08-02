@@ -2,6 +2,8 @@
 title: Ruby Note
 date: 2017-04-27 03:03:03
 categories: Note
+tags:
+- ruby
 ---
 
 <center>
