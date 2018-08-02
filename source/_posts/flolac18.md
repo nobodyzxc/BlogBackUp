@@ -386,7 +386,7 @@ Talk 介紹了 Racket，才知道他的強大。
 以後 slide 也靠 Slideshow 轉 Markdown 啦～
 ~~之前還不知道 Racket 有 Slideshow，還用 Python 工具 landslide~~
 
-<object width="100%" height="400" data="http://flolac.iis.sinica.edu.tw/flolac18/files/flolac-2018-racket-sharing.pdf"></object>
+<object width="100%" height="400" data="/mycode/flolac-2018-racket-sharing.pdf"></object>
 
 ## 後記
 
