@@ -1,7 +1,9 @@
 ---
 title: A Little Game
 date: 2018-02-21 21:35:51
-categories:
+categories: Fun
+tags:
+- game
 ---
 
 <center>

@@ -1,7 +1,6 @@
 ---
 title: My new Site
 date: 2016-12-11 23:52:44
-tags:
 ---
 <center>
 我所追求的簡單，終於在 [github](https://github.com) 上實現了，莫名感動。

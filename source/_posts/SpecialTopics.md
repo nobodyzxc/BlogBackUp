@@ -1,7 +1,7 @@
 ---
 title: My Special Topics on CS
 date: 2018-08-02 17:54:19
-categories:
+categories: Thinking
 ---
 
 <center>

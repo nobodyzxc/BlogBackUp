@@ -1,7 +1,7 @@
 ---
 title: feedback
 date: 2018-05-22 13:35:31
-categories:
+categories: Thinking
 ---
 
 <center>

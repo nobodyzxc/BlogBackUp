@@ -1,7 +1,8 @@
 ---
 title: C Type Defination to English
 date: 2017-07-15 17:04:01
-categories:
+categories: Note
+- type
 ---
 
 <center>

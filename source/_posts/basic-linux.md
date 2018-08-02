@@ -1,7 +1,9 @@
 ---
 title: Cygwin Beginner Guide
 date: 2017-05-30 22:41:52
-categories:
+categories: Fun
+tags:
+- cygwin
 ---
 
 <center>

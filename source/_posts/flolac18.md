@@ -3,6 +3,11 @@ title: FLOLAC'18
 date: 2018-07-27 23:38:45
 categories: Memoir
 mathjax: true
+tags:
+- flolac
+- functional programming
+- logic
+- lambda
 ---
 
 <center>
@@ -58,6 +63,7 @@ mathjax: true
 像是 `take n xs ++ drop n xs == xs`。
 
 介紹了一些 Haskell 基本的東西後，
+玩過了 Wholemeal Programming 後，
 一切便都從 Induction 開始。
 
 就以證明 `take n xs ++ drop n xs == xs` 為例吧。
