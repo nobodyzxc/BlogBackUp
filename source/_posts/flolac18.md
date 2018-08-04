@@ -392,7 +392,7 @@ Talk 介紹了 Racket，才知道他的強大。
 > #lang power
 
 以後 slide 也靠 Slideshow 轉 Markdown 啦～
-~~之前還不知道 Racket 有 Slideshow，還用 landslide 轉 Markdown (一個 Python 寫的工具) ~~
+~~之前還不知道 Racket 有 Slideshow，還用 landslide 轉 Markdown (一個 Python 寫的工具)~~
 
 <object width="100%" height="400" data="/mycode/flolac-2018-racket-sharing.pdf"></object>
 
