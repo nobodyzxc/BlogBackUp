@@ -1,5 +1,5 @@
 ---
-title: Scheme 初學者眼中的 Haskell [ Writing ]
+title: Scheme 初學者眼中的 Haskell
 date: 2018-02-14 22:44:50
 categories: Note
 tags:
