@@ -3,6 +3,7 @@ title: My Special Topics on CS
 date: 2018-08-02 17:54:19
 categories: Thinking
 tags:
+- evm
 - ethereum
 - solidity
 - static analysis
@@ -19,12 +20,39 @@ tags:
 
 <br><br>
 
+## (2018-08-25)
+直接跟教授說沒進度 Orz
+然後就拿到學長的 code 了（？）
+開始讀 code 吧。
+
+---
+
+## (2018-08-15)
+重新回顧了一下黃皮書 CALL 的部份，
+然後對照了一下學長的演算法，
+感覺上要實作出呼叫外部合約部份的分析，
+需要的就是從 stack 取出合約的 address，
+然後去 etherscan 把 contract code 爬下來，
+對 call 的合約再做一次靜態分析，
+不過由於是調用函數，所以由黃皮書來看，
+此合約分析的參數可以從 Memory 取得。
+
+學長之前跟我說這部份還不能做處理，
+詳情可能要等學長 code 整理好，
+才能進一步了解困難點在哪裡。
+
+---
+
+## (2018-08-08)
+
+寫信給教授，說下週進度為看合約 call 外部合約的部份。
+
 ## (2018-08-05)
 
 > 關於 process 在 bytecode 的進入點，要再[研究一下](https://ethereum.stackexchange.com/questions/7602/how-does-the-evm-find-the-entry-of-a-called-function)。
 
 1. [How does the EVM find the entry of a called function?](https://ethereum.stackexchange.com/questions/7602/how-does-the-evm-find-the-entry-of-a-called-function)
-   大意是說 EVM 不用找是哪一個 Function Call，
+   大意是說 EVM 不用找是哪一個 function call，
    **EVM 只要乖乖照著 compile 出來的 contract code 跑就好。**
    要跑哪一個 function，使用者會透過 msg call，使用 [ABI](https://ethereum.stackexchange.com/questions/234/what-is-an-abi-and-why-is-it-needed-to-interact-with-contracts)，
    而編譯器會將 contract code compile 成符合 ABI 的格式，
@@ -49,3 +77,4 @@ tags:
 
 而在 gas 估算方面，要與實際情況做比較，
 要做出統計，True/False positive，之類的要做出來。
+
