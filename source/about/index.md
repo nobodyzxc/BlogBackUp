@@ -24,4 +24,4 @@ date: 2017-03-13 02:35:21
 希望可以找到一起玩耍的人。 :3
 
 > Uncalculable life, not incalculable.
-> I mean that life is impossible to calculate.
+> I mean that the life is impossible to calculate.
