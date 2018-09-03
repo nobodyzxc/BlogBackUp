@@ -1,5 +1,5 @@
 ---
-title: Vim Note （上）
+title: Vim Note （Basic Manipulation）
 date: 2017-01-22 23:32:56
 categories: Note
 tags:

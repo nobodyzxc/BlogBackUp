@@ -1,5 +1,5 @@
 ---
-title: Haskell Note （上）
+title: Haskell Note （Basic Syntax to Type）
 date: 2017-01-31 22:44:50
 categories: Note
 tags:
