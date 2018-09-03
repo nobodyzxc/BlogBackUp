@@ -76,26 +76,26 @@ wait to refer:[rule](http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html)
     qsort :: Void* -> Size_t -> Size_t -> (Void* -> Void*)* -> Void
     ```
 
-> 自已試著抽象成一套規則
+> 自已試著整理成一套規則（感覺會錯，歡迎指正（（逃）））
 
-先找變數宣告名稱，\w+ 後跟的是 ( ，則此宣告為一函式，否則為一般變數。
+先找變數宣告名稱，\w+ 後跟的是 ( ，則此宣告為一函數，否則為一般變數。
 
-函式右邊括號是他的參數，其名前有`*`代表他的回傳值是一個指標。
+函數右邊括號是他的參數，其名前有`*`代表他的回傳值是一個指標。
 `long *fn(fnArg)` -> `fn :: FnArg -> Long*`
 
 如果再右邊還有括號，則他的回傳指標為函數指標，其參數為該括號內容。
 `long *fn(fnArg)(argOfAfnRtnedByAFn)` -> `fn :: FnArg -> (ArgOfAfnRtnedByAFn -> Long)*`
 
-如果後面一直有括號，其指的函式類型就一直向右 eval 括號就好了。
+如果後面一直有括號，其指的函數類型就一直向右 eval 括號就好了。
 `long *fn(fnArg)(argOfAfnRtnedByAFn)(argOfAfnRtnedByAFnRtnedByAFn)`
--> `fn :: FnArg -> (ArgOfAfnRtnedByAFn -> (ArgOfAfnRtnedByAFnRtnedByAFn -> Long))*`
+-> `fn :: FnArg -> (ArgOfAfnRtnedByAFn -> (ArgOfAfnRtnedByAFnRtnedByAFn -> Long*))`
 
 注意指標可能出現的位置。
 `long (*fn(fnArg)(argOfAfnRtnedByAFn))(argOfAfnRtnedByAFnRtnedByAFn)`
 -> `fn :: fnArg -> (ArgOfAfnRtnedByAFn -> (ArgOfAfnRtnedByAFnRtnedByAFn -> Long)*)`
 
-`long (*fn(fnArg)(argOfAfnRtnedByAFn)(argOfAfnRtnedByAFnRtnedByAFn))`
--> `fn :: fnArg -> (ArgOfAfnRtnedByAFn -> (ArgOfAfnRtnedByAFnRtnedByAFn -> Long*))`
+`long (*fn(fnArg))(argOfAfnRtnedByAFn)(argOfAfnRtnedByAFnRtnedByAFn)`
+-> `fn :: fnArg -> (ArgOfAfnRtnedByAFn -> (ArgOfAfnRtnedByAFnRtnedByAFn -> Long))*`
 
 有時指標不只一個，看著辦吧。
 
@@ -104,13 +104,15 @@ wait to refer:[rule](http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html)
 變數名前有`*`代表他是一個指標，
 `long *ptr` -> `ptr :: Long*`
 
-如果右邊有括號，代表他是一個函數指標。
+如果右邊有閉括號，代表他是一個函數指標。
 `long (*ptr)(argOfApointedFn)` -> `ptr :: (ArgOfApointedFn -> Long)*`
 
-其指的函式類型就一直向右 eval 括號就好了。
+其指的函數類型就一直向右 eval 括號就好了。
 `long (*ptr)(argOfApointedFn)(argOfAFnRtnedByAFnPointedByAPtr)`
 -> `ptr :: (ArgOfApointedFn -> (ArgOfAFnRtnedByAFnPointedByAPtr -> Long))*`
 
 一樣，有時指標不只一個，看著辦吧。
 
-> 我都快搞不清我在寫啥了，轉 Haskell 的表達清楚很多。
+> 我都快搞不清我在寫啥了 @@
+
+Haskell 的 Type 表達清楚很多。XD
