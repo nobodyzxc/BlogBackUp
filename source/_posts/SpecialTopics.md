@@ -20,6 +20,33 @@ tags:
 
 <br><br>
 
+
+## (2018-10-14)
+
+折騰了一下 oyente，
+能發現 Re-entery point 的工具，
+是為了防範 the DAO 再次發生的檢測功能。
+
+solc 有些舊版本編不過去，
+需要還原，而 Arch 的滾動更新，
+沒辦法提供舊的。
+
+網路上找了其他方法，
+brew 跑 ruby 的 installation script，
+但 brew 是在 MACOS 上，
+想到最近剛好有看到 LinuxBrew 這東西。
+
+折騰了好一下就可以裝了。
+不過當中編譯不過，改了一點 Makefile。
+還遇到網路太慢，跟老爸借了 VPN XD。
+
+這個比較做完，
+可能會跟資管系教授那邊研究用 symbolic execution 做 reliable neural network。
+
+希望可以學到新的東西。
+
+也要邊看自己喜歡的東西了啊。
+
 ## (2018-10-01)
 
 參加了 SOS 實驗室的 meeting，
@@ -115,3 +142,11 @@ Me: (逃
 而在 gas 估算方面，要與實際情況做比較，
 要做出統計，True/False positive，之類的要做出來。
 
+## previous work
+
+用 Haskell 實作輔助開發導向的 EVM 投了大專生沒上，
+教授好像也沒有要我做下去的意思，就轉到了程式碼分析上，
+正好資管系那邊有教授在做，給我看了學長的碩論。
+
+為了專題也看了乙太坊黃皮書，算是對架構有了解一些。
+不過感覺還是有很多不知道的東西啊。
