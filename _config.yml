@@ -29,6 +29,13 @@ social:
     GitHub: https://github.com/nobodyzxc || github
     Google+: https://plus.google.com/114949079453512284672 || google
 
+links_title: GameLinks
+links:
+    2048: /2048
+    tank: /3dtank
+    打磚塊: /BreakoutClone
+
+
 # Directory
 source_dir: source
 public_dir: public
@@ -37,7 +44,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: [mycode/** , 3dtank/**]
+skip_render: [mycode/** , 3dtank/**, BreakoutClone/**]
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -82,7 +89,13 @@ theme: next
 deploy:
   type: git
   repo : git@github.com:nobodyzxc/nobodyzxc.github.io.git
-  branch: master
-
+  branch: master 
 # message board by Disqus
 disqus_shortname: https-nobodyzxc-github-io
+
+# --------------------------------------------------------------
+# background settings
+# --------------------------------------------------------------
+# add canvas-nest effect
+# see detail from https://github.com/hustcc/canvas-nest.js
+canvas_nest: true
