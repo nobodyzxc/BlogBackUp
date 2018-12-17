@@ -29,11 +29,11 @@ social:
     GitHub: https://github.com/nobodyzxc || github
     Google+: https://plus.google.com/114949079453512284672 || google
 
-links_title: GameLinks
-links:
-    2048: /2048
-    tank: /3dtank
-    打磚塊: /BreakoutClone
+#links_title: GameLinks
+#links:
+#    2048: /2048
+#    tank: /3dtank
+#    打磚塊: /BreakoutClone
 
 
 # Directory
