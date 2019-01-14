@@ -128,7 +128,7 @@ vi.resize(10)
       `va.swap(vb)`
     - `.clear`
 
-- function overlads
+- function overloads
   - relational
   - `swap`
     `swap(va , vb)`
