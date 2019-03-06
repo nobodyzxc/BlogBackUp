@@ -27,7 +27,7 @@ categories: Memoir
 當初選志願時，對資訊甚是排斥，主要是因為高中有過挫折吧。
 
 高中電腦課學 C++ ，當時適應非常不良。
-對於`using namespace std`及`cin >>` , `cout <<`，感到沒有 sence。
+對於`using namespace std`及`cin >>` , `cout <<`，感到沒有 sense。
 這些老師僅是帶過，我是有聽沒有懂，由於沒有深入講解，我對整個架構觀念，建立不太起來。
 
 > 一切是如此的抽象。
@@ -106,18 +106,18 @@ categories: Memoir
 <ol>
 <li>
 <blockquote>`#include<stdio.h>` vs `#include<iostream>`</blockquote>
-恩，我覺得前者比較有 sence ， 標準的 io 嘛，那 stream 是什麼鬼 ( murmuring )
+恩，我覺得前者比較有 sense ， 標準的 io 嘛，那 stream 是什麼鬼 ( murmuring )
 </li>
 <li>
 <blockquote>`using namespace std;`</blockquote>
 這個我不知要怎麼說了，完全沒有頭緒啊。
-可能你跟我講沒有用的話，`cout`要改成`std::cout`，我就會有 sence 了。
+可能你跟我講沒有用的話，`cout`要改成`std::cout`，我就會有 sense 了。
 </li>
 <li>
 <blockquote>`scanf("%c%d") printf("%c%d")` vs `cin >> cout <<`</blockquote>
 前者可能會有`&`符號的問題。
 不過比起莫名其妙且老是記不起來的`>>`與`<<`，
-我相信前者的 format string 和 `&` 對我比較有 sence
+我相信前者的 format string 和 `&` 對我比較有 sense
 不要說為了打比賽啊，但說起來 C 是 C++ 子集，要用 ++ 的庫講一下應該就會知道了吧？
 況且`stdio.h`的東西比`iostream`的快啊，怎不教`cstdio`?
 </li>
@@ -129,7 +129,7 @@ categories: Memoir
 <li>
 <blockquote>`'\n'` vs `<< endl;`</blockquote>
 換行，好像過了很久才明白 `endl` 是 end line 的意思，
-相形之下 `\n` new line 似乎比較有 sence。
+相形之下 `\n` new line 似乎比較有 sense。
 </li>
 </ol>
 
@@ -149,7 +149,7 @@ VB6 的視窗化，讓我覺得一切都太麻煩，而 Linux 簡單明瞭，深
 
 然而一切的一切在之後的之後，回來看這些事總覺得 too naive。
 
-### 嘛
+### ？
 
 雖然常常感嘆高中沒得引發興趣，踏入這領域，不過至少現在是在路上的。
 > 我浪費了太多時間在別人無意義的程式上了，從現在起，我要寫我自己的。
