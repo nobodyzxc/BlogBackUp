@@ -22,21 +22,10 @@ permalink: :year/:month/:day/:title/
 permalink_defaults:
 
 social:
-    Blogger: https://incalpcs.blogspot.com
-    YouTube: https://www.youtube.com/channel/UCPgvp2rLwglsLVCrqVlQXuA
-    Zhihu: https://www.zhihu.com/people/nobodyzxc/activities
-    Instagram: https://www.instagram.com/nobodyzxc.tw/
-    GitHub: https://github.com/nobodyzxc
-    Google+: https://plus.google.com/114949079453512284672
-
-social_icons:
-  enable: true
-  Blogger: blogger
-  YouTube: youtube
-  Zhihu: zhihu
-  Instagram: instagram
-  GitHub: github
-  Google+: google
+    Blogger: https://incalpcs.blogspot.com || google
+    YouTube: https://www.youtube.com/channel/UCPgvp2rLwglsLVCrqVlQXuA || youtube
+    Instagram: https://www.instagram.com/nobodyzxc.tw/ || instagram
+    GitHub: https://github.com/nobodyzxc || github
 
 #links_title: GameLinks
 #links:
