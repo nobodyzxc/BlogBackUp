@@ -15,6 +15,9 @@ wait to refer:[rule](http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html)
 <link href="/mycode/c-syntax-path.css" rel="stylesheet" type="text/css">
 <p></p>
 <p></p>
+
+> The flip side of this is that you have to deal with old mistakes and with compatibility problems. For example, I consider the C declarator syntax an experiment that failed.-Bjarne Stroustrup, in his SlashDot interview on 2/25/2000.
+
 > 我嘗試寫成 Haskell 的定義型態。
 > 那個 Type\* 能理解就好了 （逃
 
@@ -76,11 +79,20 @@ wait to refer:[rule](http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html)
     qsort :: Void* -> Size_t -> Size_t -> (Void* -> Void*)* -> Void
     ```
 
-> 自已試著整理成一套規則（感覺會錯，歡迎指正（（逃）））
+1. start with the identifier
+2. look to the right for brackets[ ] or parentheses()
+3. look to the left for asterisks
+4. remember that parentheses group
+5. finally, look at the type (eg. int)
 
-先找變數宣告名稱，\w+ 後跟的是 ( ，則此宣告為一函數，否則為一般變數。
+[reference link](http://cseweb.ucsd.edu/~ricko/rt_lt.rule.html)
 
-函數右邊括號是他的參數，其名前有`*`代表他的回傳值是一個指標。
+
+重點是先往右讀，然後讀到括號，再往左讀，如此往復。
+先找變數宣告名稱，\w+ 後跟的是 ( ，則此宣告為一函數，否則為變數。
+
+先往右，遇到 `(`，為函數，參數為 fnArg。
+往左讀，遇到 `*`，回傳為一指標，指向 long。
 `long *fn(fnArg)` -> `fn :: FnArg -> Long*`
 
 如果再右邊還有括號，則他的回傳指標為函數指標，其參數為該括號內容。
@@ -99,6 +111,13 @@ wait to refer:[rule](http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html)
 
 有時指標不只一個，看著辦吧。
 
+> Illegal combinations include:
+	 []() - cannot have an array of functions
+	 ()() - cannot have a function that returns a function
+	 ()[] - cannot have a function that returns an array
+
+所以其實上面五項，應該只有幾個是 Illegal 的（from reference）
+
 > 其實回傳函數指標和回傳函數在 C 裡是一樣的事情
 
 變數名前有`*`代表他是一個指標，
@@ -113,6 +132,5 @@ wait to refer:[rule](http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html)
 
 一樣，有時指標不只一個，看著辦吧。
 
-> 我都快搞不清我在寫啥了 @@
-
-Haskell 的 Type 表達清楚很多。XD
+我都快搞不清我在寫啥了（
+Haskell 的 Type 表達比較好理解（

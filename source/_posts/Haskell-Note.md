@@ -294,21 +294,14 @@ type AssocList k v = [(k,v)]
 ```
 
 
-## Self suspicion
+## Questions?
 
 * tuple likes struct , while list likes array ?
-* 試想 zip implement , 是 zip (x:xs) (y:ys) = (x , y) : zip xs ys
-  而不是 list comprehension [... |  x<-xs , y<-ys , ...] ,
-  這兩種使用 list element 的方式差別是什麼 ,
-  後者如何以 recursion 實現。
-  並考慮一下迴圈是否有類似的狀況。
-* 那就是右摺疊可以處理無限長度的資料結構，而左摺疊不可以。將無限 List 從中斷開執行左摺疊是可以的，不過若是向右，就永遠到不了頭了。
-  （覺得怪怪的，這敘述，搭配一下實例思考一下）
+* 那就是右摺疊可以處理無限長度的資料結構，而左摺疊不可以。
+  （因為 Lazy Eval 所以 foldr 可以跑出結果，foldl 會無窮）
 ```haskell
 head' :: [a] -> a
 head' = foldr1 (\x _ -> x)
 last' :: [a] -> a
 last' = foldl1 (\_ x -> x)
 ```
-  -> 好像是惰性求值的關係，可以從無限開始跑可是變數要用 anonymous 表示無限那端。
-* 自定義的 `:-:` 沒有定義，用起來直接是串起來的效果？!
