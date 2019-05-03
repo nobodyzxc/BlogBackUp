@@ -81,6 +81,7 @@ A world without loop , but recursion。
 
 
 ## Data
+
 #### type
 |     Type    |     Note     |
 |:-----------:|:------------:|
@@ -91,7 +92,9 @@ A world without loop , but recursion。
 |    Double   ||
 |     Char    ||
 |     Maybe   | Nothing or single elm |
+
 #### structure
+
 |     Structure    |     Note     |
 |:-----------:|:------------:|
 |     List    | [] |
