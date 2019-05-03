@@ -201,13 +201,3 @@ tags:
   A: 在念計概的時候有提到 record 這個概念，就是不同型態的資料的集合，所以 tuple 和 struct 都可以算是 record 的一種實作吧。不過 Haskell 也有 Record Syntax。而 list 不是 array，就是 linked list，要 array 的話 Scheme 有 vector，Haskell 裡應該也有類似的東西。
 * Q: 試想 zip implement, 是 `zip (x:xs) (y:ys) = (x, y) : zip xs ys` 而不是 list comprehension [... |  x<-xs, y<-ys, ...]，這兩種使用 list element 的方式差別是什麼，後者如何以 recursion 實現。並考慮一下迴圈是否有類似的狀況。
   A: 上述的 List Comprehension 會是兩層迴圈的情形（窮舉），所以沒辦法使用。之後看到唐鳳介紹 FP 時用 Haskell List Comprehension 做的[例子](https://stackoverflow.com/questions/27333923/haskell-write-zip-function-using-list-comprehension)，估計這 List Comprehension 的內部也有個 zip 的實現在用 pattern matching 去為參數配對吧。
-* 那就是右摺疊可以處理無限長度的資料結構，而左摺疊不可以。將無限 List 從中斷開執行左摺疊是可以的，不過若是向右，就永遠到不了頭了。
-  （覺得怪怪的，這敘述，搭配一下實例思考一下）
-
-```Haskell
-head' :: [a] -> a
-head' = foldr1 (\x _ -> x)
-last' :: [a] -> a
-last' = foldl1 (\_ x -> x)
-```
-  -> 好像是惰性求值的關係，可以從無限開始跑可是變數要用 anonymous 表示無限那端。
