@@ -86,7 +86,7 @@ alter col_x drop default
 * comment
 ```sql
 -- it's a comment , MySQL 3.23.3 supports ,
--- I like the style becuase it likes haskell
+-- I like the style becuase it's like haskell
 
 #  it's also a comment
 
