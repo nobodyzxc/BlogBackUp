@@ -22,10 +22,12 @@ permalink: :year/:month/:day/:title/
 permalink_defaults:
 
 social:
+    GitHub: https://github.com/nobodyzxc || github
+    Telegram: https://t.me/nobodyzxc || telegram
     Blogger: https://incalpcs.blogspot.com || google
     YouTube: https://www.youtube.com/channel/UCPgvp2rLwglsLVCrqVlQXuA || youtube
+    FaceBook: https://www.facebook.com/nobodyzxc.tw || facebook
     Instagram: https://www.instagram.com/nobodyzxc.tw/ || instagram
-    GitHub: https://github.com/nobodyzxc || github
 
 #links_title: GameLinks
 #links:
