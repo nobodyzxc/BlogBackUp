@@ -80,7 +80,7 @@ sudo dd bs=4M if=/home/zxc/Downloads/archlinux-2019.02.01-x86_64.iso of=/dev/sdb
 command: g
 ```
 
-切 /efi
+切 `/efi`
 ```
 command: n
 partition number: (default=1)
@@ -88,7 +88,7 @@ first sector: (default=2048)
 last sector: +260M
 ```
 
-切 /
+切 `/`
 ```
 command: n
 partition number: (default=2)
@@ -96,7 +96,7 @@ first sector: (default)
 last sector: +32G
 ```
 
-切 swap，我有 16G RAM，切 16G swap (多切一點ww）。
+切 `swap`，我有 16G RAM，切 16G swap (多切一點ww）。
 ```
 command: n
 partition number: (default=3)
@@ -104,7 +104,7 @@ first sector: (default)
 last sector: +16G
 ```
 
-切 /home，切完。
+切 `/home`，切完。
 ```
 command: n
 partition number: (default=4)
@@ -253,7 +253,7 @@ echo "kabaneri" > /etc/hostname
 127.0.1.1      kabaneri.localdomain      kabaneri
 ```
 
-### 建立開機映像檔 & 設定密碼 & 
+### 建立開機映像檔 & 設定密碼
 
 ```
 mkinitcpio -p linux
@@ -354,13 +354,19 @@ systemctl enable lightdm.service # 開機後永久啟用
 sudo pacman -S i3-gaps i3lock i3-status
 ```
 
-### 中文化
+### 中文化 & 輸入法
 
 ```
 yay -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-roboto ttf-roboto-mono
 yay -S ttf-dejavu ttf-droid ttf-freefont ttf-hack ttf-liberation
 yay -S adobe-source-code-pro-fonts cantarell-fonts gsfonts powerline-fonts ttf-freefont
+sudo pacman -S ibus ibus-chewing
+# ibus-daemon & 才能用喔，要 autostart 要看你是什麼桌面環境，再進行設定。
 ```
+
+[ibus daemon reference](https://askubuntu.com/questions/135548/how-to-add-ibus-to-start-up-applications)
+[daemon program autostart](https://timleland.com/how-to-run-a-linux-program-on-startup/)
+
 
 ### Google Chrome
 
@@ -368,4 +374,4 @@ yay -S adobe-source-code-pro-fonts cantarell-fonts gsfonts powerline-fonts ttf-f
 yay -S google-chrome
 ```
 
-reference: [archwiki](https://wiki.archlinux.org/index.php/Installation_guide) [電腦故我在](https://blog.allenchou.cc/arch-linux-tutorial/)
+reference: [archlinux wiki](https://wiki.archlinux.org/index.php/Installation_guide) [電腦故我在](https://blog.allenchou.cc/arch-linux-tutorial/)
