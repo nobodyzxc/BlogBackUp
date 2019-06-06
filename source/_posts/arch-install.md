@@ -306,8 +306,9 @@ usermod zxc -G wheel
 
 ### 下載 yay
 
+do follows as normal user
+
 ```
- do follow as zxc
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
