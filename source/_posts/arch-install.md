@@ -1,7 +1,9 @@
 ---
 title: 簡明 arch 安裝指南
 date: 2019-06-06 19:46:13
-categories: linux arch
+categories: note
+tags:
+- linux
 ---
 
 <center>
@@ -12,9 +14,9 @@ categories: linux arch
 
 <br><br>
 
-# 安裝前準備
+## 安裝前準備
 
-## USB flash installation media
+### USB flash installation media
 
 首先我們要準備一支 live USB。
 下載好 Arch Linux [ISO 檔](https://www.archlinux.org/download/)
@@ -40,7 +42,7 @@ dd bs=4M if=path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 
 所以指令為`sudo dd bs=4M if=/home/zxc/Downloads/archlinux-2019.02.01-x86_64.iso of=/dev/sdb && sync`
 
-## 開機
+### 開機
 
 接著我們將 USB 裝上欲安裝的主機，然後
 
@@ -51,7 +53,7 @@ dd bs=4M if=path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 
 以 root 進入 zsh。
 
-## zsh 設定
+### zsh 設定
 
 鍵盤 default US 有需要再參考 wiki。
 啟動模式 同上。
@@ -60,7 +62,7 @@ dd bs=4M if=path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 
 更新時間 `timedatectl set-ntp true`，`timedatectl status` 查看是否成功。
 
-## 硬碟切割
+### 硬碟切割
 
 看你要把 archlinux 裝在哪顆硬碟上，此次為 `/dev/sda`。
 
@@ -141,7 +143,7 @@ partition type: 20
 command: w
 ```
 
-## 格式化硬碟
+### 格式化硬碟
 
 vfat 格式化 `/efi` 分區。
 ```
@@ -160,7 +162,7 @@ mkswap /dev/sda3
 swapon /dev/sda3
 ```
 
-## 掛載切好的磁區
+### 掛載切好的磁區
 
 ```
 mount /dev/sda2 /mnt
@@ -168,9 +170,9 @@ mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 ```
 
-# 安裝
+## 安裝
 
-## 鏡像站設定（加速用，非必要）
+### 鏡像站設定（加速用，非必要）
 
 `vim /etc/pacman.conf` 加入交大鏡像站。
 
@@ -193,9 +195,9 @@ Include = /etc/pacman.d/mirrorlist
 pacstrap /mnt  base base-devel
 ```
 
-# 系統配置
+## 系統配置
 
-## fstab
+### fstab
 
 生成 fstab 檔案，定義儲存設備的初始化和連接系統方式。
 
@@ -206,7 +208,7 @@ pacstrap /mnt  base base-devel
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-## change root
+### change root
 
 切進硬碟當 root 囉！
 
@@ -214,7 +216,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ```
 
-## 時區 & 語言 & 網路
+### 時區 & 語言 & 網路
 
 ```
  ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
@@ -246,14 +248,14 @@ echo "kabaneri" > /etc/hostname
 127.0.1.1      kabaneri.localdomain      kabaneri
 ```
 
-## 建立開機映像檔 & 設定密碼 & 
+### 建立開機映像檔 & 設定密碼 & 
 
 ```
 mkinitcpio -p linux
 passwd
 ```
 
-## 啟動載入程式 & 安裝網路工具
+### 啟動載入程式 & 安裝網路工具
 
 ```
 pacman -Sy grub os-prober efibootmgr
@@ -277,15 +279,15 @@ umount -R /mnt
 reboot
 ```
 
-# 安裝系統後
+## 安裝系統後
 
-## 手動設定 DNS（防雷）
+### 手動設定 DNS（防雷）
 
 ```
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 ```
 
-## 用戶
+### 用戶
 
 new user named zxc
 
@@ -297,7 +299,7 @@ passwd zxc
 usermod zxc -G wheel
 ```
 
-## 下載 yay
+### 下載 yay
 
 ```
  do follow as zxc
@@ -306,7 +308,7 @@ cd yay
 makepkg -si
 ```
 
-## 桌面環境
+### 桌面環境
 
 i3 擁護派一定要 i3。
 然後既然是桌機，配備又好那，就漂亮點，裝 deepin 吧 :)
@@ -346,7 +348,7 @@ systemctl enable lightdm.service # 開機後永久啟用
 sudo pacman -S i3-gaps i3lock i3-status
 ```
 
-## 中文化
+### 中文化
 
 ```
 yay -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-roboto ttf-roboto-mono
@@ -354,7 +356,7 @@ yay -S ttf-dejavu ttf-droid ttf-freefont ttf-hack ttf-liberation
 yay -S adobe-source-code-pro-fonts cantarell-fonts gsfonts powerline-fonts ttf-freefont
 ```
 
-## Google Chrome
+### Google Chrome
 
 ```
 yay -S google-chrome
