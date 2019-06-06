@@ -1,7 +1,7 @@
 ---
 title: 簡明 arch 安裝指南
 date: 2019-06-06 19:46:13
-categories: note
+categories: Note
 tags:
 - linux
 ---
