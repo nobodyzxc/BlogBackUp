@@ -362,4 +362,4 @@ yay -S adobe-source-code-pro-fonts cantarell-fonts gsfonts powerline-fonts ttf-f
 yay -S google-chrome
 ```
 
-reference: [archwiki](https://wiki.archlinux.org/index.php/Installation_guide_(正體中文)) [電腦故我在](https://blog.allenchou.cc/arch-linux-tutorial/)
+reference: [archwiki](https://wiki.archlinux.org/index.php/Installation_guide) [電腦故我在](https://blog.allenchou.cc/arch-linux-tutorial/)
