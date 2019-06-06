@@ -40,7 +40,10 @@ dd bs=4M if=path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 
 要把 sdx 換成 sdb 那我們下載的 iso 位置為 `/home/zxc/Downloads/archlinux-2019.02.01-x86_64.iso`
 
-所以指令為`sudo dd bs=4M if=/home/zxc/Downloads/archlinux-2019.02.01-x86_64.iso of=/dev/sdb && sync`
+所以我們的指令為：
+
+`sudo dd bs=4M if=/home/zxc/Downloads/archlinux-2019.02.01-x86_64.iso of=/dev/sdb && sync`
+
 
 ### 開機
 
