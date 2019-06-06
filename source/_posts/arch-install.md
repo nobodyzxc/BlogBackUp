@@ -197,7 +197,7 @@ Include = /etc/pacman.d/mirrorlist
 
 開始安裝系統套件。
 ```
-pacstrap /mnt  base base-devel
+pacstrap /mnt base base-devel
 ```
 
 ## 系統配置
@@ -224,7 +224,7 @@ arch-chroot /mnt
 ### 時區 & 語言 & 網路
 
 ```
- ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 ln -sf /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 hwclock --systohc
 ```
@@ -234,7 +234,7 @@ hwclock --systohc
 pacman -S vim
 ```
 
-編輯 /etc/locale.gen 反註解 `en_US.UTF-8 UTF-8` 及 `zh_TW.UTF-8 UTF-8`。
+編輯 `/etc/locale.gen` 反註解 `en_US.UTF-8 UTF-8` 及 `zh_TW.UTF-8 UTF-8`。
 然後用 `locale-gen` 生成檔案。
 
 加入環境變數 `echo "LANG=en_US.UTF-8" > /etc/locale.conf`。
@@ -297,7 +297,7 @@ echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 new user named zxc
 
 ```
-pacman  -S sudo
+pacman -S sudo
 vim /etc/sudoers # uncomment %wheel ALL=(ALL) ALL
 useradd -m -u 1001 zxc
 passwd zxc
@@ -317,7 +317,7 @@ makepkg -si
 ### 桌面環境
 
 i3 擁護派一定要 i3。
-然後既然是桌機，配備又好那，就漂亮點，裝 deepin 吧 :)
+然後既然是桌機，配備又好，那就漂亮點，裝 deepin 吧 :)
 
 [Deepin reference](https://www.ostechnix.com/install-deepin-desktop-environment-arch-linux/)
 
@@ -338,14 +338,14 @@ yay -S lightdm-webkit-theme-aether
 vim /etc/lightdm/lightdm.conf
 ```
 
-加上（改成）
+找到 `#greeter-session=example-gtk-gnome` 下面加上（或是反註解直接改）
 ```
 greeter-session=lightdm-webkit2-greeter
 ```
 
 ```
 systemctl start lightdm.service # 在命令列啟用，先是試開不開得起來，以免悲劇
-systemctl enable lightdm.service # 開機後永久啟用
+systemctl enable lightdm.service # 成功之後再下這行，開機後永久啟用
 ```
 
 [i3wm reference]()
