@@ -357,9 +357,9 @@ sudo pacman -S i3-gaps i3lock i3-status
 ### 中文化 & 輸入法
 
 ```
-yay -S noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-roboto ttf-roboto-mono
 yay -S ttf-dejavu ttf-droid ttf-freefont ttf-hack ttf-liberation
 yay -S adobe-source-code-pro-fonts cantarell-fonts gsfonts powerline-fonts ttf-freefont
+yay -S noto-fonts noto-fonts-emoji ttf-roboto ttf-roboto-mono noto-fonts-cjk
 sudo pacman -S ibus ibus-chewing
 # ibus-daemon & 才能用喔，要 autostart 要看你是什麼桌面環境，再進行設定。
 ```
