@@ -5,6 +5,7 @@ categories: Note
 tags:
 - haskell
 - lambda
+- fp
 ---
 <center>
 A world without loop , but recursion。

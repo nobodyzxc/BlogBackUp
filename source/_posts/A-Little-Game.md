@@ -5,6 +5,7 @@ categories: Fun
 tags:
 - game
 - logic
+- fp
 ---
 
 <center>

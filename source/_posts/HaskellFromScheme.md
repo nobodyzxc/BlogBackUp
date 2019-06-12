@@ -6,6 +6,7 @@ tags:
 - haskell
 - scheme
 - lambda
+- fp
 ---
 <center>
 

@@ -5,7 +5,7 @@ categories: Memoir
 mathjax: true
 tags:
 - flolac
-- functional programming
+- fp
 - logic
 - lambda
 ---
