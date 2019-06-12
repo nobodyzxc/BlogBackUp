@@ -2,6 +2,8 @@
 title: functional thursday ＃73
 date: 2019-05-03 10:45:51
 categories: Memoir
+tags:
+- lambda
 ---
 
 <center>

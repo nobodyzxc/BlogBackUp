@@ -5,6 +5,7 @@ categories: Note
 tags:
 - haskell
 - scheme
+- lambda
 ---
 <center>
 

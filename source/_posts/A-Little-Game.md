@@ -4,6 +4,7 @@ date: 2018-02-21 21:35:51
 categories: Fun
 tags:
 - game
+- logic
 ---
 
 <center>

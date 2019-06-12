@@ -4,6 +4,7 @@ date: 2017-01-31 22:44:50
 categories: Note
 tags:
 - haskell
+- lambda
 ---
 <center>
 A world without loop , but recursion。

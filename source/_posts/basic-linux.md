@@ -4,6 +4,7 @@ date: 2017-05-30 22:41:52
 categories: Fun
 tags:
 - cygwin
+- linux
 ---
 
 <center>
