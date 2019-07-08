@@ -7,7 +7,7 @@
     {
      "name": "os",
      "children": [
-      {"name": "Windows", "value": 25},
+      {"name": "Windows/Cygwin", "value": 25},
       {"name": "Ubuntu/Mint", "value": 30},
       {"name": "Archlinux/Antergos", "value": 35},
       {"name": "Nix", "value": 10}
@@ -18,7 +18,7 @@
      "children": [
       {"name": "vim", "value": 65},
       {"name": "git", "value": 60},
-      {"name": "shell", "value": 65},
+      {"name": "shell/GNU utility", "value": 65},
       {"name": "hexo", "value": 30}
      ]
     }

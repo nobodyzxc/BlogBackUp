@@ -1,5 +1,5 @@
 ---
-title: 簡明 arch 安裝指南
+title: 簡明 Arch 安裝指南
 date: 2019-06-06 19:46:13
 categories: Note
 tags:
