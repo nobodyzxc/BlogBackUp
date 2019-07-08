@@ -1459,7 +1459,7 @@ hexo-fs@^0.1.5:
     escape-string-regexp "^1.0.5"
     graceful-fs "^4.1.4"
 
-hexo-fs@^0.2.0:
+hexo-fs@^0.2.0, hexo-fs@^0.2.2:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/hexo-fs/-/hexo-fs-0.2.3.tgz#c3a81b46e457dfafc56d87c78ef114104f4a3e41"
   integrity sha512-rLB1rMVUW3csAljvJgHfyjemL0BrmcUZfBf9hJe6S0pA53igFa3ON0PFwomvoLs1Wdmjs9Awnw9Tru4PjWFSlQ==
@@ -1625,6 +1625,14 @@ hexo-server@^0.2.0:
     object-assign "^4.0.1"
     opn "^4.0.0"
     serve-static "^1.10.0"
+
+hexo-tag-cloud@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/hexo-tag-cloud/-/hexo-tag-cloud-2.1.1.tgz#059423b95149c4641fc1d9f70e02d9f707099c4a"
+  integrity sha512-U6uoxvgPA0i8cwzCG5cPChMFUvDQHwNuWzYWu8kqM+5xgiirMIXG4PrEV0nJMEm5oGbl3zJHGOE71J8ixQYPJQ==
+  dependencies:
+    hexo-fs "^0.2.2"
+    hexo-log "^0.2.0"
 
 hexo-util@^0.6.0, hexo-util@^0.6.3:
   version "0.6.3"

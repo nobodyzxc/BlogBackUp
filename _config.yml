@@ -134,12 +134,12 @@ live2d:
       vHeadPos: 0.618
   display:
       superSample: 4
-      width: 300
-      height: 600
+      width: 200
+      height: 400
       position: right
       #position: left
-      hOffset: 0
-      vOffset: -150
+      hOffset: -35 #-75
+      vOffset: -50
   mobile:
       show: true
       scale: 0.5
