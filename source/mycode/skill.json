@@ -48,7 +48,7 @@
     {
      "name": "fun",
      "children": [
-      {"name": "vs6", "value": 30},
+      {"name": "vb6", "value": 30},
       {"name": "c#", "value": 30},
       {"name": "js", "value": 50},
       {"name": "java", "value": 20},
