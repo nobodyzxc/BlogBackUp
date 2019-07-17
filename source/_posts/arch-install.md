@@ -372,6 +372,8 @@ sudo pacman -S ibus ibus-chewing
 
 ```
 yay -S google-chrome
+# or chromium
+sudo pacman -S chromium
 ```
 
 reference: [archlinux wiki](https://wiki.archlinux.org/index.php/Installation_guide) [電腦故我在](https://blog.allenchou.cc/arch-linux-tutorial/)
