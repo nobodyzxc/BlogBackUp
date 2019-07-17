@@ -224,7 +224,7 @@ arch-chroot /mnt
 ### 時區 & 語言 & 網路
 
 ```
-ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 ln -sf /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 hwclock --systohc
 ```
@@ -332,13 +332,13 @@ yay -S lightdm-webkit2-greeter
 yay -S lightdm-webkit-theme-aether
 ```
 
-接著設定 dm，deepin 用的是 lightdm。
+接著設定 dm，deepin 用的是 lightdm，這部份 yay 自動幫你做，你可以確認一下。
 
 ```
 vim /etc/lightdm/lightdm.conf
 ```
 
-找到 `#greeter-session=example-gtk-gnome` 下面加上（或是反註解直接改）
+找不到原本的 `#greeter-session=example-gtk-gnome`，而是已經被換成：
 ```
 greeter-session=lightdm-webkit2-greeter
 ```
@@ -351,7 +351,7 @@ systemctl enable lightdm.service # 成功之後再下這行，開機後永久啟
 [i3wm reference]()
 
 ```
-sudo pacman -S i3-gaps i3lock i3-status
+sudo pacman -S i3-gaps i3lock i3status
 ```
 
 ### 中文化 & 輸入法
