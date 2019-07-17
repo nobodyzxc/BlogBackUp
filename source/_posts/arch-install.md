@@ -362,6 +362,7 @@ yay -S adobe-source-code-pro-fonts cantarell-fonts gsfonts powerline-fonts ttf-f
 yay -S noto-fonts noto-fonts-emoji ttf-roboto ttf-roboto-mono noto-fonts-cjk
 sudo pacman -S ibus ibus-chewing
 # ibus-daemon & 才能用喔，要 autostart 要看你是什麼桌面環境，再進行設定。
+# 然後進 ibus-setup 添加中文輸入法
 ```
 
 [ibus daemon reference](https://askubuntu.com/questions/135548/how-to-add-ibus-to-start-up-applications)
