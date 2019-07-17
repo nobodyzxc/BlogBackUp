@@ -88,7 +88,7 @@ first sector: (default=2048)
 last sector: +260M
 ```
 
-切 `/`
+切 `/` （後來我因為裝 cuda, 會佔用 /usr 空間，所以提升至 64G）
 ```
 command: n
 partition number: (default=2)
@@ -127,19 +127,19 @@ partition type: 1
 
 ```
 command: t
-partition number: 1
+partition number: 2
 partition type: 20
 ```
 
 ```
 command: t
-partition number: 1
+partition number: 3
 partition type: 19
 ```
 
 ```
 command: t
-partition number: 1
+partition number: 4
 partition type: 20
 ```
 
