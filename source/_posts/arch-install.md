@@ -345,6 +345,7 @@ vim /etc/lightdm/lightdm.conf
 greeter-session=lightdm-webkit2-greeter
 ```
 
+接下來把 dm 加到啟動設定。
 ```
 systemctl start lightdm.service # 在命令列啟用，先是試開不開得起來，以免悲劇
 systemctl enable lightdm.service # 成功之後再下這行，開機後永久啟用
