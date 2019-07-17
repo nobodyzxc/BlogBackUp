@@ -348,7 +348,7 @@ systemctl start lightdm.service # 在命令列啟用，先是試開不開得起�
 systemctl enable lightdm.service # 成功之後再下這行，開機後永久啟用
 ```
 
-[i3wm reference]()
+[i3wm reference](https://wiki.archlinux.org/index.php/i3)
 
 ```
 sudo pacman -S i3-gaps i3lock i3status
