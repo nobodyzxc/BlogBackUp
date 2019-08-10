@@ -9,7 +9,6 @@ tags:
 
 <center>
 本篇主要內容為在 Cygwin 下一些簡單的 BASH 用法。
-
 </center>
 
 <!-- more -->
