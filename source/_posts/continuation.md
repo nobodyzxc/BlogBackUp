@@ -552,6 +552,13 @@ x ;=> 4
 ... inf looping
 ```
 
+抽像點來看，task 大概可以分成兩個部份，`pause` 前和後。
+每次遇到 `pause` 時，就會把 continuation 保存起來，然後 switch task，
+然後每個 task 跑過一遍，就會回來 `pause` 這個位置，`pause` 會被 `#f` 取代掉，
+接著 `display`，do named let recursive call，接著重新從開始跑到 `pause`，
+reserve continuation, switch task... inf looping...
+
+
 ## Yin-Yang Puzzle
 
 陰陽謎題 (Yin-Yang Puzzle) 據說是 David Madore 在 1999 年時，試圖去輸出的一個序列。
@@ -670,3 +677,5 @@ let*
 
 continuation 的紀錄大概就到這裡，tspl 裡面有[五個練習](https://scheme.com/tspl4/further.html)，
 Exercise 3.3.[1-5]，這裡有 Exercise 3.3.[1-4] 的[解答](https://scheme.com/tspl4/answers.html)。
+
+之後應該會對 CPS 的部份做一次探討。
