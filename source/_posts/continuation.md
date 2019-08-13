@@ -552,7 +552,7 @@ x ;=> 4
 ... inf looping
 ```
 
-抽像點來看，task 大概可以分成兩個部份，`pause` 前和後。
+抽象點來看，task 大概可以分成兩個部份，`pause` 前和後。
 每次遇到 `pause` 時，就會把 continuation 保存起來，然後 switch task，
 然後每個 task 跑過一遍，就會回來 `pause` 這個位置，`pause` 會被 `#f` 取代掉，
 接著 `display`，do named let recursive call，接著重新從開始跑到 `pause`，
