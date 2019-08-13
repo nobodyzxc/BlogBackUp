@@ -6,11 +6,16 @@ categories:
 
 <center>
 先來排個議程，或許可以把心得直接寫在本文。
+排的結果依舊是...
 </center>
 
 <!-- more -->
 
 <br><br>
+
+# 起手吐槽
+
+依舊是滿滿 PL 加一點 Block Chain... 說好的 AI 呢？
 
 # COSCUP DAY1
 
