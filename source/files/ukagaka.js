@@ -481,13 +481,14 @@ function loadUItext(options, label) {
   return options.modelConfig.ui[label];
 }
 
-
-var node = document.createElement("div");
-var widget = document.getElementById("live2d-widget")
-node.id = "smart";
-node.style.position = "absolute";
-//node.style.bottom = "300px";
-node.style.width = widget.style.width;
-//node.style.left = "30px";
-widget.insertBefore(node, widget.firstChild);
-init(node, default_option);
+$(window).on("load", function(){
+  var node = document.createElement("div");
+  var widget = document.getElementById("live2d-widget")
+  node.id = "smart";
+  node.style.position = "absolute";
+  //node.style.bottom = "300px";
+  node.style.width = widget.style.width;
+  //node.style.left = "30px";
+  widget.insertBefore(node, widget.firstChild);
+  init(node, default_option);
+}
