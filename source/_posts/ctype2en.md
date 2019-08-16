@@ -11,8 +11,8 @@ wait to refer:[rule](http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html)
 </center>
 <!-- more -->
 <br><br>
-<script src="/mycode/c-syntax-patch.js"></script>
-<link href="/mycode/c-syntax-patch.css" rel="stylesheet" type="text/css">
+<script src="/files/c-syntax-patch.js"></script>
+<link href="/files/c-syntax-patch.css" rel="stylesheet" type="text/css">
 
 > The flip side of this is that you have to deal with old mistakes and with compatibility problems. For example, I consider the C declarator syntax an experiment that failed.-Bjarne Stroustrup, in his SlashDot interview on 2/25/2000.
 

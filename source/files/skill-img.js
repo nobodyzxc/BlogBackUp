@@ -65,7 +65,7 @@ function autoBox() {
 }
 )});
   main.variable(observer("data")).define("data", ["d3"], function(d3){return(
-d3.json("/mycode/skill.json")
+d3.json("/files/skill.json")
 )});
   main.variable(observer("tree")).define("tree", ["d3","radius"], function(d3,radius){return(
 data => d3.tree()

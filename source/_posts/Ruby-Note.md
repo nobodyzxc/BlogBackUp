@@ -19,8 +19,8 @@ wait to refer:
 
 <!-- more -->
 <br><br>
-<script src="/mycode/ruby-syntax-patch.js"></script>
-<link href="/mycode/scheme-syntax-patch.css" rel="stylesheet" type="text/css">
+<script src="/files/ruby-syntax-patch.js"></script>
+<link href="/files/scheme-syntax-patch.css" rel="stylesheet" type="text/css">
 ## Basic
 跟 Python 一樣是動態、腳本語言，所謂變數只是 name binding，
 (Philosophy 可是很不同呢～)

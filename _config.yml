@@ -44,7 +44,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: [mycode/** , 3dtank/**, BreakoutClone/**]
+skip_render: [files/** , 3dtank/**, BreakoutClone/**]
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -138,8 +138,11 @@ live2d:
       height: 400
       position: right
       #position: left
-      hOffset: -35 #-75
-      vOffset: -50
+      hOffset: 0 #55 #68
+      vOffset: -95 #-60
+  #dialog:
+  #    enable: true
+  #    hitokoto: true
   mobile:
       show: true
       scale: 0.5

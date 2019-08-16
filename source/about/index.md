@@ -56,7 +56,7 @@ tags:
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
 
 // Your notebook, compiled as an ES module.
-import notebook from "/mycode/skill-img.js";
+import notebook from "/files/skill-img.js";
 
 // Load the notebook, observing its cells with a default Inspector
 // that simply renders the value of each cell into the provided DOM node.

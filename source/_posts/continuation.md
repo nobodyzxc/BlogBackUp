@@ -14,7 +14,7 @@ tags:
 對，就是那個 continuation。
 </center>
 
-<link href="/mycode/scheme-syntax-patch.css" rel="stylesheet" type="text/css">
+<link href="/files/scheme-syntax-patch.css" rel="stylesheet" type="text/css">
 
 <!-- more -->
 
