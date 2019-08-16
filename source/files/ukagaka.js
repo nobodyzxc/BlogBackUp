@@ -491,4 +491,4 @@ $(window).on("load", function(){
   //node.style.left = "30px";
   widget.insertBefore(node, widget.firstChild);
   init(node, default_option);
-}
+});
