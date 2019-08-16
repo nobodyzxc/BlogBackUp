@@ -97,7 +97,7 @@ theme: next
 deploy:
   type: git
   repo : git@github.com:nobodyzxc/nobodyzxc.github.io.git
-  branch: master 
+  branch: master
 # message board by Disqus
 disqus_shortname: https-nobodyzxc-github-io
 
