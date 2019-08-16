@@ -152,7 +152,7 @@ function init(elem, options) {
 }
 
 function newText(){
-  let list = ["你... 484 壞人 :3 <br>母湯歐北來ㄛ", "喵喵喵～", "打煤！不要亂看ㄛ", "還在學習！<br>我會變得膩害ㄛ", "為什抹要玩弄我 QAQ", "鼻要看我<br>再看我萌死你 >:3", "不要再玩了！快學習#"]
+  let list = ["你... 484 壞人 :3 <br>母湯歐北來ㄛ", "喵喵喵～", "打煤！不要亂看ㄛ", "還在學習！<br>我會變得更膩害ㄛ", "為什抹要玩弄我 QAQ", "鼻要看我<br>再看我萌死你 >:3", "不要再玩了！快學習#"]
   return list[Math.floor(Math.random() * list.length)];
 }
 
