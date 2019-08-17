@@ -34,29 +34,224 @@ Haskell Line API 等你開源 //
 ## 給 Web 工程師的 Rust 上手指南
 IB301 10:00 - 10:20 漢語
 
+Rust 吉祥物 -- 螃蟹。
+picked up by Mozilla.
+想填補系統級編成空白而發展 Rust -- fast, safe, concurrent。
+
+facebook libra - about currency, safty, transaction, wrote in Rust. 議員上 GitHub 軼事。
+
+- Yew framewrok (rs -> web asm)
+
+- iter callback like Ruby
+- type signature like Python
+
+- mcaro 寫 HTML -- `html!{...}`
+- side effect function with `!`
+- last expression in function as return value, like Ruby
+
+
 ## 認識零知識證明
 IB502 10:30 - 10:55 漢語
+
+What is ZKPs 以阿里巴巴為例。
+
+zk-SNARK
+- zk - zero-knowledge
+- S - Succinct
+- N - Non-Interactive (consider network traffic)
+- AR - Arguments (should be large to prevet bf attack)
+- K - Knowledge
+
+Alice has P(x)
+Bob has secret point s
+Alice cal P(s) for Bob
+
+### S
+Homomorphic Hidings
+- for most x, E(x) is hard to find x
+- different outputs for differnent inputs
+- E(x + y) can be computed for E(x) and E(y)
+
+if x + y = 7
+A publishes E(x), E(y)
+B computes E(x + y) by E(x) and E(y)
+B computes if E(x + y) == E(7)
+
+KCA 規範對方的行為
+- alpha-pair
+  A have (a, b), (a, alpha * b)
+  B have (a', b') => (gama * a', alpha * gama * b')
+
+QAD 問題轉換及簡化
+
+### N
+CRS - public place for A to place things
+tonix
+
+- SNARKs
+   - pros: proof size, verification time
+- STARKs
+   - pros: proof time
+   - cons: proof size
+- Bulletproofs（門羅使用)
+   - cons: proof time, verification time
+
 
 ## EWASM VM - 次世代的 Ethereum Virtual Machine
 IB502 11:30 - 11:55 漢語
 
-## 關於生命週期的一點事兒 (dup)
+### EVM recap
+- stack-based
+- 256 bit stack items
+- high level instructions
+   - SSTORE, SLOAD
+   - SHA3
+   - CALL, CREATE contract
+- too far away from acuatl machine architecture
+- less language support (Vyper, Solidity)
+
+### How about wasm (web assembly)?
+- has locals(~= reg or mem)
+- only access top 3 items v.s. EVM's 16 (property here!!)
+- support 32/64 bits
+- No high level instructions
+
+### ewasm
+- ewasm is subset of wasm
+- not support floating point number
+- **LIMITED** imports and exports (wasm section)
+- inject byecode metering and has runtime metering
+
+### Ethereum Environment Interface
+
+```
+ewasm module <= EEI => blockchain
+```
+
+call some function by outer runtime environment
+
+ewasm 透過 EEI 將一些 operation 交給外部的人
+
+### system contract
+
+- compiled into **wasm bytecode**
+- examples
+   - Byzantium precompiles
+      - sha256, rpiemd160
+   - Sentinel (verification and metering)
+
+### Sentinel contract
+
+ewasm bytecode  => Sentinel => deployed on chain
+
+- before contract deployment
+- reject non-ewasm bytecode (e.g. floating point)
+- insert metering statements
+
+### EVM-C
+
+開一個 EVM spec, 不同的 ethereum client 實作共用一個 Wasm VM
+
+C => C langauge API
+
+### wasm engine
+
+ewasm bytecode
+=> parse =>
+ewasm module
+=> validate =>
+validated ewasm module
+=> instantiate (e.g. aloc mem) =>
+deploy
+
+### EVM issue
+- storage model
+- ewasm = EVM 1.0 mirrored in wasm
+   - storage model is not compatible with rent
+
+- performance
+- ewasm(64) BN128mul not better than EVMone(256) becuase bit operation
+   - solution: precompile
+
+- price metering
+- basic block count
+- super block
+- upper bound
+
+speaker is from [buidl.secondstate.io](buidl.secondstate.io)
+
+## 關於生命週期的一點事兒 (miss)
 IB301 11:30 - 11:50 漢語
 
-## Serverless Web Service in Rust
+## Serverless Web Service in Rust (miss)
 IB301 11:50 - 12:30 漢語
 
-## 『基礎建設』 建置 Tor 的匿名 .onion 網站，並使用 Kubernetes 架構
+## 『基礎建設』 建置 Tor 的匿名 .onion 網站，並使用 Kubernetes 架構 (miss)
 E2-102 12:05 - 12:35 漢語
 
 ## Persistent, Isolated and Declarative System Environment with Nix and NixOS
 IB503 13:20 - 13:50 漢語
 
-## Build a Minimalist Partially C99-compliant Compiler for Real-world Targets
+GNU related Project [GNU Guix](https://en.wikipedia.org/wiki/GNU_Guix)
+
+九月份 functional thursday 會有 Nix 相關主題。
+
+speaker(@zetavg) touched the nixos from 35th chaos communication congress
+
+[presentation](https://bit.ly/nix-2019)
+
+Software Deployment Problems
+> The purely functional software deployment model by Nix author
+
+### Nix
+
+Nix is package manager
+```
+#purelyFunctional #Immutable #declartive #lazy #garbageCollator
+```
+
+### Nix Store
+
+pkg should not depend on global system stuff
+ruby <- /usr/lib/libssl.so (x)
+ruby <- nix-libssl-pkg (v)
+
+### Nix Lang
+
+produce derivation
+take package as variable in the Nix Lang
+there exists dependencies between the variables
+
+### Nix OS
+
+pkg, kernel, config... are built by Nix
+whole system in the Nix Store
+
+### Nix Env
+
+can switch generations after installation stages
+
+### Nix Shell
+
+a nix tool for Developer
+
+### More
+
+cachix: Nix binary cache(precompile binary)
+Hydra: nix build farm
+NixOps: declaratively deploy infrastructures
+
+9/5 f4 at Mozilla 信義區辦公室
+Nix Pills [https://nixos.org/nixos/nix-pills](https://nixos.org/nixos/nix-pills)
+
+
+## Build a Minimalist Partially C99-compliant Compiler for Real-world Targets (miss)
 IB201 13:20 - 13:45 漢語
 
 ## Cuju - 虛擬機容錯功能實作
 IB201 13:50 - 14:35 漢語
+
+Too hard to take note.
 
 ## 用剖析表達文法 PEG 實作一套程式語言 parser
 IB301 14:30 - 15:10 漢語

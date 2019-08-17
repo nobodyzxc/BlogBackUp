@@ -145,7 +145,7 @@ live2d:
   #    hitokoto: true
   mobile:
       show: true
-      scale: 0.5
+      scale: 0.8
   react:
       opacity: 0.7
       opacityDefault: 0.3
