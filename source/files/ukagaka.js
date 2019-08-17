@@ -151,9 +151,35 @@ function init(elem, options) {
   //$.ukagaka.mp3player.toggle();
 }
 
+var bufferText = "";
 function newText(){
-  let list = ["你... 484 壞人 :3 <br>母湯歐北來ㄛ", "喵喵喵～", "打煤！不要亂看ㄛ", "還在學習！<br>我會變得更膩害ㄛ", "為什抹要玩弄我 QAQ", "鼻要看我<br>再看我萌死你 >:3", "不要再玩了！快學習#"]
+  if(bufferText){
+    var text = bufferText;
+    bufferText = "";
+    return text;
+  }
+  let list = [
+    //"你... 484 壞人 :3 <br>母湯歐北來ㄛ",
+    "我是本站管理貓",
+    "喵喵喵～",
+    "本貓還在學習中，<br>請多指教！",
+    "預計上線<br>（與板主）即時聊天功能（？）",
+    "本版文章品質<br>真是不可期待啊（茶",
+    "我要罐罐～",
+    //"打煤！不要亂看ㄛ",
+    //"還在學習！<br>我會變得更膩害ㄛ",
+    //"為什抹要玩弄我 QAQ",
+    ">///<",
+    "鼻要看我<br>再看我萌死你 >:3",
+    //"不要再玩了！快學習#"
+  ]
   return list[Math.floor(Math.random() * list.length)];
+}
+
+function setText(text){
+  justRest = true;
+  bufferText = text;
+  preTyped.reset();
 }
 
 var preTyped = undefined;
@@ -180,10 +206,11 @@ function actionSetting(opt, elem) {
   });
 
   setInterval(function() {
-    if(justRest)
+    if(justRest){
       justRest = false;
-    else
-      preTyped.reset();
+      return;
+    }
+    preTyped.reset();
   }, 10000);
 
   //var obj = $(elem);
@@ -215,6 +242,8 @@ function actionSetting(opt, elem) {
     $select.delay(fadeOutSpeed).fadeIn(fadeInSpeed);
   }
 
+
+  var lastHello = 0;
   $(document).on('click', "#ukagaka_btn_up", function(event) {
     $("html,body").animate({
       scrollTop: 0
@@ -238,12 +267,16 @@ function actionSetting(opt, elem) {
   }).on('click', "#ukagaka_addmenu_add", function(event) {
     sendLearnText(options);
   }).on('click', "#ukagaka_btn_quiet", function(event) {
+    let hello = ["被你發現了<br>對，我會說話 ：3", "安安", "想聊天嗎？", "你好哇！", "你是不是想擼我？"];
+    console.log("set hello");
+    lastHello = (lastHello + 1) % hello.length;
+    //setText(hello[Math.floor(Math.random() * hello.length)]);
+    setText(hello[lastHello]);
     $('#smart').toggle();
     $("#ukagaka_btn_quiet").toggleClass("btn-clicked");
   }).on('click', "#ukagaka_btn_refresh", function(event) {
     //$(".ukagaka_img").attr("src", loadImagePath(options, 'idle', -1));
-    justRest = true;
-    preTyped.reset();
+    setText(newText());
   }).on('click', "#ukagaka_btn_music", function(event) {
     $.ukagaka.mp3player.toggle();
   }).on('click', "#ukagaka_btn_power", function(event) {
@@ -486,6 +519,7 @@ $(window).on("load", function(){
   var widget = document.getElementById("live2d-widget")
   node.id = "smart";
   node.style.position = "absolute";
+  node.style.display = "none";
   //node.style.bottom = "300px";
   node.style.width = widget.style.width;
   //node.style.left = "30px";

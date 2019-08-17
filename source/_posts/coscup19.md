@@ -38,7 +38,8 @@ Rust 吉祥物 -- 螃蟹。
 picked up by Mozilla.
 想填補系統級編成空白而發展 Rust -- fast, safe, concurrent。
 
-facebook libra - about currency, safty, transaction, wrote in Rust. 議員上 GitHub 軼事。
+facebook libra - about currency, safty, transaction, wrote in Rust.
+> 議員(Denver Riggleman): [Why Rust?](https://www.zhihu.com/question/330065739/answer/753859054)
 
 - Yew framewrok (rs -> web asm)
 
