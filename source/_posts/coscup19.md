@@ -253,6 +253,10 @@ IB201 13:50 - 14:35 漢語
 
 Too hard to take note.
 
+[project page](https://cuju-ft.github.io/cuju-web/home.html)
+
+效能等級和 VM Ware 差不多？！
+
 ## 用剖析表達文法 PEG 實作一套程式語言 parser
 IB301 14:30 - 15:10 漢語
 
