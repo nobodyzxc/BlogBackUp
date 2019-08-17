@@ -79,8 +79,10 @@ B computes if E(x + y) == E(7)
 
 KCA 規範對方的行為
 - alpha-pair
-  A have (a, b), (a, alpha * b)
-  B have (a', b') => (gama * a', alpha * gama * b')
+  A have (a, b), (a, alpha \* a)
+  B have (a', b') => (gama \* a', gama \* b' = gama \* alpha \* a = alpha \* a')
+
+[補充](https://medium.com/taipei-ethereum-meetup/%E6%B7%B1%E5%85%A5%E7%9E%AD%E8%A7%A3-zk-snarks-7a0187f399f1)
 
 QAD 問題轉換及簡化
 
@@ -93,7 +95,7 @@ tonix
 - STARKs
    - pros: proof time
    - cons: proof size
-- Bulletproofs（門羅使用)
+- Bulletproofs（門羅幣使用)
    - cons: proof time, verification time
 
 
@@ -207,7 +209,7 @@ Software Deployment Problems
 
 Nix is package manager
 ```
-#purelyFunctional #Immutable #declartive #lazy #garbageCollator
+#purelyFunctional #immutable #declartive #lazy #garbageCollator
 ```
 
 ### Nix Store
@@ -260,10 +262,106 @@ Too hard to take note.
 ## 用剖析表達文法 PEG 實作一套程式語言 parser
 IB301 14:30 - 15:10 漢語
 
+understanding computation: from simple machines to impossible programs
+> pl parser, regex parser with treetop, which is a PEG parser
+
+PEG, 2004, Bryan Ford - parsing Expression Grammars: A Recognition-Based Syntatic Foundation
+> a replacement to chomsky language, by removing the ambiguity in grammer
+
+the ambiguity is useful in modeling natural language, but not in precise and unambiguous programming language
+
+basic rule:
+- replace "|" in CFG with "/"
+
+operators
+- `""`
+- `[]`
+- `.`
+- `(e1 e2 ..)`
+- `e? e+ e*`
+- `&e`
+- `!e`
+- `e1 e2`
+- `e1/e2` note the priority, different from CFG
+
+PEG dangling else
+"if" COND "then" S1 "else" S2 / "if" COND "then" S1
+> match the else first will solve the problem (CFG can't)
+
+
+PEG is equivalent to Top Down programming language (TDPL)
+
+PEG is not a lang but a parse impl spec.
+
+PEG
+> new, powerful than CFG, fast to parse small lang
+
 ## 用 Pandoc 撰寫學術文章
 IB503 15:30 - 16:00 漢語
 
-## 17 直播從 0 到 1 之狼人殺 & 5 years Rust & 回顧
+是中文流利的外國人呢。
+清大語言所的博士候選人（
+學過 Python, Haskell（？！
+
+| | 文書處理器 | Latex |
+|:--: | :--: | :--: |
+| 上手 | 易 | 難 |
+| 排版 | 易跑 | 專門 |
+| 文件 | 短 | 長 |
+| 模式 | 編寫編排 | 寫排分工 |
+
+why open source?
+- open format
+   - easy to export, share
+- fee, no license
+- customization
+
+> 文科:只有肥宅才會用 LATEX 吧！（戰起來！！
+> 沒，其實本貓也是文組的（
+
+
+以 markdown 取代 latex
+- markdown is not program, formated text
+- can be compiled
+- source is human readable
+
+markdown dialect:
+- pandoc markdown
+- commonmark
+- github-flavoured markdown
+
+what is PANDOC?
+- 轉換神器
+- 柏克萊哲學系教授 john macfalane 所創
+- support latex, markdown
+- pdf docx html
+- reveal.js support ppt by markdown
+
+YAML metadata blocks
+參考文獻可使用 bib(la)tex
+corss-referencing
+inline latex
+
+biblography with pandoc (by pandoc-citeproc filter)
+cross-reference (by pandoc-crossref filter)
+
+pros:
+- open source
+- raw text
+- git
+   - version control
+   - collaboration
+- bugless
+
+cons:
+- learning time consuming
+- need latex somethins
+- command line interface
+
+[https://pandoc.org/getting-started.html](https://pandoc.org/getting-started.html)
+[https://pandocorg/MANUAL.html](https://pandocorg/MANUAL.html)
+
+## 17 直播從 0 到 1 之狼人殺 & 5 years Rust & 回顧 (miss)
 IB101 16:10 - 16:40 漢語
 
 # COSCUP DAY2
