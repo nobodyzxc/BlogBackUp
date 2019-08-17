@@ -192,7 +192,7 @@ IB301 11:50 - 12:30 漢語
 ## 『基礎建設』 建置 Tor 的匿名 .onion 網站，並使用 Kubernetes 架構 (miss)
 E2-102 12:05 - 12:35 漢語
 
-## Persistent, Isolated and Declarative System Environment with Nix and NixOS
+## Functional, Declarative and Modular System Environment <br>with Nix and NixOS
 IB503 13:20 - 13:50 漢語
 
 GNU related Project [GNU Guix](https://en.wikipedia.org/wiki/GNU_Guix)
@@ -248,7 +248,7 @@ NixOps: declaratively deploy infrastructures
 Nix Pills [https://nixos.org/nixos/nix-pills](https://nixos.org/nixos/nix-pills)
 
 
-## Build a Minimalist Partially C99-compliant Compiler for Real-world Targets (miss)
+## Build a Minimalist Partially C99-compliant Compiler <br>for Real-world Targets (miss)
 IB201 13:20 - 13:45 漢語
 
 ## Cuju - 虛擬機容錯功能實作
@@ -379,7 +379,7 @@ IB201 10:50 - 11:20 漢語
 ## Instruction Scheduling in LLVM
 IB306 11:40 - 12:25 漢語
 
-## 從 C++11 規格和 Template Meta-Programming 的角度欣賞 Boost 對 atomic 和 memory order 的支援
+## 從 C++11 規格和 Template Meta-Programming 的角度<br>欣賞 Boost 對 atomic 和 memory order 的支援
 E2-102 12:40 - 13:10 漢語
 
 ## 在 21 世紀做自動微分？你需要 Zygote.jl！
