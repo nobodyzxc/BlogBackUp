@@ -1,8 +1,8 @@
-##--
+---
 title: COSCUP'19
 date: 2019-08-14 06:12:46
 categories:
-##--
+---
 
 <center>
 先來排個議程，或許可以把心得直接寫在本文。
@@ -29,6 +29,7 @@ Haskell Line API 等你開源 //
 - [line-simple-beacon](https://github.com/line/line-simple-beacon)
 - [line-liff-starter](https://github.com/line/line-liff-starter)
 - [line-things-starter](https://github.com/line/line-things-starter), about IoT
+- [line Armeria](https://github.com/line/armeria), help you to build line service quickly
 
 ## 給 Web 工程師的 Rust 上手指南
 IB301 10:00 - 10:20 漢語
