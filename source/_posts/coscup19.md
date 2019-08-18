@@ -36,7 +36,7 @@ IB301 10:00 - 10:20 漢語
 
 Rust 吉祥物 -- 螃蟹。
 picked up by Mozilla.
-想填補系統級編成空白而發展 Rust -- fast, safe, concurrent。
+想填補系統級編程空白而發展 Rust -- fast, safe, concurrent。
 
 facebook libra - about currency, safty, transaction, wrote in Rust.
 > 議員(Denver Riggleman): [Why Rust?](https://www.zhihu.com/question/330065739/answer/753859054)
@@ -96,7 +96,7 @@ tonix
 - STARKs
    - pros: proof time
    - cons: proof size
-- Bulletproofs（門羅幣使用)
+- Bulletproofs（門羅幣使用）
    - cons: proof time, verification time
 
 
@@ -356,7 +356,7 @@ pros:
 
 cons:
 - learning time consuming
-- need latex somethins
+- need latex sometimes
 - command line interface
 
 [https://pandoc.org/getting-started.html](https://pandoc.org/getting-started.html)
@@ -367,32 +367,197 @@ IB101 16:10 - 16:40 漢語
 
 # COSCUP DAY2
 
+因為昨天施工挖斷電纜，所以換場地。
+
 ## 本日摘要 & 自己玩量子電腦程式
-IB101 09:00 - 09:50 漢語
+IB101(TR313) 09:00 - 09:50 漢語
 
-## 函數力爬蟲決定孩子未來區塊力
-IB101 10:00 - 10:50 漢語
+講者是第一屆總召（Google AI Quantum）。
+現行計算稱為古典計算(classical computing)。
 
-## 加強 Android 隱私的工具和技巧
-IB201 10:50 - 11:20 漢語
+量子程式語言：IBM Qasm, M$ Qsharp
+
+量子電腦應用場景：
+- 量子模擬
+   （氮固化，肥料製造用了世界 2% 電力，研究微生物為何消耗極少能量產生。）
+- 優化
+   求函數極低點，或許可用於計算能量消耗。
+- 質因數分解
+   "How to factor 2048 bits rsa integers in 8 hours using 2 million noisy Qubits"
+   量子電腦破解 RSA 加密（古典電腦需要宇宙時間）
+
+電子電腦需要 10mK（常溫 300K）環境下運作，所以需要放在冰箱。
+
+現在發展的現況為幾十 Qbits。
+Cirq -- Google Python framwork for Quantum computation
+
+N Gate
+H Gate 薛丁格的貓
+
+CNOT Gate two-qbit gate (like XOR Gate)
+如果前面放進一個 H Gate = (00, 11)
+
+the quantum parity problem
+classical -> quantum
+O(N) -> O(1)
+輸入輸出前各 apply 一排 H gate，最後觀察最後結果。
+
+transportation of 1 quantum bit
+qbit A 由於觀測後會塌陷，所以要拿 qbit B 之前，先將 qbit C 與 qbit B 糾纏，
+然後用 B 與 A 糾纏後，將其結果拿給 C 運算即可得到 A 當初的態。
+
+Q: 能解什麼問題？對目前 framwork 的看法，需不需要開發新語言？
+A: 解的問題還在發展，美國正在培養相關人才，需要大量相關人才。量子運算與古典運算式互補的。
+
+> 重點是那個 H bit，模擬薛丁格的貓，他是一切算法的起手式。
+
+## 懶惰鬼的函數式爬蟲
+IB101(TR313) 10:00 - 10:50 漢語
+
+- functional/Haskell
+- blockchain/Tezos
+- general json crawler
+
+第三方服務共同特色
+- 大多提供 JSON API
+
+Tezos 三大特色：
+- liquid proof-of-stack
+動態決定驗證者/區塊創建者，由 token 持有者共同維護
+- formal verification
+保證系統安全性
+- on chain government
+由投票機制更改 protocol（第 999 和 2019 block 的 JSON 可能長得不一樣）
+
+Backing Soda
+A Haskell crawler for Tezos
+
+> 講者：有實際寫過 DSL 或知道 DSL 的請舉手
+> 我：寫 DSL (compiler or interpreter）太難了吧？！
+>     我只有寫過 GPL（
+
+
+Haskell 起手式：定義好資料結構
+Formal program synthesis: deriving(Show, Read, Eq, ...)
+
+平行化：
+```haskell
+main a `par` b `pseq` print (a + b)
+   where a = fib 42
+         b = fac 42
+```
+
+crawler
+- 存原始檔案
+   - 不要相信第三方
+   - 減少第三方壓力
+   - 後續批次處理
+
+```
+data TzBlock = TB { level :: Int }
+
+class Crawler a where
+   weed :: a
+   nextStep :: a -> a
+
+instance Crawler TzBlock where
+   seed = TB 0
+   nextStep tb = TB { level = level tb + 1 }
+```
+
+分析：JSON 對應 SQL 的 datatype
+
+資料庫選擇：
+- Haskell property
+   - type strong and ADT
+   - easy to provide universal data store interface
+- lib
+   - haskell-persistent
+   - haskell-groundhog
+
+General Database
+- 可選擇
+- 放棄特有功能：e.g. postgres array tyep
+Specific Database
+- 比較好的效率
+
+## 加強 Android 隱私的工具和技巧 (miss)
+IB201(TR309) 10:50 - 11:20 漢語
 
 ## Instruction Scheduling in LLVM
-IB306 11:40 - 12:25 漢語
+IB306(TR412-2) 11:40 - 12:25 漢語
+
+- instro to instruction scheduling
+- LLVM scheduler
+- pipeline modeling
+- scheduler customization
+
+instruction scheduling
+
+as a means of optimization
+
+```
+load x5 x8 @a   // 3 cycle time
+add x5 x5 x5    // 4th cycle time
+load x6 x8 @b
+mul x5 x5 x6
+```
+> build dependency graph and sort from root, acc time length from first inst
+scheduling with reverse order (from large acc number to smallest)
+
+instruction scheduling occuring on:
+```
+instruction selection (DAG)
+           |
+           | scheduleDAGSDNodes
+           v
+          M-I
+           |
+           | scheduleDAGMILive
+           v
+   registor allocation
+           |
+           | schedulePOSTRATDList
+           v
+          M-I
+           |
+           v
+          ...
+```
+
+Data Dependency Graph
+- output depedency (if inst depend on same reg, they can not swap)
+- anti dependency
+- boundary not participate scheduling
+
+target description as a language to write pipeline
+
+Customize Scheduling for Target
+- define scheduling policy
+   implement overrideSchedPolicy
+- define scheduling strategy
+   derive MachineSchedStrategy (GenericScheduler)
+- add DAG mutations
+   implement ScheduleDAGMutation::apply
+
+referece:
+- Engineering a Compiler（阿阿阿阿 這本我有啊）
+- LLVM Developers' Meeting: "writing Great Machine Schedulers"
 
 ## 從 C++11 規格和 Template Meta-Programming 的角度<br>欣賞 Boost 對 atomic 和 memory order 的支援
-E2-102 12:40 - 13:10 漢語
+E2-102(TR510) 12:40 - 13:10 漢語
 
 ## 在 21 世紀做自動微分？你需要 Zygote.jl！
-IB501 13:10 - 14:00 漢語
+IB501(TR413-1) 13:10 - 14:00 漢語
 
 ## 野生的 Meta Programming 出現了 (dup)
-IB301 14:20 - 15:00 漢語
+IB301(TR310-1) 14:20 - 15:00 漢語
 
 ## Julia 語言設計與 JIT 編譯器 (dup)
-IB501 14:10 - 15:00 漢語
+IB501(TR413-1) 14:10 - 15:00 漢語
 
 ## High-Level GPU Programming with Julia
-IB501 15:10 - 16:00 英語
+IB501(TR413-1) 15:10 - 16:00 英語
 
 ## lighting talk & close
-IB101 16:05 - 17:05
+IB101(TR313) 16:05 - 17:05
