@@ -5,7 +5,7 @@ categories:
 ---
 
 <center>
-先來排個議程，或許可以把心得直接寫在本文。
+先來排個議程，或許可以把心得/筆記直接寫在本文。
 排的結果依舊是...
 </center>
 
@@ -67,7 +67,8 @@ Alice has P(x)
 Bob has secret point s
 Alice cal P(s) for Bob
 
-### S
+The S:
+
 Homomorphic Hidings
 - for most x, E(x) is hard to find x
 - different outputs for differnent inputs
@@ -87,9 +88,9 @@ KCA 規範對方的行為
 
 QAD 問題轉換及簡化
 
-### N
+The N:
+
 CRS - public place for A to place things
-tonix
 
 - SNARKs
    - pros: proof size, verification time
@@ -103,29 +104,32 @@ tonix
 ## EWASM VM - 次世代的 Ethereum Virtual Machine
 IB502 11:30 - 11:55 漢語
 
-### EVM recap
+EVM recap
+
 - stack-based
 - 256 bit stack items
 - high level instructions
    - SSTORE, SLOAD
    - SHA3
    - CALL, CREATE contract
-- too far away from acuatl machine architecture
+- too far away from actual machine architecture
 - less language support (Vyper, Solidity)
 
-### How about wasm (web assembly)?
+How about wasm (web assembly)?
+
 - has locals(~= reg or mem)
 - only access top 3 items v.s. EVM's 16 (property here!!)
 - support 32/64 bits
 - No high level instructions
 
-### ewasm
+ewasm
+
 - ewasm is subset of wasm
 - not support floating point number
 - **LIMITED** imports and exports (wasm section)
 - inject byecode metering and has runtime metering
 
-### Ethereum Environment Interface
+Ethereum Environment Interface
 
 ```
 ewasm module <= EEI => blockchain
@@ -135,7 +139,7 @@ call some function by outer runtime environment
 
 ewasm 透過 EEI 將一些 operation 交給外部的人
 
-### system contract
+system contract
 
 - compiled into **wasm bytecode**
 - examples
@@ -143,7 +147,7 @@ ewasm 透過 EEI 將一些 operation 交給外部的人
       - sha256, rpiemd160
    - Sentinel (verification and metering)
 
-### Sentinel contract
+Sentinel contract
 
 ewasm bytecode  => Sentinel => deployed on chain
 
@@ -151,23 +155,38 @@ ewasm bytecode  => Sentinel => deployed on chain
 - reject non-ewasm bytecode (e.g. floating point)
 - insert metering statements
 
-### EVM-C
+EVM-C
 
 開一個 EVM spec, 不同的 ethereum client 實作共用一個 Wasm VM
 
 C => C langauge API
 
-### wasm engine
+wasm engine
 
-ewasm bytecode
-=> parse =>
-ewasm module
-=> validate =>
-validated ewasm module
-=> instantiate (e.g. aloc mem) =>
-deploy
+```
+         ewasm bytecode
+               |
+               v
+            (parse)
+               |
+               v
+         ewasm module
+               |
+               v
+          (validate)
+               |
+               v
+     validated ewasm module
+               |
+               v
+  (instantiate) e.g. aloc mem
+               |
+               v
+            deploy
+```
 
-### EVM issue
+EVM issue
+
 - storage model
 - ewasm = EVM 1.0 mirrored in wasm
    - storage model is not compatible with rent
@@ -206,43 +225,43 @@ speaker(@zetavg) touched the nixos from 35th chaos communication congress
 Software Deployment Problems
 > The purely functional software deployment model by Nix author
 
-### Nix
+Nix:
 
-Nix is package manager
+- Nix is package manager
 ```
 #purelyFunctional #immutable #declartive #lazy #garbageCollator
 ```
 
-### Nix Store
+Nix Store:
 
-pkg should not depend on global system stuff
-ruby <- /usr/lib/libssl.so (x)
-ruby <- nix-libssl-pkg (v)
+- pkg should not depend on global system stuff
+  ruby <- /usr/lib/libssl.so (x)
+  ruby <- nix-libssl-pkg (v)
 
-### Nix Lang
+Nix Lang:
 
-produce derivation
-take package as variable in the Nix Lang
-there exists dependencies between the variables
+- produce derivation
+- take package as variable in the Nix Lang
+- there exists dependencies between the variables
 
-### Nix OS
+Nix OS:
 
-pkg, kernel, config... are built by Nix
-whole system in the Nix Store
+- pkg, kernel, config... are built by Nix
+  whole system in the Nix Store
 
-### Nix Env
+Nix Env:
 
-can switch generations after installation stages
+- can switch generations after installation stages
 
-### Nix Shell
+Nix Shell:
 
-a nix tool for Developer
+- a nix tool for Developer
 
-### More
+More:
 
-cachix: Nix binary cache(precompile binary)
-Hydra: nix build farm
-NixOps: declaratively deploy infrastructures
+- cachix: Nix binary cache(precompile binary)
+- Hydra: nix build farm
+- NixOps: declaratively deploy infrastructures
 
 9/5 f4 at Mozilla 信義區辦公室
 Nix Pills [https://nixos.org/nixos/nix-pills](https://nixos.org/nixos/nix-pills)
@@ -391,10 +410,9 @@ IB101(TR313) 09:00 - 09:50 漢語
 現在發展的現況為幾十 Qbits。
 Cirq -- Google Python framwork for Quantum computation
 
-N Gate
+N Gate (Not Gate)
 H Gate 薛丁格的貓
 
-CNOT Gate two-qbit gate (like XOR Gate)
 如果前面放進一個 H Gate = (00, 11)
 
 the quantum parity problem
@@ -407,7 +425,7 @@ qbit A 由於觀測後會塌陷，所以要拿 qbit B 之前，先將 qbit C 與
 然後用 B 與 A 糾纏後，將其結果拿給 C 運算即可得到 A 當初的態。
 
 Q: 能解什麼問題？對目前 framwork 的看法，需不需要開發新語言？
-A: 解的問題還在發展，美國正在培養相關人才，需要大量相關人才。量子運算與古典運算式互補的。
+A: 解的問題還在發展，美國正在培養相關人才，需要大量相關人才。量子運算與古典運算是互補的。
 
 > 重點是那個 H bit，模擬薛丁格的貓，他是一切算法的起手式。
 
@@ -433,7 +451,7 @@ Backing Soda
 A Haskell crawler for Tezos
 
 > 講者：有實際寫過 DSL 或知道 DSL 的請舉手
-> 我：寫 DSL (compiler or interpreter）太難了吧？！
+> 我：寫 DSL（compiler or interpreter）太難了吧？！
 >     我只有寫過 GPL（
 
 
@@ -442,7 +460,7 @@ Formal program synthesis: deriving(Show, Read, Eq, ...)
 
 平行化：
 ```haskell
-main a `par` b `pseq` print (a + b)
+main = a `par` b `pseq` print (a + b)
    where a = fib 42
          b = fac 42
 ```
@@ -453,7 +471,7 @@ crawler
    - 減少第三方壓力
    - 後續批次處理
 
-```
+```haskell
 data TzBlock = TB { level :: Int }
 
 class Crawler a where
@@ -483,6 +501,10 @@ Specific Database
 
 ## 加強 Android 隱私的工具和技巧 (miss)
 IB201(TR309) 10:50 - 11:20 漢語
+
+---
+> 跑去吃飯，結果遇到在台大讀書的同學啊啊啊啊啊啊
+---
 
 ## Instruction Scheduling in LLVM
 IB306(TR412-2) 11:40 - 12:25 漢語
@@ -540,24 +562,163 @@ Customize Scheduling for Target
 - add DAG mutations
    implement ScheduleDAGMutation::apply
 
-referece:
+reference:
 - Engineering a Compiler（阿阿阿阿 這本我有啊）
 - LLVM Developers' Meeting: "writing Great Machine Schedulers"
 
 ## 從 C++11 規格和 Template Meta-Programming 的角度<br>欣賞 Boost 對 atomic 和 memory order 的支援
 E2-102(TR510) 12:40 - 13:10 漢語
 
+what is memory order
+- recorder
+- out-of-order
+
+compiler 會做 scheduling，所以 order 和 source code 可能會不一樣。
+C++11 支援 memory order 可以給予開發者控制 order 的餘地。
+
+- synchronization operations
+在不同 thread 之間同步
+- atomic operation
+
+講者聲音有點小聲，然後講題於我有點陌生（
+
 ## 在 21 世紀做自動微分？你需要 Zygote.jl！
 IB501(TR413-1) 13:10 - 14:00 漢語
 
-## 野生的 Meta Programming 出現了 (dup)
+Wengert list
+- a list of expression/instruction
+- transform the expression with derivative definintion
+
+how automatic differentiation work
+- get the Wengert List of the expression
+- transform each instruction in the Wengert list
+- apply chain rule
+
+forward mode (適合 outputs >> inputs)
+- dual number
+reverse mode (適合 inputs >> outputs) (mostly DL situation)
+- tracker
+
+
+## 野生的 Meta Programming 出現了 (miss)
 IB301(TR310-1) 14:20 - 15:00 漢語
 
-## Julia 語言設計與 JIT 編譯器 (dup)
+## Julia 語言設計與 JIT 編譯器
 IB501(TR413-1) 14:10 - 15:00 漢語
 
+outline:
+- type system
+- mulitple dispatch
+- generic program
+- meta programming
+- relection and introspection
+- JIT compiler
+
+```
+
+                   Any
+                    ^
+                    |
+                 subtype
+                    |
+                    |  
+instance <-- is-a --+--typeof--> Datatype
+                    |
+                 subtype
+                    |
+                    v
+                  Union {}
+
+
+```
+type system
+- dynamic, similar to symbolic programming,
+  but can get staic component by some signature
+- set-theoretic type
+
+mulitple dispatch
+- 非獨有特色，其他語言也有
+- like overloading in Cpp
+
+generic programming
+- parametric types and parametric method
+- Similar to multiple dispatch with parametric polymorphism
+- All types are first-class: can be dispatched and declared
+
+meta programming
+- macro
+- generated function (julia 獨有)
+
+```
+@generated function foo(x)
+    Core.println(x) # x as a type
+    return :(x * x) # but return as a value(?)
+end
+
+> foo(5)
+Int64
+25
+
+> foo("5")
+String
+"55"
+```
+
+Function(name) <> Method(type signature, related to impl)
+so, there exist function table and method table
+
+function => generic function consisted of many methods
+
+JIT => lookup compiled method (method cache),
+if not exists, it will do specialize, compilation
+
+meta programming interface
+- AST
+   - access
+   - modify
+- Julia IR
+   - access
+   - modify
+- LLVM IR
+   - access
+   - modify
+- Machine code
+   - access
+   - modify(indirect)
+
+julia 是 hackable 的 compiler，
+可以抽換掉一些中間的 compilation procedure，
+跟上次 flolac'18 講的 racket 黑魔法有點像。
+
+
+
+[presentation](https://yuehhua.github.io/slides/julia-language-design-jit-compiler)
+
+
 ## High-Level GPU Programming with Julia
-IB501(TR413-1) 15:10 - 16:00 英語
+IB501(TR413-1) 15:10 - 16:00 漢語
+
+for CUDA becuase the support for AMD is not enough
+
+GPU for graphic drawing
+- utilize the parallel structure
+- lots of threads running at the same time
+
+for GPU programming, most PL still inline cuda C
+
+why julia
+- high-lv PL with low-lv performance
+- provide first class array impl
+- good compiler design
+
+pkgs:
+- CUDAnative.jl
+- CUDAdrv.jl
+- CuArrays.jl
+- GPUArrays.jl
+
 
 ## lighting talk & close
 IB101(TR313) 16:05 - 17:05
+
+
