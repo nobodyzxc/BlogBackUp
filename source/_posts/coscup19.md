@@ -1,7 +1,11 @@
 ---
 title: COSCUP'19
 date: 2019-08-14 06:12:46
-categories:
+categories: Note
+tags:
+- coscup
+- opensource
+- conference
 ---
 
 <center>
@@ -291,7 +295,7 @@ PEG, 2004, Bryan Ford - parsing Expression Grammars: A Recognition-Based Syntati
 the ambiguity is useful in modeling natural language, but not in precise and unambiguous programming language
 
 basic rule:
-- replace "|" in CFG with "/"
+- replace `|` in CFG with `/`
 
 operators
 - `""`
@@ -721,4 +725,4 @@ pkgs:
 ## lighting talk & close
 IB101(TR313) 16:05 - 17:05
 
-
+終於見識到本體了，真的很歡樂（
