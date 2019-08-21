@@ -181,12 +181,12 @@ function init(elem, options) {
   obj.after(
     //"<img class='ukagaka_img' src='" + loadImagePath(options, 'idle', 0) + "'></img>" +
     "<div id='ukagaka_controlpanel'><ul>" +
-    "<li id='ukagaka_btn_up'><i class='icon-gotop'></i></li>" +
-    "<li id='ukagaka_btn_quiet'><i class='icon-quiet'></i></li>" +
-    "<li id='ukagaka_btn_refresh'><i class='icon-refresh'></i></li>" +
-    "<li id='ukagaka_btn_menu'><i class='icon-learn'></i></li>" +
+    "<li id='ukagaka_btn_up' title='爬上乃'><i class='icon-gotop'></i></li>" +
+    "<li id='ukagaka_btn_quiet' title='講話/閉嘴'><i class='icon-quiet'></i></li>" +
+    "<li id='ukagaka_btn_refresh' title='戳貓'><i class='icon-refresh'></i></li>" +
+    "<li id='ukagaka_btn_menu' title='寫信'><i class='icon-learn'></i></li>" +
     //"<li id='ukagaka_btn_power'><i class='icon-power'></i></li>" +
-    "<li id='ukagaka_btn_down'><i class='icon-godown'></i></li>" +
+    "<li id='ukagaka_btn_down' title='跳到底'><i class='icon-godown'></i></li>" +
     //"<li id='ukagaka_btn_music'><i class='icon-music'></i></li>" +
     "</ul></div>"
   );
