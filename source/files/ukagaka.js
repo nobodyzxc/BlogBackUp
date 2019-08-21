@@ -336,6 +336,8 @@ function actionSetting(opt, elem) {
   }).on('click', "#ukagaka_btn_refresh", function(event) {
     //$(".ukagaka_img").attr("src", loadImagePath(options, 'idle', -1));
     setText(newText());
+    $("#smart").show();
+    $("#ukagaka_btn_quiet").addClass("btn-clicked");
   }).on('click', "#ukagaka_btn_music", function(event) {
     $.ukagaka.mp3player.toggle();
   }).on('click', "#ukagaka_btn_power", function(event) {
