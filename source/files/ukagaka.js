@@ -1,3 +1,49 @@
+// Support TLS-specific URLs, when appropriate.
+if (window.location.protocol == "https:") {
+  var ws_scheme = "wss://";
+} else {
+  var ws_scheme = "ws://"
+};
+
+
+//var wshost = 'localhost:8000'
+var wshost = "keeper-cat.herokuapp.com"
+//var inbox = new ReconnectingWebSocket(ws_scheme + location.host + "/receive");
+var box = undefined;
+
+//inbox.onmessage = function(message) {
+//  var data = JSON.parse(message.data);
+//  $("#chat-text").append("<div class='panel panel-default'><div class='panel-heading'>" + $('<span/>').text(data.handle).html() + "</div><div class='panel-body'>" + $('<span/>').text(data.text).html() + "</div></div>");
+//  $("#chat-text").stop().animate({
+//    scrollTop: $('#chat-text')[0].scrollHeight
+//  }, 800);
+//};
+//
+//inbox.onclose = function(){
+//    console.log('inbox closed');
+//    this.inbox = new WebSocket(inbox.url);
+//
+//};
+
+function wschat() {
+  console.log($("#ukagaka_addstring").val());
+  //var handle = $("#input-handle")[0].value;
+  //var text   = $("#input-text")[0].value;
+  box.send(JSON.stringify({ text: $("#ukagaka_addstring").val() }));
+  $("#ukagaka_addstring").val("");
+  return false;
+}
+
+//$("#wschat").on("submit", function(event) {
+//  console.log("hello");
+//  return false;
+//  event.preventDefault();
+//  //var handle = $("#input-handle")[0].value;
+//  //var text   = $("#input-text")[0].value;
+//  //box.send(JSON.stringify({ handle: handle, text: text }));
+//  $("#ukagaka_addstring")[0].value = "";
+//});
+
 //$("live2d-widget").ukagaka();
 //alert("done");
 //alert("hello world");
@@ -77,7 +123,7 @@ var default_option = {
       "ukagakaText":"千代",
       "loadingText":" .^100.^100.",
       //"learnPlaceholder":"default: input for learn.",
-      "learnPlaceholder":"請輸入想讓貓貓學的話",
+      "learnPlaceholder":"請輸入想對貓貓說的話",
       "menuMainText":"選單功能：",
       "menuLearnText":"$ 學習",
       "menuLogText":"$ 日誌",
@@ -90,10 +136,10 @@ var default_option = {
       "learnText":"千代學習了！"
    }
 },
-  googleKey: '0ArRwmWo93u-mdG93a2dkSWxIbHEzZjRIeDdxZXdsU1E',
-  googleFormkey: '1xADUIiBq1ksH7lxwSch1Nz_p2gSxdJttmv5OJOxJye0',
-  googleSheet: "od6",
-  googleSheetField: "entry.2030600456",
+  //googleKey: '0ArRwmWo93u-mdG93a2dkSWxIbHEzZjRIeDdxZXdsU1E',
+  //googleFormkey: '1xADUIiBq1ksH7lxwSch1Nz_p2gSxdJttmv5OJOxJye0',
+  //googleSheet: "od6",
+  //googleSheetField: "entry.2030600456",
   talkTime: 60000
 };
 
@@ -121,9 +167,10 @@ function init(elem, options) {
        loadUItext(options, 'menuExitText') +
        "</span></div>" +
     */
-    "<div class='ukagaka_msg' id='ukagaka_stringinput'>" +
+    "<div class='ukagaka_msg' id='ukagaka_stringinput'><form action='#' id='wschat' onsubmit='return wschat();'>" +
     "<input id='ukagaka_addstring' type='text' placeholder='" + loadUItext(options, 'learnPlaceholder') + "'/>" +
-    "</div>" +
+    "<p id='ukagaka_replaystring' style='margin-top: 5px; margin-bottom: 0px;'> > ...💤</p>" +
+    "</form></div>" +
     "<div class='ukagaka_msg' id='ukagaka_renewlist' style='display:none'>" + loadUItext(options, 'logText') + "<span id='ukagaka_btn_menu'>" + loadUItext(options, 'menuCancelText') + "</span></div>" +
     "<input id='ukagaka_sheetfield' type='hidden' value='" + sheetfield + "'>" +
     "</div>" +
@@ -137,9 +184,9 @@ function init(elem, options) {
     "<li id='ukagaka_btn_up'><i class='icon-gotop'></i></li>" +
     "<li id='ukagaka_btn_quiet'><i class='icon-quiet'></i></li>" +
     "<li id='ukagaka_btn_refresh'><i class='icon-refresh'></i></li>" +
-    "<li id='ukagaka_btn_power'><i class='icon-power'></i></li>" +
+    "<li id='ukagaka_btn_menu'><i class='icon-learn'></i></li>" +
+    //"<li id='ukagaka_btn_power'><i class='icon-power'></i></li>" +
     "<li id='ukagaka_btn_down'><i class='icon-godown'></i></li>" +
-    //"<li id='ukagaka_btn_menu'><i class='icon-learn'></i></li>" +
     //"<li id='ukagaka_btn_music'><i class='icon-music'></i></li>" +
     "</ul></div>"
   );
@@ -255,9 +302,22 @@ function actionSetting(opt, elem) {
   }).on('click', "#ukagaka_menu_btn_exit", function(event) {
     menuClick($("#ukagaka_msgbox"));
   }).on('click', "#ukagaka_btn_menu", function(event) {
-
+    if(box === undefined){
+      box = new ReconnectingWebSocket(ws_scheme + wshost + "/wschat");
+      box.onmessage = function(message) {
+        console.log(message);
+        $('#ukagaka_replaystring').text(' > ' + message.data);
+      };
+      box.onclose = function(){
+          console.log('box closed');
+          this.box = new WebSocket(box.url);
+      };
+    }
     $("#ukagaka_stringinput").toggle();
     $("#ukagaka_msgbox").toggle();
+    $("#smart").show();
+    $("#ukagaka_btn_quiet").addClass("btn-clicked");
+    $("#ukagaka_addstring").focus();
     //menuClick($("#ukagaka_stringinput"));
     //menuClick($("#ukagaka_menubox"));
   }).on('click', "#ukagaka_menu_btn_addstring", function(event) {
@@ -268,7 +328,6 @@ function actionSetting(opt, elem) {
     sendLearnText(options);
   }).on('click', "#ukagaka_btn_quiet", function(event) {
     let hello = ["被你發現了<br>對，我會說話 ：3", "安安", "想聊天嗎？", "你好哇！", "你是不是想擼我？"];
-    console.log("set hello");
     lastHello = (lastHello + 1) % hello.length;
     //setText(hello[Math.floor(Math.random() * hello.length)]);
     setText(hello[lastHello]);

@@ -29,6 +29,7 @@ IB101 08:30 - 9:50 漢語
 200 speaker, 2k participants.
 
 Haskell Line API 等你開源 //
+我發現 Hackage 上已經有了（
 
 - [line-simple-beacon](https://github.com/line/line-simple-beacon)
 - [line-liff-starter](https://github.com/line/line-liff-starter)
@@ -625,7 +626,7 @@ outline:
                     |
                  subtype
                     |
-                    |  
+                    |
 instance <-- is-a --+--typeof--> Datatype
                     |
                  subtype
