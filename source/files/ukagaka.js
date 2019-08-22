@@ -310,7 +310,7 @@ function actionSetting(opt, elem) {
       };
       box.onclose = function(){
           console.log('box closed');
-          this.box = new WebSocket(box.url);
+          //this.box = new WebSocket(box.url);
       };
     }
     $("#ukagaka_stringinput").toggle();
