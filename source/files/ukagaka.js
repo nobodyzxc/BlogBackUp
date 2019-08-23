@@ -11,25 +11,12 @@ var wshost = "keeper-cat.herokuapp.com"
 //var inbox = new ReconnectingWebSocket(ws_scheme + location.host + "/receive");
 var box = undefined;
 
-//inbox.onmessage = function(message) {
-//  var data = JSON.parse(message.data);
-//  $("#chat-text").append("<div class='panel panel-default'><div class='panel-heading'>" + $('<span/>').text(data.handle).html() + "</div><div class='panel-body'>" + $('<span/>').text(data.text).html() + "</div></div>");
-//  $("#chat-text").stop().animate({
-//    scrollTop: $('#chat-text')[0].scrollHeight
-//  }, 800);
-//};
-//
-//inbox.onclose = function(){
-//    console.log('inbox closed');
-//    this.inbox = new WebSocket(inbox.url);
-//
-//};
-
 function wschat() {
   console.log($("#ukagaka_addstring").val());
   //var handle = $("#input-handle")[0].value;
   //var text   = $("#input-text")[0].value;
   box.send(JSON.stringify({ text: $("#ukagaka_addstring").val() }));
+  $('#ukagaka_replaystring').append(`<br><span style='display: inline-block; float: right;'>${$("#ukagaka_addstring").val()}</span>`);
   $("#ukagaka_addstring").val("");
   return false;
 }
@@ -168,8 +155,8 @@ function init(elem, options) {
        "</span></div>" +
     */
     "<div class='ukagaka_msg' id='ukagaka_stringinput'><form action='#' id='wschat' onsubmit='return wschat();'>" +
-    "<input id='ukagaka_addstring' type='text' placeholder='" + loadUItext(options, 'learnPlaceholder') + "'/>" +
-    "<p id='ukagaka_replaystring' style='margin-top: 5px; margin-bottom: 0px;'> > ...💤</p>" +
+    "<p id='ukagaka_replaystring' style='margin-top: 0px; margin-bottom: 5px;'> <span id='state'> # ...💤</span></p>" +
+    "<input id='ukagaka_addstring' style='margin-top: 5px;' type='text' placeholder='" + loadUItext(options, 'learnPlaceholder') + "'/>" +
     "</form></div>" +
     "<div class='ukagaka_msg' id='ukagaka_renewlist' style='display:none'>" + loadUItext(options, 'logText') + "<span id='ukagaka_btn_menu'>" + loadUItext(options, 'menuCancelText') + "</span></div>" +
     "<input id='ukagaka_sheetfield' type='hidden' value='" + sheetfield + "'>" +
@@ -305,8 +292,10 @@ function actionSetting(opt, elem) {
     if(box === undefined){
       box = new ReconnectingWebSocket(ws_scheme + wshost + "/wschat");
       box.onmessage = function(message) {
+        $('#state').text(' # 🗨️🐈')
         console.log(message);
-        $('#ukagaka_replaystring').text(' > ' + message.data);
+        //$('#ukagaka_replaystring').text(' > ' + message.data);
+        $('#ukagaka_replaystring').append(`<br><span style='display: inline-block; float: left;'> > ${message.data}</span>`);
       };
       box.onclose = function(){
           console.log('box closed');
