@@ -303,7 +303,7 @@ function actionSetting(opt, elem) {
       };
     }
     $("#ukagaka_stringinput").toggle();
-    $("#ukagaka_msgbox").toggle();
+    $("#ukagaka_msgbox").hide();
     $("#smart").show();
     $("#ukagaka_btn_quiet").addClass("btn-clicked");
     $("#ukagaka_addstring").focus();
@@ -326,6 +326,8 @@ function actionSetting(opt, elem) {
     //$(".ukagaka_img").attr("src", loadImagePath(options, 'idle', -1));
     setText(newText());
     $("#smart").show();
+    $("#ukagaka_msgbox").show();
+    $("#ukagaka_stringinput").hide();
     $("#ukagaka_btn_quiet").addClass("btn-clicked");
   }).on('click', "#ukagaka_btn_music", function(event) {
     $.ukagaka.mp3player.toggle();
