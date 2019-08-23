@@ -16,7 +16,7 @@ function wschat() {
   //var handle = $("#input-handle")[0].value;
   //var text   = $("#input-text")[0].value;
   box.send(JSON.stringify({ text: $("#ukagaka_addstring").val() }));
-  $('#ukagaka_replaystring').append(`<br><span style='display: inline-block; float: right;'>${$("#ukagaka_addstring").val()}</span>`);
+  $('#ukagaka_replaystring').append(`<div style='text-align:right;'>${$("#ukagaka_addstring").val()}</div>`);
   $("#ukagaka_addstring").val("");
   return false;
 }
@@ -155,7 +155,7 @@ function init(elem, options) {
        "</span></div>" +
     */
     "<div class='ukagaka_msg' id='ukagaka_stringinput'><form action='#' id='wschat' onsubmit='return wschat();'>" +
-    "<p id='ukagaka_replaystring' style='margin-top: 0px; margin-bottom: 5px;'> <span id='state'> # ...💤</span></p>" +
+    "<div id='ukagaka_replaystring' style='max-width: 100%; margin-top: 0px; margin-bottom: 5px;'> <div id='state'> # ...💤</div></div>" +
     "<input id='ukagaka_addstring' style='margin-top: 5px;' type='text' placeholder='" + loadUItext(options, 'learnPlaceholder') + "'/>" +
     "</form></div>" +
     "<div class='ukagaka_msg' id='ukagaka_renewlist' style='display:none'>" + loadUItext(options, 'logText') + "<span id='ukagaka_btn_menu'>" + loadUItext(options, 'menuCancelText') + "</span></div>" +
@@ -295,7 +295,7 @@ function actionSetting(opt, elem) {
         $('#state').text(' # 🗨️🐈')
         console.log(message);
         //$('#ukagaka_replaystring').text(' > ' + message.data);
-        $('#ukagaka_replaystring').append(`<br><span style='display: inline-block; float: left;'> > ${message.data}</span>`);
+        $('#ukagaka_replaystring').append(`<div style='text-align:left;'> > ${message.data}</div>`);
       };
       box.onclose = function(){
           console.log('box closed');
