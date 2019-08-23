@@ -302,7 +302,7 @@ function actionSetting(opt, elem) {
           //this.box = new WebSocket(box.url);
       };
     }
-    $("#ukagaka_stringinput").toggle();
+    $("#ukagaka_stringinput").show();
     $("#ukagaka_msgbox").hide();
     $("#smart").show();
     $("#ukagaka_btn_quiet").addClass("btn-clicked");
