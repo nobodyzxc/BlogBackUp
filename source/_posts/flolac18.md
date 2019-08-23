@@ -260,7 +260,7 @@ steepsum xs = (sp && x > sm, x + sm)
 ~I: [A ... F] // ~A
 
 這裡學到的是寫成 tree 的樣子
-而學校學的 NI 是寫成 block
+而學校學的 Natural Deduction 是寫成 block
 
 然後 twitter 有[這個 bot](https://twitter.com/ipc_bot?lang=zh-tw) 可以玩。他可以將你輸入的命題作自動推導。
 
