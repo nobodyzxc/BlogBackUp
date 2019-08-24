@@ -1,112 +1,138 @@
 // Support TLS-specific URLs, when appropriate.
-if (window.location.protocol == "https:") {
-  var ws_scheme = "wss://";
-} else {
-  var ws_scheme = "ws://"
-};
-
+var ws_scheme = window.location.protocol == "https:" ? "wss://" : "ws://";
 
 //var wshost = 'localhost:8000'
 var wshost = "keeper-cat.herokuapp.com"
-//var inbox = new ReconnectingWebSocket(ws_scheme + location.host + "/receive");
-var box = undefined;
 
-function wschat() {
-  console.log($("#ukagaka_addstring").val());
-  //var handle = $("#input-handle")[0].value;
-  //var text   = $("#input-text")[0].value;
+var ws_url = ws_scheme + wshost + "/wschat"
+
+var box = undefined;
+var alivews = 0;
+var killws = 0;
+var aliveInterval = 30000;
+var killInterval = 300001; // 5 min
+
+function new_box(){
+  if(box === undefined){
+    box = new WebSocket(ws_url);
+    box.onopen = function(){
+      $('#ukagaka_reconnect').hide();
+      $('#ukagaka_addstring').show();
+      $('#ukagaka_addstring').focus();
+      keepAlive();
+      extendAlive();
+    }
+    box.onmessage = function(message) {
+      $('#state').text(' # 🗨️🐈')
+      $('#ukagaka_replaystring').append(`<div style='text-align:left;'> > ${message.data}</div>`);
+      extendAlive();
+    };
+    box.onclose = function(){
+      $('#ukagaka_addstring').hide();
+      $('#ukagaka_reconnect').text('重新連接');
+      $('#ukagaka_reconnect').show();
+      box = undefined;
+    };
+  }
+}
+
+function put_box() {
   box.send(JSON.stringify({ text: $("#ukagaka_addstring").val() }));
-  $('#ukagaka_replaystring').append(`<div style='text-align:right;'>${$("#ukagaka_addstring").val()}</div>`);
+  $('#ukagaka_replaystring').append(
+    `<div style='text-align:right;'>${$("#ukagaka_addstring").val()}</div>`);
   $("#ukagaka_addstring").val("");
+  extendAlive();
   return false;
 }
 
-//$("#wschat").on("submit", function(event) {
-//  console.log("hello");
-//  return false;
-//  event.preventDefault();
-//  //var handle = $("#input-handle")[0].value;
-//  //var text   = $("#input-text")[0].value;
-//  //box.send(JSON.stringify({ handle: handle, text: text }));
-//  $("#ukagaka_addstring")[0].value = "";
-//});
+function keepAlive() {
+  if (box.readyState == box.OPEN) {
+    box.send('');
+    console.log("keep websocket alive");
+  }
+  alivews = setTimeout(keepAlive, aliveInterval);
+}
 
-//$("live2d-widget").ukagaka();
-//alert("done");
-//alert("hello world");
+function extendAlive(){
+  if(killws) clearTimeout(killws);
+  killws = setTimeout(function(){
+    if (alivews) clearTimeout(alivews);
+    box.close();
+  }, killInterval);
+}
 
 var default_option = {
   jsonPath: 'js/ukagaka/assets/chiyo/chiyo.model.json',
   modelConfig: {
-   "type":"Ukagaka Model Setting",
-   "name":"chiyo",
-   "model":"chiyo.moc",
-   "filepath":"/js/ukagaka/assets/chiyo/",
-   "playlist":[
+    "type":"Ukagaka Model Setting",
+    "name":"chiyo",
+    "model":"chiyo.moc",
+    "filepath":"/js/ukagaka/assets/chiyo/",
+    "playlist":[
       {
-         "title":"シュガーソングとビターステップ",
-         "artist":"血界戰線 ED",
-         "album":"",
-         "cover":"",
-         "mp3":"http://morris821028.github.io/file/music/Kekkai-Sensen-ED-Instrumental-ED.mp3",
-         "ogg":"http://morris821028.github.io/file/music/Kekkai-Sensen-ED-Instrumental-ED.mp3"
+        "title":"シュガーソングとビターステップ",
+        "artist":"血界戰線 ED",
+        "album":"",
+        "cover":"",
+        "mp3":"http://morris821028.github.io/file/music/Kekkai-Sensen-ED-Instrumental-ED.mp3",
+        "ogg":"http://morris821028.github.io/file/music/Kekkai-Sensen-ED-Instrumental-ED.mp3"
       },
       {
-         "title":"さよならのこと",
-         "artist":"WHITE ALBUM2 ED",
-         "album":"",
-         "cover":"",
-         "mp3":"http://morris821028.github.io/file/music/WHITE-ALBUM2-ED-Piano.mp3",
-         "ogg":"http://morris821028.github.io/file/music/WHITE-ALBUM2-ED-Piano.mp3"
+        "title":"さよならのこと",
+        "artist":"WHITE ALBUM2 ED",
+        "album":"",
+        "cover":"",
+        "mp3":"http://morris821028.github.io/file/music/WHITE-ALBUM2-ED-Piano.mp3",
+        "ogg":"http://morris821028.github.io/file/music/WHITE-ALBUM2-ED-Piano.mp3"
       }
-   ],
-   "motions":{
+    ],
+    "motions":{
       "idle":[
-         {
-            "file":"motions/uk12.png"
-         },
-         {
-            "file":"motions/uk13.png"
-         },
-         {
-            "file":"motions/uk14.png"
-         },
-         {
-            "file":"motions/uk15.png"
-         },
-         {
-            "file":"motions/uk16.png"
-         },
-         {
-            "file":"motions/uk17.png"
-         },
-         {
-            "file":"motions/uk18.png"
-         },
-         {
-            "file":"motions/uk20.png"
-         },
-         {
-            "file":"motions/uk21.png"
-         },
-         {
-            "file":"motions/uk23.png"
-         },
-         {
-            "file":"motions/uk24.png"
-         },
-         {
-            "file":"motions/uk25.png"
-         },
-         {
-            "file":"motions/uk26.png"
-         },
-         {
-            "file":"motions/uk27.png"
-         }
+        {
+          "file":"motions/uk12.png"
+        },
+        {
+          "file":"motions/uk13.png"
+        },
+        {
+          "file":"motions/uk14.png"
+        },
+        {
+          "file":"motions/uk15.png"
+        },
+        {
+          "file":"motions/uk16.png"
+        },
+        {
+          "file":"motions/uk17.png"
+        },
+        {
+          "file":"motions/uk18.png"
+        },
+        {
+          "file":"motions/uk20.png"
+        },
+        {
+          "file":"motions/uk21.png"
+        },
+        {
+          "file":"motions/uk23.png"
+        },
+        {
+          "file":"motions/uk24.png"
+        },
+        {
+          "file":"motions/uk25.png"
+        },
+        {
+          "file":"motions/uk26.png"
+        },
+        {
+          "file":"motions/uk27.png"
+        }
       ]
-   },
-   "ui":{
+    },
+    "ui":{
       "ukagakaText":"千代",
       "loadingText":" .^100.^100.",
       //"learnPlaceholder":"default: input for learn.",
@@ -121,8 +147,8 @@ var default_option = {
       "logText":"更新日誌<br/><br/>Morris 修正<br/><br/>找尋 AI 系統<br/>找尋 AI 對話<br/>",
       "rejectText":"千代不接受這個字串喔！",
       "learnText":"千代學習了！"
-   }
-},
+    }
+  },
   //googleKey: '0ArRwmWo93u-mdG93a2dkSWxIbHEzZjRIeDdxZXdsU1E',
   //googleFormkey: '1xADUIiBq1ksH7lxwSch1Nz_p2gSxdJttmv5OJOxJye0',
   //googleSheet: "od6",
@@ -153,11 +179,13 @@ function init(elem, options) {
        "</span><span id='ukagaka_menu_btn_exit'>" +
        loadUItext(options, 'menuExitText') +
        "</span></div>" +
-    */
-    "<div class='ukagaka_msg' id='ukagaka_stringinput'><form action='#' id='wschat' onsubmit='return wschat();'>" +
+       */
+    "<div class='ukagaka_msg' id='ukagaka_stringinput'><form action='#' id='wschat' onsubmit='return put_box();'>" +
     "<div id='ukagaka_replaystring' style='max-width: 100%; margin-top: 0px; margin-bottom: 5px;'> <div id='state'> # ...💤</div></div>" +
-    "<input id='ukagaka_addstring' style='margin-top: 5px;' type='text' placeholder='" + loadUItext(options, 'learnPlaceholder') + "'/>" +
-    "</form></div>" +
+    "<input id='ukagaka_addstring' style='margin-top: 5px; display:none;' type='text' placeholder='" + loadUItext(options, 'learnPlaceholder') + "'/>" +
+    "</form>" +
+    "<button id='ukagaka_reconnect' style='width:100%; display:block; color: black; max-width:100%; auto; margin-top: 5px; pointer-events:auto' onclick='new_box(); return false;'>連接</button>" +
+    "</div>" +
     "<div class='ukagaka_msg' id='ukagaka_renewlist' style='display:none'>" + loadUItext(options, 'logText') + "<span id='ukagaka_btn_menu'>" + loadUItext(options, 'menuCancelText') + "</span></div>" +
     "<input id='ukagaka_sheetfield' type='hidden' value='" + sheetfield + "'>" +
     "</div>" +
@@ -197,7 +225,7 @@ function newText(){
     "我是本站管理貓",
     "喵喵喵～",
     "本貓還在學習中，<br>請多指教！",
-    "（與板主）即時聊天功能已上線",
+    //"（與板主）即時聊天功能已上線",
     "本版文章品質<br>真是不可期待啊（茶",
     "我要罐罐～",
     //"打煤！不要亂看ㄛ",
@@ -289,19 +317,6 @@ function actionSetting(opt, elem) {
   }).on('click', "#ukagaka_menu_btn_exit", function(event) {
     menuClick($("#ukagaka_msgbox"));
   }).on('click', "#ukagaka_btn_menu", function(event) {
-    if(box === undefined){
-      box = new ReconnectingWebSocket(ws_scheme + wshost + "/wschat");
-      box.onmessage = function(message) {
-        $('#state').text(' # 🗨️🐈')
-        console.log(message);
-        //$('#ukagaka_replaystring').text(' > ' + message.data);
-        $('#ukagaka_replaystring').append(`<div style='text-align:left;'> > ${message.data}</div>`);
-      };
-      box.onclose = function(){
-          console.log('box closed');
-          //this.box = new WebSocket(box.url);
-      };
-    }
     $("#ukagaka_stringinput").show();
     $("#ukagaka_msgbox").hide();
     $("#smart").show();
