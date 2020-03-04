@@ -199,7 +199,7 @@ Include = /etc/pacman.d/mirrorlist
 
 開始安裝系統套件。
 ```
-pacstrap /mnt base base-devel
+pacstrap /mnt base base-devel linux linux-firmware
 ```
 
 ## 系統配置
