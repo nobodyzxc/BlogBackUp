@@ -20,7 +20,10 @@ tags:
 
 <script src="https://gist.github.com/nobodyzxc/5e9bb4d6134dfa5e9a98709ae9b945b3.js"></script>
 
-可用 `curl https://gist.githubusercontent.com/nobodyzxc/5e9bb4d6134dfa5e9a98709ae9b945b3/raw/1fb4e95aa17029cd371cdee5769d132ef5cec5e1/install_arch.sh | bash ` 安裝。
+可用以下指令安裝：
+```
+curl https://gist.githubusercontent.com/nobodyzxc/5e9bb4d6134dfa5e9a98709ae9b945b3/raw/a48a805b95ad47590daf9ecb6ef0f54c041bae5a/install_arch.sh | bash
+```
 
 ## 安裝前準備
 
@@ -65,13 +68,13 @@ sudo dd bs=4M if=/home/zxc/Downloads/archlinux-2019.02.01-x86_64.iso of=/dev/sdb
 因為我們要用 GRUB 引導程序（可以選擇要開機的硬碟，雙系統可以用）
 所以選擇 USB 有 UEFI 的選項。
 
-![](/arch_install/bootmenu.jpg)
+![](/images/arch_install/bootmenu.jpg)
 
 選擇後應該會長這樣：
-![](/arch_install/uefi.jpg)
+![](/images/arch_install/uefi.jpg)
 
 選錯了會長這樣：
-![](/arch_install/bios.jpg)
+![](/images/arch_install/bios.jpg)
 
 以 root 進入 zsh。
 
