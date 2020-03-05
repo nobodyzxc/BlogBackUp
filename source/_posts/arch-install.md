@@ -20,7 +20,7 @@ tags:
 
 <script src="https://gist.github.com/nobodyzxc/5e9bb4d6134dfa5e9a98709ae9b945b3.js"></script>
 
-可用 `curl https://gist.githubusercontent.com/nobodyzxc/5e9bb4d6134dfa5e9a98709ae9b945b3/raw/7c3066e9db33759dbb518a06d7eeb9a85193c033/install_arch.sh | bash ` 安裝。
+可用 `curl https://gist.githubusercontent.com/nobodyzxc/5e9bb4d6134dfa5e9a98709ae9b945b3/raw/1fb4e95aa17029cd371cdee5769d132ef5cec5e1/install_arch.sh | bash ` 安裝。
 
 ## 安裝前準備
 
