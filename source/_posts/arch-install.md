@@ -22,7 +22,7 @@ tags:
 
 可用以下指令安裝：
 ```
-curl https://gist.githubusercontent.com/nobodyzxc/5e9bb4d6134dfa5e9a98709ae9b945b3/raw/a48a805b95ad47590daf9ecb6ef0f54c041bae5a/install_arch.sh | bash
+curl https://gist.githubusercontent.com/nobodyzxc/5e9bb4d6134dfa5e9a98709ae9b945b3/raw/e0a838f649744e8ac329ff7021d7f377eccc6f3f/install_arch.sh | bash
 ```
 
 ## 安裝前準備
@@ -346,7 +346,8 @@ i3 擁護派一定要 i3。
 值得注意的是，我用上文 lightdm-deepin-greeter 還是 blank screen，
 lightdm-gtk-greeter 也怪怪的。
 所以改用 lightdm-webkit2-greeter（需要 yay）。
-然後主題使用 [Aether](https://github.com/NoiSek/Aether)（水尬靠杯）。
+<s>然後主題使用 [Aether](https://github.com/NoiSek/Aether)（水尬靠杯）。</s>
+我又叛逃了，現在使用的是 [Litarvan](https://github.com/Litarvan/lightdm-webkit-theme-litarvan)。（因為發現 Aether 不能記憶我上次使用的桌面系統）
 
 ```
 sudo pacman -S xorg xorg-server deepin deepin-extra
