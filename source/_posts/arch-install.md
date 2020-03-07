@@ -22,7 +22,7 @@ tags:
 
 可用以下指令安裝：
 ```
-curl https://gist.githubusercontent.com/nobodyzxc/5e9bb4d6134dfa5e9a98709ae9b945b3/raw/e0a838f649744e8ac329ff7021d7f377eccc6f3f/install_arch.sh | bash
+curl https://gist.githubusercontent.com/nobodyzxc/5e9bb4d6134dfa5e9a98709ae9b945b3/raw/30c7de08c1935fcc520cf08c7cd47651d26e7337/install_arch.sh | bash
 ```
 
 ## 安裝前準備
