@@ -5,10 +5,8 @@ categories: Memoir
 ---
 
 <center>
-
 一年了，這邊也該動動筆了。
 那就紀錄一下發生了什麼事情吧。
-
 </center>
 
 <!-- more -->
