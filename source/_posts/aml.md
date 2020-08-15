@@ -639,7 +639,7 @@ predictions = clf.predict_proba(xvalid_tfv.tocsc())
 相較於 IR Task 那種大量文本的處理，BERT 比較適合小文本的任務，
 這次的比賽就是一個非常好的發揮空間，所以我們在此次比賽也開始了對 BERT 的初次嘗試。
 
-因為先前傳統機器學習方法如 BM25, TF 之類的是用 one-hot encoding 的方法，存在特徵稀疏的問題，word embedding 相應而生。他將一個詞映射到一個低維稠密的語義空間，使相似詞可以共享上下文資訊，提升泛化能力。。深度學習在近幾年來快速發展，像是前面提到的 word2vector 還有後面開源的 ckip 斷詞工具都有利用到 word embedding。這類工具主要架構大多是用 unsupervised learning 訓練每一個詞的 word embedding，這其實就是在做一個特徵提取的動作，
+因為先前傳統機器學習方法如 BM25, TF 之類的是用 one-hot encoding 的方法，存在特徵稀疏的問題，word embedding 相應而生。他將一個詞映射到一個低維稠密的語義空間，使相似詞可以共享上下文資訊，提升泛化能力。深度學習在近幾年來快速發展，像是前面提到的 word2vector 還有後面開源的 ckip 斷詞工具都有利用到 word embedding。這類工具主要架構大多是用 unsupervised learning 訓練每一個詞的 word embedding，這其實就是在做一個特徵提取的動作，
 接著再確定想要的任務，例如 ckip 的斷詞或是詞性標記、NER 等，使用先前訓練出來的 embedding 作為表達式，再做一次 supervised learning 讓他更加確定需要的上下文關係，來建立最終的 Model。
 
 根據這種模式，近幾年來發展出了像是 ELMo、OpenAI 的 GPT、Google 的 BERT 及一堆他的變形、其他像是 CMU 的 XLNet 等。訓練 word embedding 從一開始的 RNN 到 LSTM 最後到 Attention，更多原理細節可以參考 [這一篇介紹](https://www.jishuwen.com/d/2M6u/zh-tw)。
