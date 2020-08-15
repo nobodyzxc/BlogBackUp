@@ -305,7 +305,7 @@ wayback/20190827225620/udn.com/news/story/7321/3845624
 2. 天氣/預報/：/氣流/影響/，/天氣/仍舊/不穩/，/留意/瞬間/大雨/。
 3. 台灣/座落/於/西/太平洋/。
 
-斷詞在實做上我們是使用 [jieba](https://github.com/fxsjy/jieba) 的 `search_mode`。
+斷詞在實作上我們是使用 [jieba](https://github.com/fxsjy/jieba) 的 `search_mode`。
 
 ```python
 import jieba
