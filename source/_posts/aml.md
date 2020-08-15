@@ -671,7 +671,7 @@ BERT 提供了四大下游任務（就是四個 supervised 的 NN Model），我
 
 根據需求，我們使用了 BertForSequenceClassification 做了對單個篇新聞的分類（AML & non-AML），但受限於 BERT 512 的 token size 限制，我們取了文章最後的 510 個 token 丟進 model 。
 
-在 validate data 上的分類準確度從剛才的 90% 直接來到了 99% 。
+在 validation data 上的分類準確度從剛才的 90% 直接來到了 99% 。
 
 一個比較基本可以用的 AML 犯罪名單提取系統已經差不多了。
 時間也來到了測試賽。
@@ -734,7 +734,7 @@ NER 出來的結果似乎就有了簡單的分類能力，可以避開一些非 
 
 #### NN model (RoBERTa) as classifier
 
-最後，經由測試，我們將前幾天的 query 當作 validate set，
+最後，經由測試，我們將前幾天的 query 當作 validation set，
 RoBERTa 的準確度從 96% 上到 97%，RoBERTa 的 classifier 似乎有變好，
 於是我們將 classifier 換成 RoBERTa。
 
