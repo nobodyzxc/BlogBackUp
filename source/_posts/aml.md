@@ -21,7 +21,7 @@ mathjax: true
 
 接著就來介紹一下這個比賽吧！
 
-## 競賽說明
+## 競賽說明 About Competition
 
 > 以下說明來自 [玉山官網](https://tbrain.trendmicro.com.tw/Competitions/Details/11) 。
 
