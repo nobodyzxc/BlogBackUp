@@ -666,17 +666,16 @@ predictions = clf.predict_proba(xvalid_tfv.tocsc())
 BERT 的使用也相當容易，python 有一個集 NLP 大成的套件庫叫做 `transformers`，
 裡面不僅有 BERT， 也有 XLNet 等 model 。
 
-詳細的實作教學可以參考 [進擊的 BERT：NLP 界的巨人之力與遷移學習](https://leemeng.tw/attack_on_bert_transfer_learning_in_nlp.html)。
-
-而原理可參考李宏毅教授的 [BERT 的教學影片](https://www.youtube.com/watch?v=UYPa347-DdE)。
-
 要下載 BERT 的 pre-training 相當容易，只要把填好 pre-training 的名稱，
 他跑下去發現沒有的話，就會自己去載了。
 
 至於有哪些 pre-training，除了上網 Google 外，基本上可以來 [hugface 的網站](https://huggingface.co/models) 上面找，
 因為此次是中文的比賽，所以我們使用了最基本款 `bert-base-chinese` 即可。
 
-基本上 BERT 的使用細節都可以透過這篇 [教學文](https://leemeng.tw/attack_on_bert_transfer_learning_in_nlp.html) 學到，裡面也有範例程式碼，學習起來算是相當的容易。
+基本上 BERT 的使用細節都可以透過這篇 [進擊的 BERT：NLP 界的巨人之力與遷移學習](https://leemeng.tw/attack_on_bert_transfer_learning_in_nlp.html) 學到，
+裡面也有範例程式碼，學習起來算是相當的容易。
+
+而原理可參考李宏毅教授的 [BERT 的教學影片](https://www.youtube.com/watch?v=UYPa347-DdE)。
 
 BERT 提供了四大下游任務（就是四個 supervised 的 NN Model），我們可以根據我們的需求，
 選用適合的任務模型來使用。關於更詳細的四大任務介紹可以參考這篇 [知乎專欄](https://zhuanlan.zhihu.com/p/102208639)
