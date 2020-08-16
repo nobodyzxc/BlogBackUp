@@ -427,9 +427,9 @@ IR model 大概就是以上面提到提到的概念，做出的一個搜尋引�
 
 #### NN model (ckip) + rule based as extractor (NER)
 
-而在去年九月，中研院的 ckip 開源了一套新的斷詞系統 [ckiptagger](https://github.com/ckiplab/ckiptagger)，與舊的不同處在於這一套是用深度學習的方法，利用 BiLSTM 訓練出來的模型。他一樣利用 pre-training 的 word embedding，然後搭配 BiLSTM 訓練出一套斷詞系統。而後透過斷詞出來的結果再加上詞向量訓練出詞性標注。
+而在去年九月，中研院的 ckip 開源了一套新的斷詞系統 [ckiptagger](https://github.com/ckiplab/ckiptagger)，與舊的不同處在於這一套是用深度學習的方法，利用 BiLSTM 訓練出來的模型。他一樣利用 pre-training 的 word embedding，然後搭配 BiLSTM 訓練出一套斷詞系統。而後透過斷詞出來的結果再加上 word embedding 訓練出詞性標注。
 
-而最後最重要的 NER 也是由 BiLSTM 訓練而成，需要拿前面的詞向量 + 斷詞結果 + 詞性標注當作輸入。有了這一整套系統，我們就有基本的中文 NER 可以用了。這套斷詞系統相當精確，也有許多類別，地點、組織等都會標記出來，我們只要取用人物的部份即可。
+而最後最重要的 NER 也是由 BiLSTM 訓練而成，需要拿前面的 word embedding + 斷詞結果 + 詞性標注當作輸入。有了這一整套系統，我們就有基本的中文 NER 可以用了。這套斷詞系統相當精確，也有許多類別，地點、組織等都會標記出來，我們只要取用人物的部份即可。
 
 不過人物的部份，他會連一些簡稱（張嫌、陳婦）都標記出來，
 所以我們這邊會做一個簡單的 filter 去過濾這些結果。
@@ -666,6 +666,10 @@ predictions = clf.predict_proba(xvalid_tfv.tocsc())
 BERT 的使用也相當容易，python 有一個集 NLP 大成的套件庫叫做 `transformers`，
 裡面不僅有 BERT， 也有 XLNet 等 model 。
 
+詳細的實作教學可以參考 [進擊的 BERT：NLP 界的巨人之力與遷移學習](https://leemeng.tw/attack_on_bert_transfer_learning_in_nlp.html)。
+
+而原理可參考李宏毅教授的 [BERT 的教學影片](https://www.youtube.com/watch?v=UYPa347-DdE)。
+
 要下載 BERT 的 pre-training 相當容易，只要把填好 pre-training 的名稱，
 他跑下去發現沒有的話，就會自己去載了。
 
@@ -707,7 +711,7 @@ BERT 提供了四大下游任務（就是四個 supervised 的 NN Model），我
 根據主辦單位的標記資料，每一篇 AML 文章都有對應的人名集合。
 
 要把資料輸進 BERT 做 NER 還需要把每個 token 做標記。
-這邊我們根據 [IOB format](https://en.wikipedia.org/wiki/Inside%E2%80%93outside%E2%80%93beginning_(tagging))，只要把目標人名用 `B-PER`, `I-PER` 標起來即可。
+這邊我們根據 [IOB format](https://en.wikipedia.org/wiki/Inside%E2%80%93outside%E2%80%93beginning_(tagging)，只要把目標人名用 `B-PER`, `I-PER` 標起來即可。
 
 首先我們先用 BERT 載入 `bert-base-chinese`，使用他的 tokenizer 為每篇 AML 新聞做 tokenization。
 
@@ -753,8 +757,12 @@ NER 出來的結果似乎就有了簡單的分類能力，可以避開一些非 
 RoBERTa 的準確度從 96% 上到 97%，RoBERTa 的 classifier 似乎有變好，
 於是我們將 classifier 換成 RoBERTa。
 
+下圖是我們的最終架構圖：
+
+![](https://i.imgur.com/4durE7N.png)
+
 > 由於主辦單位不小心把第七天的 query 送成前一天的，故第七天沒有列入計算。
-> 可能是 RoBERTa 的表現加上 1500 的標記資料生效了，最後一天我們的成績跑進了第三名。
+> 可能是 RoBERTa 的表現加上 1500 的標記資料生效了，最後一天我們的成績跑到了第三名。
 > 至此，整個賽程結束。
 > 因為我本身的研究領域不是 NLP，加上時間因素，能有這樣的成績已經是相當幸運了。
 > 三個禮拜衝刺也到了一段落了 :)
