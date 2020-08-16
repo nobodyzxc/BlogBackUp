@@ -349,10 +349,10 @@ $$\cos (t,e)= {t e \over \|t\| \| e\|} = \frac{ \sum_{i=1}^{n}{t_i e_i} }{ \sqrt
 
 ```python
 from sklearn.metrics.pairwise import cosine_similarity
-vec_a = [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8,   0,   0,   0,   0,   0,   0,   0]
-vec_b = [  0,   0,   0,   0,   0, 2/8,   0, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8,   0,   0]
-vec_c = [1/3,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 1/3, 1/3]
-print(cosine_similarity([vec_a, vec_b, vec_c], [vec_a, vec_b, vec_c]))
+vecA = [1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8,   0,   0,   0,   0,   0,   0,   0]
+vecB = [  0,   0,   0,   0,   0, 2/8,   0, 1/8, 1/8, 1/8, 1/8, 1/8, 1/8,   0,   0]
+vecC = [1/3,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 1/3, 1/3]
+print(cosine_similarity([vecA, vecB, vecC], [vecA, vecB, vecC]))
 ```
 
 ```python
