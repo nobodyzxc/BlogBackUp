@@ -564,7 +564,7 @@ def inference():
 
 ### static IP
 
-Azure 不開放 80 和 443 以外的 port，所以原則上把服務開在其中一個 port 即可。
+Azure 對外不開放 80 和 443 以外的 port，所以原則上把服務開在其中一個 port 即可。
 
 那如果手上有比較好的顯卡，覺得 K80 跑得太慢，但該電腦又沒有固定 IP 的話怎麼辦呢？
 
@@ -580,8 +580,19 @@ systemctl restart sshd.service
 然後因為 ssh 容易掉，我這邊使用 autossh 讓他自動重連就穩多了。
 
 ```
-autossh -M 20000 -i ~/.ssh/id_rsa -NfR  :80:localhost:8080 user@azure
+autossh -M 20000 -i ~/.ssh/id_rsa -NfR  :8080:localhost:8080 user@azure
+# foward local 8080 to remote 8080
 ```
+
+可以看到，我將本機端的 8080 port forwarding 到遠端的 8080 port，
+因為遠端的 80 port 需要 root 權限，但有時 ssh 會關掉 root 遠端登入（只允許 console）。
+所以這邊可以透過 [python-port-forward](https://github.com/vinodpandey/python-port-forward):
+
+```
+sudo python2.7 port-forward.py 80:localhost:8080
+```
+
+將 8080 port 再 forward 到 80 port，我們就可以使用 azure 的 IP 了。
 
 原則上有靜態 IP，有 ssh 的 server 都可以使用 forwading，
 像這次比賽基本上都是由家中 NAS 提供服務。
