@@ -18,6 +18,7 @@ tags:
 <!-- more -->
 
 
+<br><br>
 ## 楔子
 
 對 Functional 的追求，

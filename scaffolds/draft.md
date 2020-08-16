@@ -1,9 +1,15 @@
 ---
 title: {{ title }}
-tags:
+date: {{ date }}
+categories:
 ---
 
 <center>
 </center>
 
+
 <!-- more -->
+
+
+<br><br>
+## H2

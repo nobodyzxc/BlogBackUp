@@ -20,6 +20,7 @@ tags:
 <!-- more -->
 
 
+<br><br>
 # About Scheme
 
 學校 scheme 學了大半學期，continuation 這個詞估計同學連聽都沒聽過。

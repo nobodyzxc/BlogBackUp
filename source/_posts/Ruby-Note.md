@@ -22,6 +22,7 @@ wait to refer:<br>
 <!-- more -->
 
 
+<br><br>
 <script src="/files/ruby-syntax-patch.js"></script>
 <link href="/files/scheme-syntax-patch.css" rel="stylesheet" type="text/css">
 ## Basic

@@ -17,6 +17,7 @@ tags:
 <!-- more -->
 
 
+<br><br>
 ## Basic
 跟 Python 一樣是動態語言，所謂變數只是 name binding，
 用法跟 Python 也一樣，要用之前先 assign 一個值。

@@ -12,6 +12,7 @@ categories: Thinking
 <!-- more -->
 
 
+<br><br>
 > 葉丙成老師兩篇關於主修 CS 的文章
 >
 > 102657 ( CK ) 2018-03-06 10:59 0

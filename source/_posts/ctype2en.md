@@ -14,6 +14,7 @@ wait to refer:<a href="http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html">rule</a>
 <!-- more -->
 
 
+<br><br>
 <script src="/files/c-syntax-patch.js"></script>
 <link href="/files/c-syntax-patch.css" rel="stylesheet" type="text/css">
 

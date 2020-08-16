@@ -13,6 +13,7 @@ mathjax: true
 <!-- more -->
 
 
+<br><br>
 學期末在 FB 上看到有人在人工智慧社團分享了這個比賽，感覺這個議題滿有趣的，剛好大學有修過一門 IR (Information Retrieval, 資訊檢索) 的課，他算是自然語言處理 (NLP) 的應用，所以也算對 NLP 有一點點基本的認識，手上有那時期末 project 做出來的 crawler 和 IR Model，我便拉著同學們一起入坑了。
 
 所有的 code 都已經放在 [GitHub](https://github.com/BlackBoxOperator/GotchaTheNames) 上了，有興趣可以參考，

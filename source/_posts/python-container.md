@@ -15,6 +15,7 @@ Python 感覺入門很久了，但對於容器的使用一直感到很生疏，�
 <!-- more -->
 
 
+<br><br>
 ## Question
 
 我對於 Python 的一些存在一直不能感到理解，就是這些對容器的 function 了。

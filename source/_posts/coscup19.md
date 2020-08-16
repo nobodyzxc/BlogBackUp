@@ -17,6 +17,7 @@ tags:
 <!-- more -->
 
 
+<br><br>
 # 起手吐槽
 
 依舊是滿滿 PL 加一點 Block Chain... 說好的 AI 呢？

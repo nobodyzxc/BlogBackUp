@@ -18,6 +18,7 @@ A world without loop , but recursion。<br>
 <!-- more -->
 
 
+<br><br>
 ## Some hints
 
 * 不像 PP , OOP 告訴電腦要做什麼，FP 的思考方式是描述問題。

@@ -15,6 +15,7 @@ tags:
 <!-- more -->
 
 
+<br><br>
 事先聲明 Cygwin != Linux，它是 Windows 下一個模擬 Linux terminal 的介面。
 
 關於 Cygwin 的[安裝](https://www.ubuntu-tw.org/modules/newbb/viewtopic.php?topic_id=47282)。
