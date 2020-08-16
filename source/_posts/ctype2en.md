@@ -5,12 +5,15 @@ categories: Note
 ---
 
 <center>
-PL 教授給的 [8 頁 Func Ptr 閱讀材料](https://www.google.com.tw/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiYrNTC6orVAhXEebwKHVxyDXIQFgglMAA&url=http%3A%2F%2Fwww2.mta.ac.il%2F~hbinsky%2Fc%2520content%2FFunction%2520Pointer.pdf&usg=AFQjCNEzZ-0v-7fvdH5Z8sEVHbebcpV4mg)。
-那就來玩一下吧。
-wait to refer:[rule](http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html)
+PL 教授給的 <a href="https://www.google.com.tw/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwiYrNTC6orVAhXEebwKHVxyDXIQFgglMAA&amp;url=http%3A%2F%2Fwww2.mta.ac.il%2F~hbinsky%2Fc%2520content%2FFunction%2520Pointer.pdf&amp;usg=AFQjCNEzZ-0v-7fvdH5Z8sEVHbebcpV4mg">8 頁 Func Ptr 閱讀材料</a>。<br>
+那就來玩一下吧。<br>
+wait to refer:<a href="http://ieng9.ucsd.edu/~cs30x/rt_lt.rule.html">rule</a>
 </center>
+
+
 <!-- more -->
-<br><br>
+
+
 <script src="/files/c-syntax-patch.js"></script>
 <link href="/files/c-syntax-patch.css" rel="stylesheet" type="text/css">
 

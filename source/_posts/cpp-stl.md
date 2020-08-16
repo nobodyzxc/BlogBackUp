@@ -13,7 +13,6 @@ tags:
 
 
 <!-- more -->
-<br><br>
 
 
 # How to start

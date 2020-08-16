@@ -16,9 +16,9 @@ tags:
 
 <link href="/files/scheme-syntax-patch.css" rel="stylesheet" type="text/css">
 
+
 <!-- more -->
 
-<br><br>
 
 # About Scheme
 

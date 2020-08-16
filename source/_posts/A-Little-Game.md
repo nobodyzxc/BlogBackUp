@@ -9,15 +9,16 @@ tags:
 ---
 
 <center>
-這是一年多前，在知乎看到的[小遊戲](http://www.therottingcartridge.com/games/programming/)。
-那時候玩到感覺就是這遊戲真不簡單，蘊含了很多東西在裡面。
-這幾天因為朋友說無聊，所以我又翻出來玩（結果他沒玩），
-感覺得到的東西又不一樣了。
+這是一年多前，在知乎看到的<a href="http://www.therottingcartridge.com/games/programming/">小遊戲</a>。<br>
+那時候玩到感覺就是這遊戲真不簡單，蘊含了很多東西在裡面。<br>
+這幾天因為朋友說無聊，所以我又翻出來玩（結果他沒玩），<br>
+感覺得到的東西又不一樣了。<br>
 感覺從中得到了些東西，所以想探討一下。
 </center>
 
+
 <!-- more -->
-<br><br>
+
 
 ## [傳送門](http://www.therottingcartridge.com/games/programming/)
    ^ 戳他

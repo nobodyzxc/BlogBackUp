@@ -8,17 +8,20 @@ tags:
 ---
 
 <center>
-[Codecademy](https://www.codecademy.com) 之 Ruby 速記。
-原來 Ruby 和 DSL 很有淵源啊（喃喃）。
-剛學沒多久教授就提到了，Ruby 主要是 SmallTalk + Lisp 佐一點 C。
->> On the path to enlightenment.
-wait to refer:
-  [Ruby Guides](http://guides.ruby.tw/ruby/index.html) done!
-  [Lots of docs](https://www.ruby-lang.org/zh_tw/documentation/)
+<a href="https://www.codecademy.com">Codecademy</a> 之 Ruby 速記。<br>
+原來 Ruby 和 DSL 很有淵源啊（喃喃）。<br>
+剛學沒多久教授就提到了，Ruby 主要是 SmallTalk + Lisp 佐一點 C。<br>
+On the path to enlightenment.<br>
+wait to refer:<br>
+  <a href="http://guides.ruby.tw/ruby/index.html">Ruby Guides</a> done!<br>
+  <a href="https://www.ruby-lang.org/zh_tw/documentation/">Lots of docs</a>
+
 </center>
 
+
 <!-- more -->
-<br><br>
+
+
 <script src="/files/ruby-syntax-patch.js"></script>
 <link href="/files/scheme-syntax-patch.css" rel="stylesheet" type="text/css">
 ## Basic

@@ -9,16 +9,17 @@ tags:
 - fp
 ---
 <center>
-嘛，情人節，和 Haskell 約個會吧！
-因為學完 Scheme 後回來看 Haskell，
-發現有不少地方是已經會的。
-而我覺得記些基本的東西意義不大，
-所以改成以一個接觸過 Scheme 的 FP 初學者角度，
+嘛，情人節，和 Haskell 約個會吧！<br>
+因為學完 Scheme 後回來看 Haskell，<br>
+發現有不少地方是已經會的。<br>
+而我覺得記些基本的東西意義不大，<br>
+所以改成以一個接觸過 Scheme 的 FP 初學者角度，<br>
 重新來看待 Haskell 這個語言。
 </center>
 
+
 <!-- more -->
-<br><br>
+
 
 ## Syntax
 

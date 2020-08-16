@@ -11,8 +11,9 @@ tags:
 本篇主要內容為在 Cygwin 下一些簡單的 BASH 用法。
 </center>
 
+
 <!-- more -->
-<br><br>
+
 
 事先聲明 Cygwin != Linux，它是 Windows 下一個模擬 Linux terminal 的介面。
 

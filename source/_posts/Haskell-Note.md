@@ -8,14 +8,15 @@ tags:
 - fp
 ---
 <center>
-A world without loop , but recursion。
-學校 PL 課程，及 [Haskell 趣學指南](https://learnyoua.haskell.sg/content/zh-tw/) 的一些心得筆記。
-<s>更新：戰場轉換到 scheme，scheme 新坑開完再回來。</s>
+A world without loop , but recursion。<br>
+學校 PL 課程，及 <a href="https://learnyoua.haskell.sg/content/zh-tw/">Haskell 趣學指南</a> 的一些心得筆記。<br>
+<s>更新：戰場轉換到 scheme，scheme 新坑開完再回來。</s><br>
 更更新：我回乃了。
 </center>
 
+
 <!-- more -->
-<br><br>
+
 
 ## Some hints
 

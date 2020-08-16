@@ -7,15 +7,18 @@ tags:
 - linux
 ---
 <center>
-結識 vim 一年多了，一切的一切算得上機緣巧遇。
-想來不禁百感交集，意味悠遠。
-這篇文章會不定期更新，隨著我的 vim skill。
-這段旅途的終點，大概就是我不用 vim 的那天吧！
-（可能是入 emacs 教，或是奔向 IDE 了吧～)
+結識 vim 一年多了，一切的一切算得上機緣巧遇。<br>
+想來不禁百感交集，意味悠遠。<br>
+這篇文章會不定期更新，隨著我的 vim skill。<br>
+這段旅途的終點，大概就是我不用 vim 的那天吧！<br>
+（可能是入 emacs 教，或是奔向 IDE 了吧～)<br>
 Chrome 有 Vimium ， Firefox 有 VimFx 加入我大 Vim 教吧。
 </center>
+
+
 <!-- more -->
-<br><br>
+
+
 ## 基本操作篇
 要編輯一個存在的文檔`tst.txt`時只要在 terminal 下 `vim tst.txt`。
 如果要建立一個新檔，叫做`new.txt`，也只要下 `vim new.txt`，只是離開記得存。

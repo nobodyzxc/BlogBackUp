@@ -10,9 +10,9 @@ tags:
 裝 Arch 第二次就上手～
 </center>
 
+
 <!-- more -->
 
-<br><br>
 
 ## script
 

@@ -10,9 +10,9 @@ mathjax: true
 π-calculas 不負責任筆記
 </center>
 
+
 <!-- more -->
 
-<br><br>
 
 ## Concurrency vs Parallelism
 
