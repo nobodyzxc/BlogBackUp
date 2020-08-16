@@ -568,9 +568,9 @@ Azure 對外不開放 80 和 443 以外的 port，所以原則上把服務開在
 
 那如果手上有比較好的顯卡，覺得 K80 跑得太慢，但該電腦又沒有固定 IP 的話怎麼辦呢？
 
-這時可以使用 ssh port forwarding 的功能，forwarding 分作兩種，正向代理和反向代理。正向代理是將伺服器端的 port forwarding 到我們的電腦上，所以我們可以把伺服器端的服務拿到我們客戶端的 port 來用。反過來想，今天我們是要把我們客戶端提供的服務放到伺服器上，所以用的是反向代理，假設我們把 flask 開在 8080 port 上，那只要 forwarding 到伺服器的 80 port 上，那外面的人只要用 http protocol 瀏覽伺服器的 IP 位置即可。
+這時可以使用 ssh port forwarding 的功能，forwarding 分作兩種，正向代理和反向代理。正向代理是將伺服器端的 port forward 到我們的電腦上，所以我們可以把伺服器端的服務拿到我們客戶端的 port 來用。反過來想，今天我們是要把我們客戶端提供的服務放到伺服器上，所以用的是反向代理，假設我們把 flask 開在 8080 port 上，那只要 forward 到伺服器的 80 port 上，那外面的人只要用 http protocol 瀏覽伺服器的 IP 位置即可。
 
-值得注意的一點是，`/etc/ssh/sshd_config` 裡面的 `AllowTcpForwarding` 必須是 `yes`，才可以 forwarding。
+值得注意的一點是，`/etc/ssh/sshd_config` 裡面的 `AllowTcpForwarding` 必須是 `yes`，才可以 forward。
 剛改完記得要重啟 ssh server。
 
 ```
@@ -584,7 +584,7 @@ autossh -M 20000 -i ~/.ssh/id_rsa -NfR  :8080:localhost:8080 user@azure
 # foward local 8080 to remote 8080
 ```
 
-可以看到，我將本機端的 8080 port forwarding 到遠端的 8080 port，
+可以看到，我將本機端的 8080 port forward 到遠端的 8080 port，
 因為遠端的 80 port 需要 root 權限，但有時 ssh 會關掉 root 遠端登入（只允許 console）。
 所以這邊可以透過 [python-port-forward](https://github.com/vinodpandey/python-port-forward):
 
