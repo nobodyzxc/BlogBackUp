@@ -716,6 +716,12 @@ BERT 提供了四大下游任務（就是四個 supervised 的 NN Model），我
 
 接著根據幫匹配的人名標上標記，其餘的標上 `O` 即可。
 
+```
+"法官怕周麗真逃亡", ["周麗真"]
+['法', '官', '怕',    '周',     '麗',    '真','逃', '亡']
+['O',  'O',  'O', 'B-PER', 'I-PER', 'I-PER', 'O',  'O']
+```
+
 只要寫個小小的 script 轉換完資料，
 接著使用 BertForTokenClassification 就可以開始愉快的 train NER 囉！
 
