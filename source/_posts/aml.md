@@ -20,6 +20,8 @@ mathjax: true
 不過因為訓練資料是主辦單位提供，故不能釋出。
 這部份可能要讀者自行爬取並標記。
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ENRQHKaJfSI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 接著就來介紹一下這個比賽吧！
 
 ## 競賽說明 About Competition
