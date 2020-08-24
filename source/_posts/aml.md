@@ -20,7 +20,9 @@ mathjax: true
 不過因為訓練資料是主辦單位提供，故不能釋出。
 這部份可能要讀者自行爬取並標記。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ENRQHKaJfSI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="overflow:hidden;" scrolling="no" width="100%" height="400" src="https://hackmd.io/@nobodyzxc/BkoH_a-Mv#/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+> 分享會當天的報告用投影片
 
 接著就來介紹一下這個比賽吧！
 
