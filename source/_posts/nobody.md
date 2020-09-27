@@ -116,15 +116,28 @@ mtchi 教授是我兩位好友的專題老師，因為我和其他兩個同學�
 
 計架和正規語言算是比較理論的課，而平行和數值算是比較實作的課程。
 
-計架算是計組的延伸，除了回顧一些先前的知識，也介紹了滿多其他的東西。期末 paper reading 的部份，滿多組別都在介紹 FPGA 那些 AI 晶片，我們讀到的是一篇關於 Data Flow 的優化方式，也蠻有趣的。
+計架算是計組的延伸，除了回顧一些先前的知識，也介紹了滿多其他的東西。
+期末 paper reading 的部份，滿多組別都在介紹 FPGA 那些 AI 晶片，
+我們讀到的是一篇關於 Data Flow 的優化方式，也蠻有趣的。
 
 正規語言在大學也有修過，不過這門課多了滿多證明的，修完了感覺自己還是不太會寫，正規還是很不扎實 XD。
 
-數值軟體讓我真正接觸到了 python binding 的寫法還有一些會影響 performance 的小細節。我們使用 pybind11 來幫助 python 調用 cpp11 的 code。最後期末 project 我選了 SVM 當主題，不過沒時間也寫不出來，也就把這門課 drop 掉了（（
+數值軟體讓我真正接觸到了 python binding 的寫法還有一些會影響 performance 的小細節。
+我們使用 pybind11 來幫助 python 調用 cpp11 的 code。
+最後期末 project 我選了 SVM 當主題，不過沒時間也寫不出來，也就把這門課 withdraw 了（（
 
-我在平行程式學了許多平行化的方法，像是大學已經接觸過的 threading，還有 OpenMP、OpenMPI、OpenCL 還有 CUDA。不過沒有接觸到 SIMD 感覺有點可惜。最後我們期末寫了關於 huffman encoding 和 decoding 的平行化。隔壁組則是寫了太鼓達人的 RL 平行化 XD
+我在平行程式學了許多平行化的方法，像是大學已經接觸過的 threading，
+還有 OpenMP、OpenMPI、OpenCL 還有 CUDA。不過沒有接觸到 SIMD 感覺有點可惜。
+最後我們期末寫了關於 huffman encoding 和 decoding 的平行化。
+隔壁組則是寫了太鼓達人的 RL 平行化 XD
 
-不過平行的遺憾很巧合地被補起來了。十月份的時候，剛好看到黑貓大大在元智大學有一場 Halide 的分享，那門課先教了我們 ARM 上 SIMD 的寫法，然後用自己的手機上運行 gemm。之後教了 Halide，發現他 SIMD, threading，tiling 什麼的全部幫我們做掉了，TVM 據說也是受 Halide 啟發而發展出來的，一套 Halide 打天下，感覺也是相當有趣的研究方向。最後在 lab 實作和回答問題，我和 rnic 還得到了兩塊板子，黑貓大大人實在太好了 XDD
+不過平行的遺憾很巧合地被補起來了。
+
+十月份的時候，剛好看到黑貓大大在元智大學有一場 Halide 的分享，
+那門課先教了我們 ARM 上 SIMD 的寫法，然後用自己的手機上運行 gemm。
+之後教了 Halide，發現他 SIMD, threading，tiling 什麼的全部幫我們做掉了，
+TVM 據說也是受 Halide 啟發而發展出來的，一套 Halide 打天下，感覺也是相當有趣的研究方向。
+最後在 lab 實作和回答問題，我和 rnic 還得到了兩塊板子，黑貓大大人實在太好了 XDD
 
 兩週後，在學校餐廳還和他巧遇了，留下了一張合影 :)
 
