@@ -1,18 +1,19 @@
 ---
-title: Vim Note （Basic Manipulation）
+title: Vim Note (Basic Manipulation)
 date: 2017-01-22 23:32:56
 categories: Note
 tags:
 - vim
 - linux
 ---
+
 <center>
 結識 vim 一年多了，一切的一切算得上機緣巧遇。<br>
-想來不禁百感交集，意味悠遠。<br>
+一路走來的點點滴滴，想來不禁百感交集。<br>
 這篇文章會不定期更新，隨著我的 vim skill。<br>
 這段旅途的終點，大概就是我不用 vim 的那天吧！<br>
-（可能是入 emacs 教，或是奔向 IDE 了吧～)<br>
-Chrome 有 Vimium ， Firefox 有 VimFx 加入我大 Vim 教吧。
+（可能是入 emacs 教，或是真香 IDE 了吧）<br>
+Chrome 有 Vimium ， Firefox 有 VimFx 可以內化功力，快入我大 Vim 教吧。
 </center>
 
 
