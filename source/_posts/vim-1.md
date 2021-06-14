@@ -1,5 +1,5 @@
 ---
-title: Vim Node (Basic Configuration)
+title: Vim Note (Basic Configuration)
 date: 2020-11-18 21:59:21
 categories: Note
 tags:
