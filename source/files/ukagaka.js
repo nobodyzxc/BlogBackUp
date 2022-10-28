@@ -2,7 +2,7 @@
 var ws_scheme = window.location.protocol == "https:" ? "wss://" : "ws://";
 
 //var wshost = 'localhost:8000'
-var wshost = "keeper-cat.herokuapp.com"
+var wshost = "keeper-cat.fly.dev"
 
 var ws_url = ws_scheme + wshost + "/wschat"
 
