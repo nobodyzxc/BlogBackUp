@@ -29,12 +29,12 @@ social:
     FaceBook: https://www.facebook.com/nobodyzxc.tw || facebook
     Instagram: https://www.instagram.com/nobodyzxc.tw/ || instagram
 
-#links_title: GameLinks
-#links:
-#    2048: /2048
-#    tank: /3dtank
-#    打磚塊: /BreakoutClone
-
+    # links_title: GameLinks
+    # links:
+    #     2048: /2048
+    #     tank: /3dtank
+    #     guitar: /guitar
+    #     打磚塊: /BreakoutClone
 
 # Directory
 source_dir: source
@@ -44,7 +44,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: [files/** , 3dtank/**, BreakoutClone/**, drrr-botext-manual/**, tripcode/**, fonts/**]
+skip_render: [files/** , 3dtank/**, BreakoutClone/**, guitar/**, drrr-botext-manual/**, tripcode/**, fonts/**]
 
 # Writing
 new_post_name: :title.md # File name of new posts
