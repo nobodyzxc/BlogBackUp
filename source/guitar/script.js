@@ -122,6 +122,11 @@ function showNote(){
   });
 }
 
+function rerunMode(){
+  resetMode();
+  window[$('#mode').val()]?.();
+}
+
 $(document).ready(function(){
 
   for (var i=0; i < notes.e.length; i++){
@@ -194,22 +199,9 @@ $(document).ready(function(){
     showNotes(noteToShow);
   });
 
-  $('#mode').change(function(){
-    resetMode();
-    window[$(this).val()]?.();
-  }).change();
-
-  $('#modeInterval').change(function(){
-    console.log("reset")
-    resetMode();
-    window[$('#mode').val()]?.();
-  });
-
-  $('#answerTimeout').change(function(){
-    console.log("reset")
-    resetMode();
-    window[$('#mode').val()]?.();
-  });
+  $('#mode').change(rerunMode).change();
+  $('#modeInterval').change(rerunMode);
+  $('#answerTimeout').change(rerunMode);
   showNotes();
 
   // Get the modal
@@ -221,7 +213,7 @@ $(document).ready(function(){
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
 
-  // When the user clicks the button, open the modal 
+  // When the user clicks the button, open the modal
   btn.onclick = function() {
     modal.style.display = "block";
   }

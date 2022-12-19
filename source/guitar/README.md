@@ -1,6 +1,9 @@
-# Guitar Fretboard Visualization
+# Guitar Fretboard
 
-A Pen created on CodePen.io. Original URL: [https://codepen.io/DreySkee/pen/bddpqM](https://codepen.io/DreySkee/pen/bddpqM).
+TODO: add pattern 1 to 5
 
-See how notes move along the guitar neck as you tune it up and down.
-You can also view each note position individually.
+Add number display to practice patterns
+
+Add pattern lat. sequential, follow metronome
+
+All practice follow metronome
