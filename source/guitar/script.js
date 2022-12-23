@@ -231,7 +231,13 @@ $(document).ready(function(){
   $('#toggle-metronome').click(function(){
     $(".play-btn").click();
     $(this).text($(".play-btn").text());
-  })
+  });
+  (new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation) {
+      $('#toggle-metronome').text($(".play-btn").text());
+    });
+  })).observe($(".play-btn")[0], { attributes: true });
+
   showNotes();
 
   // Get the modal
