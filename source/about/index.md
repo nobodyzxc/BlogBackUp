@@ -91,7 +91,6 @@ Tags:
 路線從 ASIC 到 GPU，一路踩坑至今。
 
 > I’m leaving this here as a snapshot of an earlier version of myself.
-
 > Interpret it with a grain of salt.
 
 <div id="chart" style="width:100%;height:100%;">
